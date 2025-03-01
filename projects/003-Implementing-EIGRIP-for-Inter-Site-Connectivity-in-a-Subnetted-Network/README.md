@@ -1,4 +1,4 @@
-# **Implementing EIGRP for Inter-Site Connectivity in a Subnetted Network**
+# **Implementing Routing Protocol for Inter-Site Connectivity in a Subnetted Network**
 
 ## **1. Introduction**
 In modern network infrastructures, efficient routing is essential to ensure seamless communication between different sites. This project involves configuring and implementing the Enhanced Interior Gateway Routing Protocol (EIGRP) to enable full network connectivity between two locations: San Francisco and New York. Prior to configuring EIGRP, devices within each site could communicate locally, but inter-site communication was not possible. The goal of this project is to enable dynamic routing using EIGRP so that devices from both sites can reach each other efficiently.
@@ -102,7 +102,7 @@ router eigrp 100
 Before configuring EIGRP:
 - Devices within San Francisco and within New York could ping each other.
 - San Francisco devices could not reach New York devices, and vice versa.
-![Communication Failed](/screenshot/003/ping_fail.png)
+![Communication Failed](/screenshot/003/inter-site_ping_fail.png)
 
 ### **Post-EIGRP Configuration Test Results**
 After implementing EIGRP:
