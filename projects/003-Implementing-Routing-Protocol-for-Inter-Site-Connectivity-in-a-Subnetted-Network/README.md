@@ -145,12 +145,12 @@ EIGRP is a dynamic routing protocol developed by Cisco Systems. It's designed to
 - **Support for VLSM and CIDR**: EIGRP supports Variable Length Subnet Masking (VLSM) and Classless Inter-Domain Routing (CIDR), allowing for more flexible IP address allocation.
 - **Load Balancing** : EIGRP can perform unequal-cost load balancing, distributing traffic across multiple paths proportionally.
 
-### **How EIGRP Helps with Inter-Site Communication**
-**Dynamic Route Learning** : EIGRP automatically discovers and shares routes between sites, ensuring that all routers have up-to-date routing information.
-**Simplified Configuration** : Instead of manually configuring routes for every network, you can rely on EIGRP to handle route advertisement and updates.
-**Reduced Administrative Overhead** : EIGRP minimizes the need for manual intervention by dynamically adjusting to network changes, such as new subnets or link failures.
-**Efficient Resource Utilization** : By using advanced metrics and load balancing, EIGRP optimizes the use of available bandwidth and ensures reliable data transfer between sites.
-**Scalability** : EIGRP can scale to support large and complex network topologies, making it suitable for organizations with multiple sites.
+### **How EIGRP Helps with Inter-Site Communication?**
+- **Dynamic Route Learning** : EIGRP automatically discovers and shares routes between sites, ensuring that all routers have up-to-date routing information.
+- **Simplified Configuration** : Instead of manually configuring routes for every network, you can rely on EIGRP to handle route advertisement and updates.
+- **Reduced Administrative Overhead** : EIGRP minimizes the need for manual intervention by dynamically adjusting to network changes, such as new subnets or link failures.
+- **Efficient Resource Utilization** : By using advanced metrics and load balancing, EIGRP optimizes the use of available bandwidth and ensures reliable data transfer between sites.
+- **Scalability** : EIGRP can scale to support large and complex network topologies, making it suitable for organizations with multiple sites.
 
 ## **Autonomous System (AS) Number**
 AS number is used to identify the EIGRP process running on the router and to ensure that routers exchanging EIGRP routing information belong to the same AS.
