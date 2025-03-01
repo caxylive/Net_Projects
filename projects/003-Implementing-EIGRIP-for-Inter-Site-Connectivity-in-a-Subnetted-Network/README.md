@@ -26,34 +26,22 @@ The network has been subnetted using the `192.168.1.0/24` address space. To acco
 While the focus of this project is on EIGRP, key device configurations are included to highlight network setup differences. 
 
 ### **San Francisco R1 (Static IP Configuration)**
-- Assign IP Address on R1's GigabitEthernet Interface and bring it up.
-- Assign IP Address on R1's Serial interface and bring it up.
-- Check IP and Interface table and ensure interfaces are administratively up.
-- Write changes from vRAM to nvRAM
-- Summary of important commands:
-```Cisco IOS
-interface GigabitEthernet 0/0/0
-ip address 192.168.1.62 255.255.255.192
-no shutdown
-interface Serial 0/1/0
-ip address 192.168.1.129 255.255.255.252
-no shutdown
-do show ip interface brief
-copy running-config startup-config
-```
+- Select R1's G0/0/0 interface: ```interface GigabitEthernet 0/0/0```
+- Assign IP Address and Subnet Mask: ```ip address 192.168.1.62 255.255.255.192```
+- Bring the interface up: ```no shutdown```
+- Select R1's Serial 0/1/0 interface: ```interface Serial 0/1/0```
+- Assign IP Address and Subnet Mask: ```ip address 192.168.1.129 255.255.255.252```
+- Bring up the interface: ```no shutdown```
+- Check IP and Interface table and ensure interfaces are administratively up:```do show ip interface brief```
+- Write changes from vRAM to nvRAM: ```copy running-config startup-config``` or ```wr```
 ![San Francisco R1 Initial Configuration](/screenshot/003/config-r1_initial.png)
 
 ### San Fransisco S1
-- Assign IP address on S1's Vlan1 and ensure interface is administratively up
-- Verify with the interface summary.
-- Save the configuration
-- Summary of imporant commands:
-``` Cisco IOS
-ip address 192.168.1.61 255.255.255.192
-no shutdown
-do show ip interface brief
-copy running-config startup-config
-```
+- Select Vlan1 on S1: ```interface vlan1```
+- Assign IP Address and Subnet Mask: ```ip address 192.168.1.61 255.255.255.192```
+- Bring the interface up: ```no shutdown```
+- Verify with the interface summary: ```do show ip interface brief```
+- Save the configuration: ```copy running-config startup-config``` or ```wr```
 ![San Fransisco S1 Configuration](/screenshot/003/config-s1_initial.png)
 
 ### **New York R2: Initial Configuration**
@@ -62,7 +50,7 @@ copy running-config startup-config
 - Check IP and Interface table and ensure interfaces are administratively up.
 ```Cisco IOS
 interface GigabitEthernet 0/0/0
-ip address 192.168.1.125 255.255.255.192
+ip address 192.168.1.126 255.255.255.192
 no shutdown
 interface Serial 0/1/0
 ip address 192.168.1.130 255.255.255.252
