@@ -119,22 +119,62 @@ Expected successful response.
 
 ### Routing Table
 #### R1 and R2 Routing Tables Before EIGRP
+![R1 Routing Table](/screenshot/003/routing-tables-before-eigrp.png)
+
 Based on the output of ```show ip route``` on R1 and R2, we can tell that EIGRP is not configured or not working properly because:
 
 1. **No EIGRP Routes** (```D - EIGRP```)
-The output does not show any D (EIGRP) entries, which means R2 has not learned any routes from R1 via EIGRP.
+- The output does not show any D (EIGRP) entries, which means R2 has not learned any routes from R1 via EIGRP.
 
 2. **Only Connected (```C```) and Local (```L```) Routes Exist**
-The only entries are for directly connected subnets (```C```) and local addresses (```L```), meaning R1 is not receiving updates from R2 and vice versa.
-Expected:
-- R1 should have a EIGRP-learned (```D```) route for 192.168.1.64/26 (New York subnet).
-- R2 should have a EIGRP-learned (```D```) route for 192.168.1.0/26 (San Francisco subnet).
+- The only entries are for directly connected subnets (```C```) and local addresses (```L```), meaning R1 is not receiving updates from R2 and vice versa.
+- Expected:
+  - R1 should have a EIGRP-learned (```D```) route for 192.168.1.64/26 (New York subnet).
+  - R2 should have a EIGRP-learned (```D```) route for 192.168.1.0/26 (San Francisco subnet).
 
-![R1 Routing Table](/screenshot/003/routing-tables-before-eigrp.png)
+
 
 #### R2 Routing Table After EIGRP
-![R2 Routing Table](/screenshot/003/r2_routing_table.png)
+![R2 Routing Table](/screenshot/003/routing-tables-after-eigrp.png)
 
 ## **6. Conclusion**
 This project successfully demonstrated the implementation of EIGRP to achieve full connectivity between the San Francisco and New York sites. Through dynamic routing, EIGRP enabled automatic route learning and sharing, eliminating the need for static routes. Future enhancements could include redundancy testing and comparisons with alternative routing protocols such as OSPF.
 
+## **7. Glossary**
+## **DHCP Pool**
+A DHCP pool is a range of IP addresses and related network configuration settings that a DHCP server uses to dynamically assign IP addresses and other network information to client devices. The DHCP pool ensures that each device on the network gets a unique IP address, avoiding IP conflicts and simplifying network management.
+
+### Importance of DHCP Pool:
+**Automatic IP Assignment:**
+The DHCP pool allows the DHCP server to automatically assign IP addresses to devices as they join the network, eliminating the need for manual IP address configuration.
+**Centralized Management:**
+By using a DHCP pool, network administrators can manage IP address assignments and network configurations from a centralized location, making it easier to maintain and update network settings.
+**IP Conflict Avoidance:**
+The DHCP server ensures that each IP address within the pool is assigned only once, preventing IP address conflicts and ensuring smooth network operations.
+**Flexibility and Scalability:**
+DHCP pools can be easily adjusted to accommodate changes in the network size or topology, making it easier to scale the network up or down as needed.
+**Simplified Network Configuration:**
+Besides IP addresses, DHCP pools can also provide additional network settings such as subnet mask, default gateway, DNS servers, and other configuration parameters, simplifying the overall network setup for client devices.
+**Efficient Resource Utilization:**
+DHCP pools help to utilize IP address space efficiently, ensuring that IP addresses are reused when devices disconnect from the network, and reducing the chance of running out of available IP addresses.
+## **EIGRP (Enhanced Interior Gateway Routing Protocol)**
+EIGRP is a dynamic routing protocol developed by Cisco Systems. It's designed to exchange routing information within an autonomous system. Unlike static routing, where routes are manually configured, EIGRP automates the process of learning and maintaining routes, making it more efficient and scalable for larger networks.
+
+### Key Features of EIGRP:
+**Fast Convergence**: EIGRP quickly adapts to network changes, minimizing downtime.
+**Efficient Bandwidth Usage**: EIGRP sends partial updates only when there's a change, rather than broadcasting the entire routing table.
+**Advanced Metrics**: It uses a composite metric based on bandwidth, delay, load, and reliability to choose optimal paths.
+**Support for VLSM and CIDR**: EIGRP supports Variable Length Subnet Masking (VLSM) and Classless Inter-Domain Routing (CIDR), allowing for more flexible IP address allocation.
+**Load Balancing**: EIGRP can perform unequal-cost load balancing, distributing traffic across multiple paths proportionally.
+
+### **How EIGRP Helps with Inter-Site Communication**:
+**Dynamic Route Learning**: EIGRP automatically discovers and shares routes between sites, ensuring that all routers have up-to-date routing information.
+**Simplified Configuration**: Instead of manually configuring routes for every network, you can rely on EIGRP to handle route advertisement and updates.
+**Reduced Administrative Overhead**: EIGRP minimizes the need for manual intervention by dynamically adjusting to network changes, such as new subnets or link failures.
+**Efficient Resource Utilization**: By using advanced metrics and load balancing, EIGRP optimizes the use of available bandwidth and ensures reliable data transfer between sites.
+**Scalability**: EIGRP can scale to support large and complex network topologies, making it suitable for organizations with multiple sites.
+
+## **Autonomous System (AS) Number**
+AS number is used to identify the EIGRP process running on the router and to ensure that routers exchanging EIGRP routing information belong to the same AS.
+
+In other words, for EIGRP to function and share routes between routers, all routers participating in the EIGRP process must have the same AS number. If one router is configured with ```router eigrp 100``` and another with ```router eigrp 200```, they **will not** exchange routing information because they belong to different autonomous systems.
