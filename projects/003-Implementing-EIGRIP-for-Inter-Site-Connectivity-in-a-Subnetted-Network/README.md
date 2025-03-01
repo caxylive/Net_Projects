@@ -70,9 +70,10 @@ While the focus of this project is on EIGRP, key device configurations are inclu
 - Set the default gateway to R2: ```ip default-gateway 192.168.1.126```
 - Specify the DNS server's IP address: ```ip name server 192.168.1.126```
   - Please note that in the real-world, there will be a separate DNS server.
+
 ![New York R2 DHCP, Default Gateway, and DNS Configuration](/screenshot/003/config-r2_dhcp-defaultGateway-dns.png)
 - Verify the DHCP pool, excluded addresses, default gateway, and DNS server: ```do show run```
-![New Yor R2 Show Running Configuration](screenshot/003/config-r2_show-run.png)
+![New Yor R2 Show Running Configuration](/screenshot/003/config-r2_show-run.png)
 - Save the running config once everything is ok: ```copy running-config startup-config```
 
 ## **4. EIGRP Configuration**
