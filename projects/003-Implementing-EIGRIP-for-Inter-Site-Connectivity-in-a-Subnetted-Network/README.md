@@ -73,16 +73,25 @@ do show ip interface brief
 
 ### New York S2
 - Assign IP address on S2's Vlan1 and ensure interface is administratively up
+- Set default gateway to R2.
+![New York S2 Initial Configuration](/screenshot/003/config-s2_initial.png)
 - Verify with the interface summary.
-- Save the configuration.
+![New York S2 Show Interface](/screenshot/003/config-s2_interface.png)
+- Check the running configuration
+![New York S2 Default Gateway](/screenshot/003/config-s2_defaultGateway.png)
+- Save the configuration: ```copy running-config startup-config```
 - Summary of imporant commands:
 ``` Cisco IOS
+interface vlan1
 ip address 192.168.1.125 255.255.255.192
 no shutdown
-do show ip interface brief
+ip default-gateway
+show ip interface brief
 copy running-config startup-config
+end
+disable
 ```
-![New York S2 Configuration](/screenshot/003/config-s2_initial.png)
+
 
 ### New York R2: DHCP and DNS Configuration
 
