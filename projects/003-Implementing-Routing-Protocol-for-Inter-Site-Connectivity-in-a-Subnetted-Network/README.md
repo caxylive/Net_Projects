@@ -102,8 +102,16 @@ Based on the output of the ```show ip route``` command on R1 and R2, it is evide
 ![R2 Routing Table](/screenshot/003/routing-tables-after-eigrp.png)
 There are three key indicators from the output that confirm EIGRP is functioning.
 1. EIGRP Neighbor Adjacency is Established
+  - The output of ```show ip eigrp neighbors``` for both R1 and R2 shows that they have established a neighbor relationship with each other.
+  - Uptime increasing means that the adjacency is stable.
+  - ```Q count = 0``` means that there are no pending EIGRP updates waiting to be sent.
+  - R1 and R2 have successfully formed an EIGRP neighbor adjacency.
 
 2. EIGRP Routes Appear in the Routing Table
+  - The output of the ```show ip route``` command shows that the ```D``` EIGRP code appears in R1 and R2's routing table. This means that EIGRP is learning routes dynamically.
+  - San Fransisco Subnet ```192.168.1.0/26``` is now reachable via EIGRP from **R2** through **R1's Serial Interface** ```192.168.1.129/30```.
+  - New Yor Subnet ```192.168.1.64/26``` is also reachable via EIGRP from **R1** through R2's Serial Interface ```192.168.1.130/30```.
+  - These suggests that EIGRP is correctly **exchanging and installing routes** between R1 and R2.
 
 3. End-to-End Connectivity between San Fransisco and New York
 
@@ -112,6 +120,7 @@ After implementing EIGRP:
 - `show ip route` confirmed that EIGRP dynamically shared routes.
 - Devices in San Francisco successfully pinged devices in New York.
 - Devices in New York successfully pinged devices in San Francisco.
+
 ![Communication Successful](/screenshot/003/ping_success.png)
 
 ## **6. Conclusion**
