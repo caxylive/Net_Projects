@@ -45,41 +45,23 @@ While the focus of this project is on EIGRP, key device configurations are inclu
 ![San Fransisco S1 Configuration](/screenshot/003/config-s1_initial.png)
 
 ### **New York R2: Initial Configuration**
-- Assign IP Address on R2's GigabitEthernet Interface and bring it up.
-- Assign IP Address on R2's Serial interface and bring it up.
-- Check IP and Interface table and ensure interfaces are administratively up.
-```Cisco IOS
-interface GigabitEthernet 0/0/0
-ip address 192.168.1.126 255.255.255.192
-no shutdown
-interface Serial 0/1/0
-ip address 192.168.1.130 255.255.255.252
-no shutdown
-do show ip interface brief
-```
+- Select R2's GigabitEthernet 0/0/0 interface: ```interface g0/0/0```
+- Assign IP Address and Subnet Mask: ```ip address 192.168.1.130 255.255.255.252```
+- Bring the interface up: ```no shutdown```
+- Verify with the interface summary: ```do show ip interface brief```
+- Save the configuration from vRAM to nvRAM: ```copy running-config startup-config```
 ![New York R2 Initial Configuration](/screenshot/003/config-r2_initial.png)
 
 ### New York S2
-- Assign IP address on S2's Vlan1 and ensure interface is administratively up
-- Set default gateway to R2.
+- Select S2's Vlan1 interface: ```interface vlan1```
+- Assign IP Address and Subnet Mask: ```ip address 192.168.1.125 255.255.255.192```
+- Set default gateway to R2: ```ip default-gateway 192.168.1.26```
 ![New York S2 Initial Configuration](/screenshot/003/config-s2_initial.png)
-- Verify with the interface summary.
+- Verify Vlan1 is administratively up with assigned IP address:```do show ip interface brief```
 ![New York S2 Show Interface](/screenshot/003/config-s2_interface.png)
-- Check the running configuration
+- Check the running configuration to verify default gateway assignment: ```do show run```
 ![New York S2 Default Gateway](/screenshot/003/config-s2_defaultGateway.png)
 - Save the configuration: ```copy running-config startup-config```
-- Summary of imporant commands:
-``` Cisco IOS
-interface vlan1
-ip address 192.168.1.125 255.255.255.192
-no shutdown
-ip default-gateway
-show ip interface brief
-copy running-config startup-config
-end
-disable
-```
-
 
 ### New York R2: DHCP and DNS Configuration
 
