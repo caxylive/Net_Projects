@@ -118,8 +118,19 @@ ping 192.168.1.65
 Expected successful response.
 
 ### Routing Table
-#### R1 Routing Table After EIGRP
-![R1 Routing Table](/screenshot/003/r1_routing_table.png)
+#### R1 and R2 Routing Tables Before EIGRP
+Based on the output of ```show ip route``` on R1 and R2, we can tell that EIGRP is not configured or not working properly because:
+
+1. **No EIGRP Routes** (```D - EIGRP```)
+The output does not show any D (EIGRP) entries, which means R2 has not learned any routes from R1 via EIGRP.
+
+2. **Only Connected (```C```) and Local (```L```) Routes Exist**
+The only entries are for directly connected subnets (```C```) and local addresses (```L```), meaning R1 is not receiving updates from R2 and vice versa.
+Expected:
+- R1 should have a EIGRP-learned (```D```) route for 192.168.1.64/26 (New York subnet).
+- R2 should have a EIGRP-learned (```D```) route for 192.168.1.0/26 (San Francisco subnet).
+
+![R1 Routing Table](/screenshot/003/routing-tables-before-eigrp.png)
 
 #### R2 Routing Table After EIGRP
 ![R2 Routing Table](/screenshot/003/r2_routing_table.png)
