@@ -4,8 +4,8 @@
 In modern network infrastructures, efficient routing is essential to ensure seamless communication between different sites. This project involves configuring and implementing the Enhanced Interior Gateway Routing Protocol (EIGRP) to enable full network connectivity between two locations: San Francisco and New York. Prior to configuring EIGRP, devices within each site could communicate locally, but inter-site communication was not possible. The goal of this project is to enable dynamic routing using EIGRP so that devices from both sites can reach each other efficiently.
 
 ## **2. Network Design**
-The network has been subnetted using the `192.168.1.0/24` address space. San Francisco and New York each utilize a `/26` subnet, while the serial link connecting the two sites operates on a `/30` subnet. The addressing scheme is as follows:
-![Network Topology](/screenshot/003/network_topology.png)
+The network has been subnetted using the `192.168.1.0/24` address space. To accomodate the required 60 hosts per subnet, San Francisco and New York each utilize a `/26` subnet, while the serial link connecting the two sites operates on a `/30` subnet to avoid wasting IP addresses. The addressing scheme is as follows:
+![Network Topology](/screenshot/003/network_topology-00.png)
 - **San Francisco (`192.168.1.0/26`)**
   - **PC1**: `192.168.1.1` (Static IP)
   - **PC2**: `192.168.1.2` (Static IP)
@@ -22,25 +22,69 @@ The network has been subnetted using the `192.168.1.0/24` address space. San Fra
   - **R1 (SF Side)**: `192.168.1.129`
   - **R2 (NY Side)**: `192.168.1.130`
 
-## **3. Device Configuration**
+## **3. Initial Device Configurations**
 While the focus of this project is on EIGRP, key device configurations are included to highlight network setup differences. 
 
-### **San Francisco (Static IP Configuration)**
-```bash
-interface FastEthernet0/0
- ip address 192.168.1.1 255.255.255.192
- no shutdown
+### **San Francisco R1 (Static IP Configuration)**
+- Assign IP Address on R1's GigabitEthernet Interface and bring it up.
+- Assign IP Address on R1's Serial interface and bring it up.
+- Check IP and Interface table and ensure interfaces are administratively up.
+- Write changes from vRAM to nvRAM
+- Summary of important commands:
+```Cisco IOS
+interface GigabitEthernet 0/0/0
+ip address 192.168.1.62 255.255.255.192
+no shutdown
+interface Serial 0/1/0
+ip address 192.168.1.129 255.255.255.252
+no shutdown
+do show ip interface brief
+copy running-config startup-config
 ```
-![San Francisco PC1 IP Configuration](/screenshot/003/pc1_ipconfig.png)
+![San Francisco R1 Initial Configuration](/screenshot/003/config-r1_initial.png)
 
-### **New York (DHCP Configuration on R2)**
-```bash
-ip dhcp excluded-address 192.168.1.125 192.168.1.127
-ip dhcp pool NY-LAN
- network 192.168.1.64 255.255.255.192
- default-router 192.168.1.126
+### San Fransisco S1
+- Assign IP address on S1's Vlan1 and ensure interface is administratively up
+- Verify with the interface summary.
+- Save the configuration
+- Summary of imporant commands:
+``` Cisco IOS
+ip address 192.168.1.61 255.255.255.192
+no shutdown
+do show ip interface brief
+copy running-config startup-config
 ```
-![New York PC3 IP Configuration](/screenshot/003/pc3_ipconfig.png)
+![San Fransisco S1 Configuration](/screenshot/003/config-s1_initial.png)
+
+### **New York R2: Initial Configuration**
+- Assign IP Address on R2's GigabitEthernet Interface and bring it up.
+- Assign IP Address on R2's Serial interface and bring it up.
+- Check IP and Interface table and ensure interfaces are administratively up.
+```Cisco IOS
+interface GigabitEthernet 0/0/0
+ip address 192.168.1.125 255.255.255.192
+no shutdown
+interface Serial 0/1/0
+ip address 192.168.1.130 255.255.255.252
+no shutdown
+do show ip interface brief
+```
+![New York R2 Initial Configuration](/screenshot/003/config-r2_initial.png)
+
+### New York S2
+- Assign IP address on S2's Vlan1 and ensure interface is administratively up
+- Verify with the interface summary.
+- Save the configuration.
+- Summary of imporant commands:
+``` Cisco IOS
+ip address 192.168.1.125 255.255.255.192
+no shutdown
+do show ip interface brief
+copy running-config startup-config
+```
+![New York S2 Configuration](/screenshot/003/config-s2_initial.png)
+
+### New York R2: DHCP and DNS Configuration
 
 ## **4. EIGRP Configuration**
 Since devices in San Francisco could not initially communicate with devices in New York, EIGRP was implemented to dynamically share routing information.
