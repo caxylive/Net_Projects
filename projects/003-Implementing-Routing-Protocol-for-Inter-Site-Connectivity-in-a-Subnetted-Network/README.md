@@ -6,21 +6,7 @@ In modern network infrastructures, efficient routing is essential to ensure seam
 ## **2. Network Design**
 The network has been subnetted using the `192.168.1.0/24` address space. To accomodate the required 60 hosts per subnet, San Francisco and New York each utilize a `/26` subnet, while the serial link connecting the two sites operates on a `/30` subnet to avoid wasting IP addresses. The addressing scheme is as follows:
 ![Network Topology](/screenshot/003/network_topology-00.png)
-- **San Francisco (`192.168.1.0/26`)**
-  - **PC1**: `192.168.1.1` (Static IP)
-  - **PC2**: `192.168.1.2` (Static IP)
-  - **Switch (S1)**: `192.168.1.61`
-  - **Router (R1)**: `192.168.1.62`
-
-- **New York (`192.168.1.64/26`)**
-  - **PC3**: `192.168.1.65` (DHCP)
-  - **PC4**: `192.168.1.66` (DHCP)
-  - **Switch (S2)**: `192.168.1.125`
-  - **Router (R2)**: `192.168.1.126`
-
-- **San Francisco - New York Link (`192.168.1.128/30`)**
-  - **R1 (SF Side)**: `192.168.1.129`
-  - **R2 (NY Side)**: `192.168.1.130`
+![Subnetting Table](/screenshot/003/subnetting_table.png)
 
 ## **3. Initial Device Configurations**
 While the focus of this project is on EIGRP, key device configurations are included to highlight network setup differences. 
@@ -120,11 +106,10 @@ Expected successful response.
 ### Routing Table
 #### R1 and R2 Routing Tables Before EIGRP
 ![R1 Routing Table](/screenshot/003/routing-tables-before-eigrp.png)
-
-Based on the output of ```show ip route``` on R1 and R2, we can tell that EIGRP is not configured or not working properly because:
+Based on the output of the ```show ip route``` command on R1 and R2, it is evident that EIGRP is either not configured or not functioning correctly due to the following observations:
 
 1. **No EIGRP Routes** (```D - EIGRP```)
-- The output does not show any D (EIGRP) entries, which means R2 has not learned any routes from R1 via EIGRP.
+- The output does not show any D (EIGRP) entries, which means R1 has not learned any routes from R2 via EIGRP and vice versa.
 
 2. **Only Connected (```C```) and Local (```L```) Routes Exist**
 - The only entries are for directly connected subnets (```C```) and local addresses (```L```), meaning R1 is not receiving updates from R2 and vice versa.
