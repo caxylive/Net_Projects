@@ -66,21 +66,15 @@ While the focus of this project is on EIGRP, key device configurations are inclu
 Since devices in San Francisco could not initially communicate with devices in New York, EIGRP was implemented to dynamically share routing information.
 
 ### **Configuring EIGRP on R1 (San Francisco Router)**
-```bash
-router eigrp 100
- network 192.168.1.0 0.0.0.63
- network 192.168.1.128 0.0.0.3
- no auto-summary
-```
+- Start the EIGRP with AS number 100: ```router eigrp 100```
+- Tell EIGRP to advertise 192.168.1.0: ```network 192.168.1.0```
+- Maintain subnet masks when routes are advertised (provides more accurate routing info): ```no auto-summary```
 ![R1 EIGRP Configuration](/screenshot/003/r1_eigrp.png)
 
 ### **Configuring EIGRP on R2 (New York Router)**
-```bash
-router eigrp 100
- network 192.168.1.64 0.0.0.63
- network 192.168.1.128 0.0.0.3
- no auto-summary
-```
+- Start the EIGRP with AS number 100: ```router eigrp 100```
+- Tell EIGRP to advertise 192.168.1.64: ```network 192.168.1.64```
+- Maintain subnet masks when routes are advertised (provides more accurate routing info): ```no auto-summary```
 ![R2 EIGRP Configuration](/screenshot/003/r2_eigrp.png)
 
 ## **5. Testing and Verification**
