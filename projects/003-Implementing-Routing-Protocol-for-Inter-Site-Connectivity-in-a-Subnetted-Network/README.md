@@ -121,35 +121,36 @@ This project successfully demonstrated the implementation of EIGRP to achieve fu
 ## **DHCP Pool**
 A DHCP pool is a range of IP addresses and related network configuration settings that a DHCP server uses to dynamically assign IP addresses and other network information to client devices. The DHCP pool ensures that each device on the network gets a unique IP address, avoiding IP conflicts and simplifying network management.
 
-### Importance of DHCP Pool:
-**Automatic IP Assignment:**
+### **Importance of DHCP Pool**
+- **Automatic IP Assignment** :
 The DHCP pool allows the DHCP server to automatically assign IP addresses to devices as they join the network, eliminating the need for manual IP address configuration.
-**Centralized Management:**
+- **Centralized Management** :
 By using a DHCP pool, network administrators can manage IP address assignments and network configurations from a centralized location, making it easier to maintain and update network settings.
-**IP Conflict Avoidance:**
+- **IP Conflict Avoidance** :
 The DHCP server ensures that each IP address within the pool is assigned only once, preventing IP address conflicts and ensuring smooth network operations.
-**Flexibility and Scalability:**
+- **Flexibility and Scalability** :
 DHCP pools can be easily adjusted to accommodate changes in the network size or topology, making it easier to scale the network up or down as needed.
-**Simplified Network Configuration:**
+- **Simplified Network Configuration** : 
 Besides IP addresses, DHCP pools can also provide additional network settings such as subnet mask, default gateway, DNS servers, and other configuration parameters, simplifying the overall network setup for client devices.
-**Efficient Resource Utilization:**
+- **Efficient Resource Utilization** : 
 DHCP pools help to utilize IP address space efficiently, ensuring that IP addresses are reused when devices disconnect from the network, and reducing the chance of running out of available IP addresses.
+
 ## **EIGRP (Enhanced Interior Gateway Routing Protocol)**
 EIGRP is a dynamic routing protocol developed by Cisco Systems. It's designed to exchange routing information within an autonomous system. Unlike static routing, where routes are manually configured, EIGRP automates the process of learning and maintaining routes, making it more efficient and scalable for larger networks.
 
-### Key Features of EIGRP:
-**Fast Convergence**: EIGRP quickly adapts to network changes, minimizing downtime.
-**Efficient Bandwidth Usage**: EIGRP sends partial updates only when there's a change, rather than broadcasting the entire routing table.
-**Advanced Metrics**: It uses a composite metric based on bandwidth, delay, load, and reliability to choose optimal paths.
-**Support for VLSM and CIDR**: EIGRP supports Variable Length Subnet Masking (VLSM) and Classless Inter-Domain Routing (CIDR), allowing for more flexible IP address allocation.
-**Load Balancing**: EIGRP can perform unequal-cost load balancing, distributing traffic across multiple paths proportionally.
+### **Key Features of EIGRP**
+- **Fast Convergence** : EIGRP quickly adapts to network changes, minimizing downtime.
+- **Efficient Bandwidth Usage**: EIGRP sends partial updates only when there's a change, rather than broadcasting the entire routing table.
+- **Advanced Metrics** : It uses a composite metric based on bandwidth, delay, load, and reliability to choose optimal paths.
+- **Support for VLSM and CIDR**: EIGRP supports Variable Length Subnet Masking (VLSM) and Classless Inter-Domain Routing (CIDR), allowing for more flexible IP address allocation.
+- **Load Balancing** : EIGRP can perform unequal-cost load balancing, distributing traffic across multiple paths proportionally.
 
-### **How EIGRP Helps with Inter-Site Communication**:
-**Dynamic Route Learning**: EIGRP automatically discovers and shares routes between sites, ensuring that all routers have up-to-date routing information.
-**Simplified Configuration**: Instead of manually configuring routes for every network, you can rely on EIGRP to handle route advertisement and updates.
-**Reduced Administrative Overhead**: EIGRP minimizes the need for manual intervention by dynamically adjusting to network changes, such as new subnets or link failures.
-**Efficient Resource Utilization**: By using advanced metrics and load balancing, EIGRP optimizes the use of available bandwidth and ensures reliable data transfer between sites.
-**Scalability**: EIGRP can scale to support large and complex network topologies, making it suitable for organizations with multiple sites.
+### **How EIGRP Helps with Inter-Site Communication**
+**Dynamic Route Learning** : EIGRP automatically discovers and shares routes between sites, ensuring that all routers have up-to-date routing information.
+**Simplified Configuration** : Instead of manually configuring routes for every network, you can rely on EIGRP to handle route advertisement and updates.
+**Reduced Administrative Overhead** : EIGRP minimizes the need for manual intervention by dynamically adjusting to network changes, such as new subnets or link failures.
+**Efficient Resource Utilization** : By using advanced metrics and load balancing, EIGRP optimizes the use of available bandwidth and ensures reliable data transfer between sites.
+**Scalability** : EIGRP can scale to support large and complex network topologies, making it suitable for organizations with multiple sites.
 
 ## **Autonomous System (AS) Number**
 AS number is used to identify the EIGRP process running on the router and to ensure that routers exchanging EIGRP routing information belong to the same AS.
