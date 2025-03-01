@@ -64,6 +64,16 @@ While the focus of this project is on EIGRP, key device configurations are inclu
 - Save the configuration: ```copy running-config startup-config```
 
 ### New York R2: DHCP and DNS Configuration
+- Assign a name to the DHCP Pool: ```ip dhcp pool NY```
+- Specify the network address and subnet mask for the DHCP pool: ```network 192.168.1.64 255.255.255.192```
+- Ensure the DHCP Server does not assign its own IP address to other devices: ```ip dhcp excluded-address 192.168.1.126```
+- Set the default gateway to R2: ```ip default-gateway 192.168.1.126```
+- Specify the DNS server's IP address: ```ip name server 192.168.1.126```
+  - Please note that in the real-world, there will be a separate DNS server.
+![New York R2 DHCP, Default Gateway, and DNS Configuration](/screenshot/003/config-r2_dhcp-defaultGateway-dns.png)
+- Verify the DHCP pool, excluded addresses, default gateway, and DNS server: ```do show run```
+![New Yor R2 Show Running Configuration](screenshot/003/config-r2_show-run.png)
+- Save the running config once everything is ok: ```copy running-config startup-config```
 
 ## **4. EIGRP Configuration**
 Since devices in San Francisco could not initially communicate with devices in New York, EIGRP was implemented to dynamically share routing information.
