@@ -69,13 +69,13 @@ Since devices in San Francisco could not initially communicate with devices in N
 - Start the EIGRP with AS number 100: ```router eigrp 100```
 - Tell EIGRP to advertise 192.168.1.0: ```network 192.168.1.0```
 - Maintain subnet masks when routes are advertised (provides more accurate routing info): ```no auto-summary```
-![R1 EIGRP Configuration](/screenshot/003/r1_eigrp.png)
+![R1 EIGRP Configuration](/screenshot/003/r1-eigrp.png)
 
 ### **Configuring EIGRP on R2 (New York Router)**
 - Start the EIGRP with AS number 100: ```router eigrp 100```
 - Tell EIGRP to advertise 192.168.1.64: ```network 192.168.1.64```
 - Maintain subnet masks when routes are advertised (provides more accurate routing info): ```no auto-summary```
-![R2 EIGRP Configuration](/screenshot/003/r2_eigrp.png)
+![R2 EIGRP Configuration](/screenshot/003/r2-eigrp.png)
 
 ## **5. Testing and Verification**
 ### **Pre-EIGRP Configuration Test Results**
@@ -84,22 +84,9 @@ Before configuring EIGRP:
 - San Francisco devices could not reach New York devices, and vice versa.
 ![Communication Failed](/screenshot/003/inter-site_ping_fail.png)
 
-### **Post-EIGRP Configuration Test Results**
-After implementing EIGRP:
-- `show ip route` confirmed that EIGRP dynamically shared routes.
-- Devices in San Francisco successfully pinged devices in New York.
-- Devices in New York successfully pinged devices in San Francisco.
-![Communication Successful](/screenshot/003/ping_success.png)
-
-Example verification command:
-```bash
-ping 192.168.1.65
-```
-Expected successful response.
-
-### Routing Table
-#### R1 and R2 Routing Tables Before EIGRP
+### **Pre-EIGRP R1 and R2 Routing Tables**
 ![R1 Routing Table](/screenshot/003/routing-tables-before-eigrp.png)
+
 Based on the output of the ```show ip route``` command on R1 and R2, it is evident that EIGRP is either not configured or not functioning correctly due to the following observations:
 
 1. **No EIGRP Routes** (```D - EIGRP```)
@@ -111,10 +98,21 @@ Based on the output of the ```show ip route``` command on R1 and R2, it is evide
   - R1 should have a EIGRP-learned (```D```) route for 192.168.1.64/26 (New York subnet).
   - R2 should have a EIGRP-learned (```D```) route for 192.168.1.0/26 (San Francisco subnet).
 
-
-
-#### R2 Routing Table After EIGRP
+### **Post-EIGRP R1 and R2 Routing Tables**
 ![R2 Routing Table](/screenshot/003/routing-tables-after-eigrp.png)
+There are three key indicators from the output that confirm EIGRP is functioning.
+1. EIGRP Neighbor Adjacency is Established
+
+2. EIGRP Routes Appear in the Routing Table
+
+3. End-to-End Connectivity between San Fransisco and New York
+
+### **Post-EIGRP Configuration Test Results**
+After implementing EIGRP:
+- `show ip route` confirmed that EIGRP dynamically shared routes.
+- Devices in San Francisco successfully pinged devices in New York.
+- Devices in New York successfully pinged devices in San Francisco.
+![Communication Successful](/screenshot/003/ping_success.png)
 
 ## **6. Conclusion**
 This project successfully demonstrated the implementation of EIGRP to achieve full connectivity between the San Francisco and New York sites. Through dynamic routing, EIGRP enabled automatic route learning and sharing, eliminating the need for static routes. Future enhancements could include redundancy testing and comparisons with alternative routing protocols such as OSPF.
