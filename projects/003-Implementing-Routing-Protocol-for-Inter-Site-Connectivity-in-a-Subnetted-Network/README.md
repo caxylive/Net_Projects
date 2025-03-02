@@ -12,50 +12,75 @@ The network has been subnetted using the `192.168.1.0/24` address space. To acco
 While the focus of this project is on EIGRP, key device configurations are included to highlight network setup differences. 
 
 ### **San Francisco R1 (Static IP Configuration)**
-- Select R1's G0/0/0 interface: ```interface GigabitEthernet 0/0/0```
-- Assign IP Address and Subnet Mask: ```ip address 192.168.1.62 255.255.255.192```
-- Bring the interface up: ```no shutdown```
-- Select R1's Serial 0/1/0 interface: ```interface Serial 0/1/0```
-- Assign IP Address and Subnet Mask: ```ip address 192.168.1.129 255.255.255.252```
-- Bring up the interface: ```no shutdown```
-- Check IP and Interface table and ensure interfaces are administratively up:```do show ip interface brief```
-- Write changes from vRAM to nvRAM: ```copy running-config startup-config``` or ```wr```
+| Description                                                     | Command                                               |
+|-----------------------------------------------------------------|-------------------------------------------------------|
+| Select R1's G0/0/0 interface                                    | ```interface GigabitEthernet 0/0/0```                 |
+| Assign IP Address and Subnet Mask                               | ```ip address 192.168.1.62 255.255.255.192```         |
+| Bring the interface up                                          | ```no shutdown```                                     |
+| Select R1's Serial 0/1/0 interface                              | ```interface Serial 0/1/0```                          |
+| Assign IP Address and Subnet Mask                               | ```ip address 192.168.1.129 255.255.255.252```        |
+| Bring up the interface                                          | ```no shutdown```                                     |
+| Check IP and Interface table and ensure interfaces are administratively up | ```do show ip interface brief```           |
+| Write changes from vRAM to nvRAM                                | ```copy running-config startup-config``` or ```wr```  |
+
 ![San Francisco R1 Initial Configuration](/screenshot/003/config-r1_initial.png)
 
 ### San Fransisco S1
-- Select Vlan1 on S1: ```interface vlan1```
-- Assign IP Address and Subnet Mask: ```ip address 192.168.1.61 255.255.255.192```
-- Bring the interface up: ```no shutdown```
-- Verify with the interface summary: ```do show ip interface brief```
-- Save the configuration: ```copy running-config startup-config``` or ```wr```
+| Description                                                     | Command                                               |
+|-----------------------------------------------------------------|-------------------------------------------------------|
+| Select Vlan1 on S1                                              | ```interface vlan1```                                 |
+| Assign IP Address and Subnet Mask                               | ```ip address 192.168.1.61 255.255.255.192```         |
+| Bring the interface up                                          | ```no shutdown```                                     |
+| Verify with the interface summary                               | ```do show ip interface brief```                      |
+| Save the configuration                                          | ```copy running-config startup-config``` or ```wr```  |
+
 ![San Fransisco S1 Configuration](/screenshot/003/config-s1_initial.png)
 
 ### **New York R2: Initial Configuration**
-- Select R2's GigabitEthernet 0/0/0 interface: ```interface g0/0/0```
-- Assign IP Address and Subnet Mask: ```ip address 192.168.1.130 255.255.255.252```
-- Bring the interface up: ```no shutdown```
-- Verify with the interface summary: ```do show ip interface brief```
-- Save the configuration from vRAM to nvRAM: ```copy running-config startup-config```
+| Description                                                     | Command                                               |
+|-----------------------------------------------------------------|-------------------------------------------------------|
+| Select R2's GigabitEthernet 0/0/0 interface                     | ```interface g0/0/0```                                |
+| Assign IP Address and Subnet Mask                               | ```ip address 192.168.1.130 255.255.255.252```        |
+| Bring the interface up                                          | ```no shutdown```                                     |
+| Verify with the interface summary                               | ```do show ip interface brief```                      |
+| Save the configuration from vRAM to nvRAM                       | ```copy running-config startup-config```              |
+| Select Vlan1 on S1                                              | ```interface vlan1```                                 |
+| Assign IP Address and Subnet Mask                               | ```ip address 192.168.1.61 255.255.255.192```         |
+| Bring the interface up                                          | ```no shutdown```                                     |
+| Verify with the interface summary                               | ```do show ip interface brief```                      |
+| Save the configuration                                          | ```copy running-config startup-config or wr```        |
+
 ![New York R2 Initial Configuration](/screenshot/003/config-r2_initial.png)
 
 ### New York S2
-- Select S2's Vlan1 interface: ```interface vlan1```
-- Assign IP Address and Subnet Mask: ```ip address 192.168.1.125 255.255.255.192```
-- Set default gateway to R2: ```ip default-gateway 192.168.1.26```
+| Description                                                     | Command                                               |
+|-----------------------------------------------------------------|-------------------------------------------------------|
+| Select S2's Vlan1 interface                                     | ```interface vlan1```                                 |
+| Assign IP Address and Subnet Mask                               | ```ip address 192.168.1.125 255.255.255.192```        |
+| Set default gateway to R2                                       | ```ip default-gateway 192.168.1.26```                 |
+
 ![New York S2 Initial Configuration](/screenshot/003/config-s2_initial.png)
-- Verify Vlan1 is administratively up with assigned IP address:```do show ip interface brief```
+
+| Verify Vlan1 is administratively up with assigned IP address         | ```do show ip interface brief```                 |
+
 ![New York S2 Show Interface](/screenshot/003/config-s2_interface.png)
-- Check the running configuration to verify default gateway assignment: ```do show run```
+
+| Check the running configuration to verify default gateway assignment | ```do show run```                                |
+
 ![New York S2 Default Gateway](/screenshot/003/config-s2_defaultGateway.png)
-- Save the configuration: ```copy running-config startup-config```
+
+| Save the configuration                                          | ```copy running-config startup-config```              |
+
 
 ### New York R2: DHCP and DNS Configuration
-- Assign a name to the DHCP Pool: ```ip dhcp pool NY```
-- Specify the network address and subnet mask for the DHCP pool: ```network 192.168.1.64 255.255.255.192```
-- Ensure the DHCP Server does not assign its own IP address to other devices: ```ip dhcp excluded-address 192.168.1.126```
-- Set the default gateway to R2: ```ip default-gateway 192.168.1.126```
-- Specify the DNS server's IP address: ```ip name server 192.168.1.126```
-  - Please note that in the real-world, there will be a separate DNS server.
+| Description                                                     | Command                                               |
+|-----------------------------------------------------------------|-------------------------------------------------------|
+| Assign a name to the DHCP Pool                                  | ```ip dhcp pool NY```                                 |
+| Specify the network address and subnet mask for the DHCP pool   | ```network 192.168.1.64 255.255.255.192```            |
+| Ensure the DHCP Server does not assign its own IP address to other devices | ```ip dhcp excluded-address 192.168.1.126```|
+| Set the default gateway to R2                                   | ```ip default-gateway 192.168.1.126```                |
+| Specify the DNS server's IP address                             | ```ip name server 192.168.1.126```                    |
+| * Please note that in the real-world, there will be a separate DNS server.| |
 
 ![New York R2 DHCP, Default Gateway, and DNS Configuration](/screenshot/003/config-r2_dhcp-defaultGateway-dns.png)
 - Verify the DHCP pool, excluded addresses, default gateway, and DNS server: ```do show run```
@@ -66,15 +91,22 @@ While the focus of this project is on EIGRP, key device configurations are inclu
 Since devices in San Francisco could not initially communicate with devices in New York, EIGRP was implemented to dynamically share routing information.
 
 ### **Configuring EIGRP on R1 (San Francisco Router)**
-- Start the EIGRP with AS number 100: ```router eigrp 100```
-- Tell EIGRP to advertise 192.168.1.0: ```network 192.168.1.0```
-- Maintain subnet masks when routes are advertised (provides more accurate routing info): ```no auto-summary```
+| Description                                       | Command                   |
+|---------------------------------------------------|---------------------------|
+| Start the EIGRP with AS number 100                | ```router eigrp 100```    |
+| Tell EIGRP to advertise 192.168.1.0               | ```network 192.168.1.0``` |
+| Maintain subnet masks when routes are advertised  | ```no auto-summary```     |
+| (provides more accurate routing info)             |                           |
+
 ![R1 EIGRP Configuration](/screenshot/003/r1-eigrp.png)
 
 ### **Configuring EIGRP on R2 (New York Router)**
-- Start the EIGRP with AS number 100: ```router eigrp 100```
-- Tell EIGRP to advertise 192.168.1.64: ```network 192.168.1.64```
-- Maintain subnet masks when routes are advertised (provides more accurate routing info): ```no auto-summary```
+| Description                                                     | Command                                               |
+|-----------------------------------------------------------------|-------------------------------------------------------|
+| Start the EIGRP with AS number 100                              | ```router eigrp 100```                                |
+| Tell EIGRP to advertise 192.168.1.64                            | ```network 192.168.1.64```                            |
+| Maintain subnet masks when routes are advertised (provides more accurate routing info) | ```no auto-summary```                          |
+
 ![R2 EIGRP Configuration](/screenshot/003/r2-eigrp.png)
 
 ## **5. Testing and Verification**
