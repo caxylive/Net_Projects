@@ -73,24 +73,24 @@ While the focus of this project is on EIGRP, key device configurations are inclu
 
 
 ### New York R2: DHCP and DNS Configuration
-| Description                                                     | Command                                                       |
-|-----------------------------------------------------------------|---------------------------------------------------------------|
-| Assign a name to the DHCP Pool                                  | R2(config) #```ip dhcp pool NY```                             |
-| Specify the network address and subnet mask for the DHCP pool   | R2(dhcp-config) #```network 192.168.1.64 255.255.255.192```   |
-| Set the default router to R2                                    | R2(dhcp-config) #```default-router 192.168.1.126```           |
-| Exit dhcp-config                                                | R2(dhcp-config) #```exit```                                   |
-| Ensure DHCP Server doesn't assign its own IP address to other devices | R2(config) #```ip dhcp excluded-address 192.168.1.126```|
-| Specify the DNS server's IP address                             | R2(config) #```ip name server 192.168.1.126```                |
-| Exit config                                                     | R2(config) #```exit```                                        |
+| Description                                                     | Command                                           |
+|-----------------------------------------------------------------|---------------------------------------------------|
+| Assign a name to the DHCP Pool                                  | ```ip dhcp pool NY```                             |
+| Specify the network address and subnet mask for the DHCP pool   | ```network 192.168.1.64 255.255.255.192```        |
+| Set the default router to R2                                    | ```default-router 192.168.1.126```                |
+| Exit dhcp-config                                                | ```exit```                                        |
+| Ensure DHCP Server doesn't assign its own IP address to other devices | ```ip dhcp excluded-address 192.168.1.126```|
+| Specify the DNS server's IP address                             | ```ip name server 192.168.1.126```                |
+| Exit config                                                     | ```exit```                                        |
 | Save configuration                                              | ```write memory``` or ```copy running-config startup-config```|
 
+![New York R2 DHCP, Default Gateway, and DNS Configuration](/screenshot/003/config-r2_dhcp-defaultGateway-dns.png)
 PS:
 - Please note that in the real-world, there will be a separate DNS server.
 - ```default-router``` → Used in DHCP to tell clients which router to use as their gateway.
 - ```ip default-gateway``` → Only used on switches or routers with IP routing disabled (not needed here).
 - R2 doesn’t need ```ip default-gateway``` because it's a router, and routing protocols take care of forwarding traffic.
 
-![New York R2 DHCP, Default Gateway, and DNS Configuration](/screenshot/003/config-r2_dhcp-defaultGateway-dns.png)
 - Verify the DHCP pool, excluded addresses, default gateway, and DNS server: ```do show run```
 ![New Yor R2 Show Running Configuration](/screenshot/003/config-r2_show-run.png)
 - Save the running config once everything is ok: ```copy running-config startup-config```
@@ -113,7 +113,7 @@ Since devices in San Francisco could not initially communicate with devices in N
 |-----------------------------------------------------------------|-------------------------------------------------------|
 | Start the EIGRP with AS number 100                              | ```router eigrp 100```                                |
 | Tell EIGRP to advertise 192.168.1.64                            | ```network 192.168.1.64```                            |
-| Maintain subnet masks when routes are advertised (provides more accurate routing info) | ```no auto-summary```                          |
+| Maintain subnet masks when routes are advertised (provides more accurate routing info) | ```no auto-summary```          |
 
 ![R2 EIGRP Configuration](/screenshot/003/r2-eigrp.png)
 
