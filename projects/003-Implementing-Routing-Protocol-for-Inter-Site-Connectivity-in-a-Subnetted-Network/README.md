@@ -40,15 +40,13 @@ While the focus of this project is on EIGRP, key device configurations are inclu
 | Description                                                     | Command                                               |
 |-----------------------------------------------------------------|-------------------------------------------------------|
 | Select R2's GigabitEthernet 0/0/0 interface                     | ```interface g0/0/0```                                |
+| Assign IP Address and Subnet Mask                               | ```ip address 192.168.1.126 255.255.255.192```        |
+| Bring the interface up                                          | ```no shutdown```                                     |
+| Select R2's Serial 0/1/0 interface                              | ```interface s0/1/0```                                |
 | Assign IP Address and Subnet Mask                               | ```ip address 192.168.1.130 255.255.255.252```        |
 | Bring the interface up                                          | ```no shutdown```                                     |
 | Verify with the interface summary                               | ```do show ip interface brief```                      |
-| Save the configuration from vRAM to nvRAM                       | ```copy running-config startup-config```              |
-| Select Vlan1 on S1                                              | ```interface vlan1```                                 |
-| Assign IP Address and Subnet Mask                               | ```ip address 192.168.1.61 255.255.255.192```         |
-| Bring the interface up                                          | ```no shutdown```                                     |
-| Verify with the interface summary                               | ```do show ip interface brief```                      |
-| Save the configuration                                          | ```copy running-config startup-config or wr```        |
+| Save the configuration                                          | ```copy running-config startup-config or wr```  
 
 ![New York R2 Initial Configuration](/screenshot/003/config-r2_initial.png)
 
