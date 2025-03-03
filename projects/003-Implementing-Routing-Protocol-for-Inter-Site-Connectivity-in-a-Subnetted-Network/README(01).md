@@ -31,35 +31,36 @@ The `192.168.1.0/24` address space was subdivided as follows:
 ---
 
 ## **3. Device Configurations**
-### **San Francisco Router (R1)**
+### **San Francisco Router (R1) and New York Router (R2) Initial Configuration**
 #### **Interface Configuration**
-| Description               | Command                                      |
-|---------------------------|----------------------------------------------|
-| Configure LAN Interface   | `interface GigabitEthernet0/0/0`             |
-| Assign IP Address         | `ip address 192.168.1.62 255.255.255.192`    |
-| Bring interface up        | `no shutdown`                                |
-| Configure WAN Interface   | `interface Serial0/1/0`                      |
-| Assign IP Address         | `ip address 192.168.1.129 255.255.255.252`   |
-| Bring interface up        | `no shutdown`                                |
-| Write changes from vRAM to nvRAM | `copy running-config startup-config`   |
+| Description               | Command (R1)                                 | Command (R2)                               |
+|---------------------------|----------------------------------------------|--------------------------------------------|
+| Configure LAN Interface   | `interface GigabitEthernet0/0/0`             | `interface GigabitEthernet0/0/0`           |
+| Assign IP Address         | `ip address 192.168.1.62 255.255.255.192`    | `ip address 192.168.1.126 255.255.255.192`  |
+| Bring interface up        | `no shutdown`                                | `no shutdown`                              |
+| Configure WAN Interface   | `interface Serial0/1/0`                      | `interface Serial0/1/0`                    |
+| Assign IP Address         | `ip address 192.168.1.129 255.255.255.252`   | `ip address 192.168.1.130 255.255.255.252` |
+| Bring interface up        | `no shutdown`                                | `no shutdown`                              |
+| Write changes from vRAM to nvRAM | `copy running-config startup-config`  | `copy running-config startup-config`       |
 
 ![**Figure 3**: R1 Interface Configuration](screenshot/003/config-r1_initial.png)  
 *Relevant interface commands and verification output on R1.*
 
 ---
 
-### **San Francisco Switch (S1)**
+### **San Francisco Switch (S1) and New York Switch (S2)**
 #### **Interface Configuration**
-| Description               | Command                                          |
-|---------------------------|--------------------------------------------------|
-| Configure LAN Interface   | ```interface vlan1```                            |
-| Assign IP Address         | ```ip address 192.168.1.61 255.255.255.192```    |
-| Bring interface up        | ```no shutdown```                                |
-| Verify configuration      | ```show ip interface brief```                    |
-| Write changes from vRAM to nvRAM | ```copy running-config startup-config```  |
+| Description               | Command (S1)                                 | Command (S2)                              |
+|---------------------------|----------------------------------------------|-------------------------------------------|
+| Configure LAN Interface   | `interface vlan1`                            | `interface vlan1`                         |
+| Assign IP Address         | `ip address 192.168.1.61 255.255.255.192`    | `ip address 192.168.1.61 255.255.255.192` |
+| Bring interface up        | `no shutdown`                                | `no shutdown`                             |
+| Set Default Gateway       | `ip default-gateway 192.168.1.62`            | `ip default-gateway 192.168.1.126`        | 
+| Verify configuration      | `show ip interface brief`                    | `show ip interface brief`                 |
+| Write changes from vRAM to nvRAM | `copy running-config startup-config`  | `copy running-config startup-config`      |
 
-![**Figure 4**: R1 Interface Configuration](screenshot/003/config-r1_initial.png)  
-*Relevant interface commands and verification output on R1.*
+![**Figure 4**: Switch (S1) and (S2) Configuration](screenshot/003/config-switch_initial.png)  
+*Relevant interface commands and verification output on S1.*
 
 ---
 
@@ -107,7 +108,10 @@ Note:
 ### Verification <a id="verification"></a>
 
 1. **Neighbor Adjacency** <a id="verification-neighbor-adjacency"></a>
+
 The ```show ip eigrp neighbors``` command confirms successful adjacency between R1 and R2:
+- Uptime increasing means that the adjacency is stable.
+- `Q count = 0` means that there are no pending EIGRP updates waiting to be sent.
 
 ![**Figure 7**: EIGRP Neighbor Status](screenshot/003/r1-show-ip-eigrp-beighbors.png)
 *Stable neighbor relationship indicated by increasing uptime and ```Q Count = 0```.*
@@ -115,33 +119,42 @@ The ```show ip eigrp neighbors``` command confirms successful adjacency between 
 ---
 
 2. **Routing Tables** <a id="verification-routing-tables"></a>
-Post-EIGRP routing tables show dynamically learned routes:
 
-![**Figure 8**: Post-EIGRP Routing Table on R1]()
-*```D``` (EIGRP) routes for remote subnets, confirming route propagation.*
+Post-EIGRP routing tables show EIGRP is correctly exchanging and installing routes between R1 and R2:
+- The `D` EIGRP code appears in R1 and R2's routing table. This means that EIGRP is learning routes dynamically.
+- San Francisco Subnet `192.168.1.0/26` is reachable via EIGRP from R2 through R1's Serial Interface `192.168.1.129/30`.
+- New York Subnet `192.168.1.64/26` is also reachable via EIGRP from R1 through R2's Serial Interface `192.168.1.130/30`.
+
+  ![**Figure 8**: Post-EIGRP Routing Table on R1 and R2](screenshot/003/output-show_ip_route.png)
+  *```D``` (EIGRP) routes for remote subnets, confirming route propagation.*
 
 ---
 
 ## **5. Testing and Validation**
 ### **Pre-EIGRP Connectivity**
 - ❌ Inter-site pings failed due to missing routes:  
+
   ![**Figure 9**: Failed Inter-Site Ping](screenshot/003/inter-site_ping_fail.png)  
   *Ping from San Francisco to New York before EIGRP configuration.*
 
 ---
+
 ### Pre-EIGRP Routing Tables
+
   ![**Figure 10**: No EIGRP Routes](screenshot/003/pre-eigrp-routing-tables.png)  
 
 The routing tables does not show any `D` EIGRP entries, which means that R1 **has not learned any routes** from R2 via EIGRP and vice versa. The only entries are for directly connected subnets (`C`) and local addresses (`L`), meaning R1 is not receiving updates from R2 and vice versa.
 
 ---
+
 ### Post-EIGRP Routing Tables
 Please revisit the [verification](#verification-routing-tables) section to view the results after the routing tables have been configured with EIGRP.
 
 ---
 
 ### **Post-EIGRP Connectivity**
-- ✅ **Successful Inter-Site Pings**  
+- ✅ **Successful Inter-Site Pings**
+
   ![**Figure 10**: Successful Inter-Site Ping](screenshot/003/ping_success.png)  
   *Ping from PC1 (San Francisco) to PC2 (New York) after EIGRP convergence.*
 
@@ -159,34 +172,8 @@ Please revisit the [verification](#verification-routing-tables) section to view 
 ---
 
 ## **6. Conclusion**
-EIGRP was successfully implemented to automate route propagation between San Francisco and New York, eliminating reliance on static routes. Key outcomes include:
-- **Dynamic Scalability**: Simplified expansion to additional subnets.
-- **Efficient Convergence**: Sub-second route updates during topology changes.
-- **Reduced Overhead**: No manual route maintenance required.
 
-**Future Enhancements**:  
-- Redundancy testing with backup links.
-- Comparative analysis with OSPF.
-
-## **7. Appendix: Key Concepts**
-### **EIGRP (Enhanced Interior Gateway Routing Protocol)**
-- **Protocol Type**: Advanced distance-vector (hybrid).
-- **Key Features**: Fast convergence, support for VLSM/CIDR, unequal-cost load balancing.
-- **Autonomous System (AS)**: Routers within the same AS (e.g., AS 100) exchange routing updates.
-
----
-
-### **DHCP Pool**
-- **Purpose**: Dynamically assign IP addresses, gateways, and DNS settings.
-- **Exclusions**: Reserved addresses (e.g., `ip dhcp excluded-address 192.168.1.126`).
-
----
-
-### **Autonomous System (AS) Number**
-- **Purpose**: Identifies the EIGRP process and ensures routers within the same AS exchange routing information.
-- **Example**: Both R1 and R2 were configured with `router eigrp 100` to establish adjacency.
-
-
+EIGRP was successfully implemented to automate route propagation between the San Francisco and New York sites. Through dynamic routing, EIGRP enabled automatic route learning and sharing, eliminating the need for static routes. Key outcomes include simplified expansion to additional subnets, sub-second route updates during topology changes, and elimination of manual route maintenance. Future enhancements could include redundancy testing with backup links and comparisons with alternative routing protocols such as OSPF.
 
 
 
