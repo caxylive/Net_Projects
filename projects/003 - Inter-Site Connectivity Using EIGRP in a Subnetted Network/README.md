@@ -49,10 +49,10 @@ The `192.168.1.0/24` address space was subdivided as follows:
 - **New York LAN**: `192.168.1.64/26` (60 host addresses)
 - **WAN Link**: `192.168.1.128/30` (point-to-point serial connection)
 
-![Network Topology](screenshot/003/network_topology-00.png)  
+![Network Topology](screenshot/network-topology.png)  
 *Logical topology showing subnets and device interconnections.*
 
-![Subnet Allocation Table](screenshot/003/subnetting_table.png)  
+![Subnet Allocation Table](screenshot/subnetting-table.png)  
 *Subnet ranges and address assignments.*
 
 [Back to Top](#top)
