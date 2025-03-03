@@ -175,6 +175,10 @@ To test internet connectivity, PCs attempted to access the simulated external se
 
 Furthermore, network performance was assessed using tools such as Wireshark to monitor packet flows, ensuring no significant delays or packet loss occurred during transmission. Security measures were also reviewed, including access control lists (ACLs) and firewall settings to regulate traffic and prevent unauthorized access.
 
+[Back to Top](#top)
+
+---
+
 ## **7. Limitations of the Project**
 While the network topology was successfully implemented in Cisco Packet Tracer, there are certain limitations that need to be considered. 
 
