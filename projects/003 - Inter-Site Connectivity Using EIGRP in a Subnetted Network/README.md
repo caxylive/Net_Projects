@@ -145,7 +145,7 @@ We should be able to verify the configuration with `show ip interface brief`:
 
 ---
 
-### Verification <a id="verification"></a>
+### Verification
 
 1. **Neighbor Adjacency**
 
@@ -158,7 +158,7 @@ The ```show ip eigrp neighbors``` command confirms successful adjacency between 
 
 ---
 
-2. **Routing Tables**
+2. **Routing Tables** <a name="verification-routing-tables"></a>
 
 Post-EIGRP routing tables show EIGRP is correctly exchanging and installing routes between R1 and R2:
 - The `D` EIGRP code appears in R1 and R2's routing table. This means that EIGRP is learning routes dynamically.
