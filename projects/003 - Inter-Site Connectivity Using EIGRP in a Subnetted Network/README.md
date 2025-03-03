@@ -94,7 +94,7 @@ While devices in San Francisco will be assigned Static IPs, DHCP will be impleme
 
 `show running-config` should reveal the settings:
 
-![R2 DHCP and DNS Configuration](screenshot/003/config-r2-show-run.png)  
+![R2 DHCP and DNS Configuration](screenshot/r2-show-run.png)  
 *DHCP pool setup and DNS configuration on R2.*
 
 **Note**:
