@@ -1,3 +1,4 @@
+<a name="top"></a>
 # **Inter-Site Connectivity Using EIGRP in a Subnetted Network**
 
 ---
@@ -14,6 +15,8 @@ This project demonstrates the implementation of **EIGRP** to establish dynamic r
 - **Network Services**: DHCP, DNS (simulated)
 - **Tools**: Cisco IOS, Cisco Packet Tracer
 
+[Back to Top](#top)
+
 ---
 
 ## **2. Network Design**
@@ -28,6 +31,8 @@ The `192.168.1.0/24` address space was subdivided as follows:
 
 ![Subnet Allocation Table](screenshot/003/subnetting_table.png)  
 *Subnet ranges and address assignments.*
+
+[Back to Top](#top)
 
 ---
 
@@ -92,6 +97,8 @@ We should be able to verify the configuration with `show ip interface brief`:
 ![Switch (S1) and (S2) Configuration](screenshot/003/config-switch_initial.png)  
 *Relevant interface commands and verification output on S1.*
 
+[Back to Top](#top)
+
 ---
 
 ## **4. EIGRP Implementation**
@@ -136,6 +143,8 @@ Post-EIGRP routing tables show EIGRP is correctly exchanging and installing rout
   ![Post-EIGRP Routing Table on R1 and R2](screenshot/003/output-show_ip_route.png)
   *```D``` (EIGRP) routes for remote subnets, confirming route propagation.*
 
+[Back to Top](#top)
+
 ---
 
 ## **5. Testing and Validation**
@@ -177,13 +186,15 @@ Please revisit the [verification](#verification-routing-tables) section to view 
 
 > Full connectivity was validated across all devices. [View detailed test log](#).
 
+[Back to Top](#top)
+
 ---
 
 ## **6. Conclusion**
 
 EIGRP was successfully implemented to automate route propagation between the San Francisco and New York sites. Through dynamic routing, EIGRP enabled automatic route learning and sharing, eliminating the need for static routes. Key outcomes include simplified expansion to additional subnets, sub-second route updates during topology changes, and elimination of manual route maintenance. Future enhancements could include redundancy testing with backup links and comparisons with alternative routing protocols such as OSPF.
 
-
+[Back to Top](#top)
 
 
 
