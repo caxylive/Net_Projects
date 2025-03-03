@@ -13,6 +13,28 @@
 - [Conclusion](#6-conclusion)
 
 ---
+## Table of Contents
+- [Introduction](#1-introduction)
+  - [Technologies Used](#technologies-used)
+- [Network Design](#2-network-design)
+  - [Subnetting Scheme](#subnetting-scheme)
+- [Device Configurations](#3-device-configurations)
+  - [San Francisco Router (R1) and New York Router (R2) Initial Configuration](#san-francisco-router-r1-and-new-york-router-r2-initial-configuration)
+  - [New York Router (R2)](#new-york-router-r2)
+  - [San Francisco Switch (S1) and New York Switch (S2)](#san-francisco-switch-s1-and-new-york-switch-s2)
+- [EIGRP Implementation](#4-eigrp-implementation)
+  - [Configuration on R1 and R2](#configuration-on-r1-and-r2)
+  - [Verification](#verification)
+    - [Neighbor Adjacency](#neighbor-adjacency)
+    - [Routing Tables](#routing-tables)
+- [Testing and Validation](#5-testing-and-validation)
+  - [Pre-EIGRP Routing Tables](#pre-eigrp-routing-tables)
+  - [Pre-EIGRP Connectivity](#pre-eigrp-connectivity)
+  - [Post-EIGRP Routing Tables](#post-eigrp-routing-tables)
+  - [Post-EIGRP Connectivity](#post-eigrp-connectivity)
+- [Conclusion](#6-conclusion)
+
+---
 
 ## **1. Introduction**
 
@@ -60,7 +82,7 @@ The `192.168.1.0/24` address space was subdivided as follows:
 | Bring interface up        | `no shutdown`                                | `no shutdown`                              |
 | Write changes from vRAM to nvRAM | `copy running-config startup-config`  | `copy running-config startup-config`       |
 
-`show ip interface brief` should show the interfaces allocated with an IP address and are up and not administratively down.
+`show ip interface brief` shows the interfaces are not administratively down and are assigned with their respective IP addresses.
 ![R1 Interface Configuration](screenshot/003/config-r1_initial.png)  
 *Relevant interface commands and verification output on R1.*
 
@@ -113,7 +135,7 @@ We should be able to verify the configuration with `show ip interface brief`:
 ---
 
 ## **4. EIGRP Implementation**
-#### **Configuration on R1 and R2**
+### **Configuration on R1 and R2**
 | Description                                  | Command (R1)           | Command (R2)           |
 |----------------------------------------------|------------------------|------------------------|
 | Assign EIGRP to an AS number                 | `router eigrp 100`     | `router eigrp 100`     |
@@ -133,7 +155,7 @@ We should be able to verify the configuration with `show ip interface brief`:
 
 ### Verification <a id="verification"></a>
 
-1. **Neighbor Adjacency** <a id="verification-neighbor-adjacency"></a>
+1. **Neighbor Adjacency**
 
 The ```show ip eigrp neighbors``` command confirms successful adjacency between R1 and R2:
 - Uptime increasing means that the adjacency is stable.
@@ -144,7 +166,7 @@ The ```show ip eigrp neighbors``` command confirms successful adjacency between 
 
 ---
 
-2. **Routing Tables** <a id="verification-routing-tables"></a>
+2. **Routing Tables**
 
 Post-EIGRP routing tables show EIGRP is correctly exchanging and installing routes between R1 and R2:
 - The `D` EIGRP code appears in R1 and R2's routing table. This means that EIGRP is learning routes dynamically.
@@ -159,6 +181,14 @@ Post-EIGRP routing tables show EIGRP is correctly exchanging and installing rout
 ---
 
 ## **5. Testing and Validation**
+### **Pre-EIGRP Routing Tables**
+
+  ![No EIGRP Routes](screenshot/003/pre-eigrp-routing-tables.png)  
+
+The routing tables does not show any `D` EIGRP entries, which means that R1 **has not learned any routes** from R2 via EIGRP and vice versa. The only entries are for directly connected subnets (`C`) and local addresses (`L`), meaning R1 is not receiving updates from R2 and vice versa.
+
+---
+
 ### **Pre-EIGRP Connectivity**
 - ❌ Inter-site pings failed due to missing routes:  
 
@@ -167,15 +197,7 @@ Post-EIGRP routing tables show EIGRP is correctly exchanging and installing rout
 
 ---
 
-### Pre-EIGRP Routing Tables
-
-  ![No EIGRP Routes](screenshot/003/pre-eigrp-routing-tables.png)  
-
-The routing tables does not show any `D` EIGRP entries, which means that R1 **has not learned any routes** from R2 via EIGRP and vice versa. The only entries are for directly connected subnets (`C`) and local addresses (`L`), meaning R1 is not receiving updates from R2 and vice versa.
-
----
-
-### Post-EIGRP Routing Tables
+### **Post-EIGRP Routing Tables**
 Please revisit the [verification](#verification-routing-tables) section to view the results after the routing tables have been configured with EIGRP.
 
 ---
