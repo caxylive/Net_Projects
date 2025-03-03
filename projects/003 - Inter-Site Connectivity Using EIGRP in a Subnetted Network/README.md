@@ -73,8 +73,9 @@ The `192.168.1.0/24` address space was subdivided as follows:
 | Write changes from vRAM to nvRAM | `copy running-config startup-config`  | `copy running-config startup-config`       |
 
 `show ip interface brief` shows the interfaces are not administratively down and are assigned with their respective IP addresses.
-![R1 Interface Configuration](screenshot/003/config-r1_initial.png)  
-*Relevant interface commands and verification output on R1.*
+![R1 Interface Configuration](screenshot/r1-initial-config.png)
+![R2 Interface Configuration](screenshot/r2-initial-config.png)  
+*Relevant interface command output on R1 and R2.*
 
 ---
 
