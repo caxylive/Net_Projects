@@ -5,14 +5,6 @@
 
 ---
 
-- [Introduction](#1-introduction)
-- [Network Design](#2-network-design)
-- [Device Configurations](#3-device-configurations)
-- [EIGRP Implementation](#4-eigrp-implementation)
-- [Testing and Validation](#5-testing-and-validation)
-- [Conclusion](#6-conclusion)
-
----
 ## Table of Contents
 - [Introduction](#1-introduction)
   - [Technologies Used](#technologies-used)
@@ -25,8 +17,8 @@
 - [EIGRP Implementation](#4-eigrp-implementation)
   - [Configuration on R1 and R2](#configuration-on-r1-and-r2)
   - [Verification](#verification)
-    - [Neighbor Adjacency](#neighbor-adjacency)
-    - [Routing Tables](#routing-tables)
+    - [Neighbor Adjacency](#verification-neighbor-adjacency)
+    - [Routing Tables](#verification-routing-tables)
 - [Testing and Validation](#5-testing-and-validation)
   - [Pre-EIGRP Routing Tables](#pre-eigrp-routing-tables)
   - [Pre-EIGRP Connectivity](#pre-eigrp-connectivity)
