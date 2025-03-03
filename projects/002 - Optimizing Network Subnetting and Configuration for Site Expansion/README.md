@@ -9,7 +9,7 @@ Contact: [carl.xymon.verdejo@gmail.com](carl.xymon.verdejo@gmail.com)
 The aim of this project is to **extend** a previously configured small-scale network with multiple subnets and internet connectivity using Cisco Packet Tracer. Building upon [Project_01](https://github.com/caxylive/Net_Projects/tree/main/projects/001%20-%20Subnetting%20Network%20Configuration%20and%20Management), we will extend and conserve IP addresses for network expansion in Project_02.
 
 ### Network Topology (Pre-Subnetting)
-The initial network topology in ([Project_01](https://github.com/caxylive/Net_Projects/tree/main/projects/001%20-%20Subnetting%20Network%20Configuration%20and%20Management)) consisted of two primary sites, Site_01 and Site_02, connected to an intermediary router (IntRouter) for internet access. Subnetting was performed on the ```192.168.1.0 /24``` network to allocate IP addresses efficiently for various network segments. In project_02, Site_03 along with a serial link to IntRouter was added which will warrant additional configuration.
+The initial network topology in [Project_01](https://github.com/caxylive/Net_Projects/tree/main/projects/001%20-%20Subnetting%20Network%20Configuration%20and%20Management) consisted of two primary sites, Site_01 and Site_02, connected to an intermediary router (IntRouter) for internet access. Subnetting was performed on the ```192.168.1.0 /24``` network to allocate IP addresses efficiently for various network segments. In project_02, Site_03 along with a serial link to IntRouter was added which will warrant additional configuration.
 ![Figure 1: Network Topology](screenshot/project_02-network-topology-initial.png)
 
 ### Objectives
