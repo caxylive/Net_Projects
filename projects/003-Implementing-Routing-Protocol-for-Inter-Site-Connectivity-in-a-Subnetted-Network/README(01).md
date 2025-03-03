@@ -68,7 +68,7 @@ While devices in San Francisco will be assigned Static IPs, DHCP will be impleme
 ![R2 DHCP and DNS Configuration](screenshot/003/config-r2-show-run.png)  
 *DHCP pool setup and DNS configuration on R2.*
 
-Note:
+**Note**:
 -  **DHCP Pool** enables the DHCP server to automatically assign IP addresseses based on this "pool" of addresses, reducing the workload and minimizing errors.
 -  By excluding IP addresses (`ip dhcp excluded-address 192.168.1.125 192.168.1.127`), DHCP clients avoid getting assigned IP addresses of R2, S2, and broadcast IP.
 - Use `default-gateway` on a router if the router is acting as a switch and its IP routing function is disabled.
@@ -87,9 +87,8 @@ Note:
 | Assign IP Address         | `ip address 192.168.1.61 255.255.255.192`    | `ip address 192.168.1.61 255.255.255.192` |
 | Bring interface up        | `no shutdown`                                | `no shutdown`                             |
 | Set Default Gateway       | `ip default-gateway 192.168.1.62`            | `ip default-gateway 192.168.1.126`        | 
-| Verify configuration      | `show ip interface brief`                    | `show ip interface brief`                 |
-| Write changes from vRAM to nvRAM | `copy running-config startup-config`  | `copy running-config startup-config`      |
 
+We should be able to verify the configuration with `show ip interface brief`:
 ![Switch (S1) and (S2) Configuration](screenshot/003/config-switch_initial.png)  
 *Relevant interface commands and verification output on S1.*
 
