@@ -1,6 +1,8 @@
 # My Networking Projects
 This repository serves as a collection of networking projects designed to enhance my technical knowledge and practical skills in IT. Each project focuses on key networking concepts such as subnetting, routing, and network configuration, reinforcing my understanding as I progress in my IT journey.
 
+---
+
 - 001 - [Subnetting, Network Configuration and Management](#subnetting-network-configuration-and-management)
 - 002 - [Optimizing Network Subnetting and Configuration for Site Expansion](#optimizing-network-subnetting-and-configuration-for-site-expansion)
 - 003 - [Inter-Site Connectivity Using EIGRP in a Subnetted Network](#inter-site-connectivity-using-eigrp-in-a-subnetted-network)
@@ -8,7 +10,6 @@ This repository serves as a collection of networking projects designed to enhanc
 
 ---
 
-# Project List:
 ## 1) [Subnetting, Network Configuration and Management](https://github.com/caxylive/Net_Projects/tree/main/projects/001%20-%20Subnetting%20Network%20Configuration%20and%20Management)
 This project focuses on subnetting an allocated network into smaller subnets to accommodate multiple network segments. It involves configuring IP addressing, ensuring proper device communication within each subnet, and enabling external network access. The primary objective is to establish a well-structured network that supports efficient IP address allocation and seamless connectivity.
 
