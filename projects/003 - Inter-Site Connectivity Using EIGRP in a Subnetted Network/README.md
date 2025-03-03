@@ -183,7 +183,7 @@ The routing tables does not show any `D` EIGRP entries, which means that R1 **ha
 ---
 
 ### **Pre-EIGRP Connectivity**
-- ❌ Inter-site pings failed due to missing routes:  
+Devices can communicate locally (i.e., San Francisco devices can communicate among each other; New York devices can communicate among each other). However, inter-site pings failed due to missing routes ❌.
 
   ![Failed Inter-Site Ping](screenshot/inter-site-ping-fail.png)  
   *Ping from San Francisco to New York and vice versa **before** EIGRP configuration.*
