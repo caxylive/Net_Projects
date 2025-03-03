@@ -44,6 +44,7 @@ The `192.168.1.0/24` address space was subdivided as follows:
 | Bring interface up        | `no shutdown`                                | `no shutdown`                              |
 | Write changes from vRAM to nvRAM | `copy running-config startup-config`  | `copy running-config startup-config`       |
 
+`show ip interface brief` should show the interfaces allocated with an IP address and are up and not administratively down.
 ![R1 Interface Configuration](screenshot/003/config-r1_initial.png)  
 *Relevant interface commands and verification output on R1.*
 
@@ -62,18 +63,19 @@ While devices in San Francisco will be assigned Static IPs, DHCP will be impleme
 | Exclude a range of IP that will not be assigned to clients |        ---         | `ip dhcp excluded-address 192.168.1.125 192.168.1.127` |
 | Specify the DNS server's IP address                        |        ---         | `ip name-server 192.168.1.126`                         |
 
-
-Note:
--  **DHCP Pool** enables the DHCP server to automatically assign IP addresseses based on this "pool" of addresses, reducing the workload and minimizing errors.
--  By excluding IP addresses (`ip dhcp excluded-address 192.168.1.125 192.168.1.127`), R2 avoids assigning the IP addresses of itself, S2, and broadcast IP to the hosts.
-- Use `default-gateway` for Switches and use `default-router` for Routers.
-- Use `default-gateway` on a router if the router is acting as a switch and its IP routing function is disabled.
-- Layer 3 switches that can perform routing functions might use `default-router` in their DHCP settings to provide default gateway information to DHCP clients.
--  R2 does not need `ip default-gateway` because it's a router, and routing protocols take care of forwarding traffic.
-- In production environments, DNS is typically hosted on a **dedicated server**. Here, R2 simulates DNS resolution for **testing purposes**.
+`show running-config` should reveal the settings:
 
 ![R2 DHCP and DNS Configuration](screenshot/003/config-r2-show-run.png)  
 *DHCP pool setup and DNS configuration on R2.*
+
+Note:
+-  **DHCP Pool** enables the DHCP server to automatically assign IP addresseses based on this "pool" of addresses, reducing the workload and minimizing errors.
+-  By excluding IP addresses (`ip dhcp excluded-address 192.168.1.125 192.168.1.127`), DHCP clients avoid getting assigned IP addresses of R2, S2, and broadcast IP.
+- Use `default-gateway` on a router if the router is acting as a switch and its IP routing function is disabled.
+- Layer 3 switches that can perform routing functions might use `default-router` in their DHCP settings to provide default gateway information to DHCP clients.
+- R2 does not need `ip default-gateway` because it's a router, and routing protocols take care of forwarding traffic.
+- In summary, use `default-gateway` for Switches and use `default-router` for Routers.
+- In production environments, DNS is typically hosted on a **dedicated server**. Here, R2 simulates DNS resolution for **testing purposes**.
 
 ---
 
