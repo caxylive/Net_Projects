@@ -118,8 +118,10 @@ While devices in San Francisco will be assigned Static IPs, DHCP will be impleme
 | Set Default Gateway       | `ip default-gateway 192.168.1.62`            | `ip default-gateway 192.168.1.126`        | 
 
 We should be able to verify the configuration with `show ip interface brief`:
-![Switch (S1) and (S2) Configuration](screenshot/003/config-switch_initial.png)  
-*Relevant interface commands and verification output on S1.*
+![S1 Initial Configuration](screenshot/s1-initial-config-01.png)  
+![S1 Initial Configuration](screenshot/s1-initial-config-02.png)  
+![S2 Default Gateway Configuration](screenshot/s2-default-gateway.png)  
+*Relevant verification output on S1 and S2.*
 
 [Back to Top](#top)
 
@@ -133,8 +135,9 @@ We should be able to verify the configuration with `show ip interface brief`:
 | Include what network EIGRP should advertise  | `network 192.168.1.0`  | `network 192.168.1.64` |
 | Allow EIGRP to advertise subnets as they are | `no auto-summary`      | `no auto-summary`      |
 
-![EIGRP Configuration on R1](screenshot/003/config-r1-eigrp.png)  
-*EIGRP setup for the San Fransisco subnet (AS 100).*
+![EIGRP Configuration on R1](screenshot/r1-eigrp.png)  
+![EIGRP Configuration on R2](screenshot/r2-eigrp.png)  
+*EIGRP setup for the San Fransisco and New York subnet (AS 100).*
 
 **Note**:
 - The Autonomous System (AS) number in the `router eigrp 100` command ensures that the EIGRP process is uniquely identified and allows for controlled exchange or routing information within the specified routing domain.
@@ -152,7 +155,7 @@ The ```show ip eigrp neighbors``` command confirms successful adjacency between 
 - Uptime increasing means that the adjacency is stable.
 - `Q count = 0` means that there are no pending EIGRP updates waiting to be sent.
 
-![EIGRP Neighbor Status](screenshot/003/r1-show-ip-eigrp-beighbors.png)
+![EIGRP Neighbor Status](screenshot/show-ip-eigrp-beighbors.png)
 *Stable neighbor relationship indicated by increasing uptime and ```Q Count = 0```.*
 
 ---
@@ -164,7 +167,7 @@ Post-EIGRP routing tables show EIGRP is correctly exchanging and installing rout
 - San Francisco Subnet `192.168.1.0/26` is reachable via EIGRP from R2 through R1's Serial Interface `192.168.1.129/30`.
 - New York Subnet `192.168.1.64/26` is also reachable via EIGRP from R1 through R2's Serial Interface `192.168.1.130/30`.
 
-  ![Post-EIGRP Routing Table on R1 and R2](screenshot/003/output-show_ip_route.png)
+  ![Post-EIGRP Routing Table on R1 and R2](screenshot/routing-tables-after-eigrp.png)
   *```D``` (EIGRP) routes for remote subnets, confirming route propagation.*
 
 [Back to Top](#top)
@@ -174,7 +177,7 @@ Post-EIGRP routing tables show EIGRP is correctly exchanging and installing rout
 ## **5. Testing and Validation**
 ### **Pre-EIGRP Routing Tables**
 
-  ![No EIGRP Routes](screenshot/003/pre-eigrp-routing-tables.png)  
+  ![No EIGRP Routes](screenshot/routing-tables-before-eigrp.png)  
 
 The routing tables does not show any `D` EIGRP entries, which means that R1 **has not learned any routes** from R2 via EIGRP and vice versa. The only entries are for directly connected subnets (`C`) and local addresses (`L`), meaning R1 is not receiving updates from R2 and vice versa.
 
@@ -183,8 +186,8 @@ The routing tables does not show any `D` EIGRP entries, which means that R1 **ha
 ### **Pre-EIGRP Connectivity**
 - ❌ Inter-site pings failed due to missing routes:  
 
-  ![Failed Inter-Site Ping](screenshot/003/inter-site_ping_fail.png)  
-  *Ping from San Francisco to New York before EIGRP configuration.*
+  ![Failed Inter-Site Ping](screenshot/inter-site_ping_fail.png)  
+  *Ping from San Francisco to New York and vice versa **before** EIGRP configuration.*
 
 ---
 
@@ -204,11 +207,12 @@ Please revisit the [verification](#verification-routing-tables) section to view 
 - **Summary of Critical Tests**
   | Source          | Destination     | Result  |
   |-----------------|-----------------|---------|
-  | PC1 (SF)        | PC2 (NY)        | Success |
+  | PC1 (SF)        | PC4 (NY)        | Success |
   | R1 (SF)         | R2 (NY) WAN     | Success |
   | S1 (SF)         | S2 (NY)         | Success |
+  | PC2 (SF)        | PC3 (NY)        | Success |  
 
-> Full connectivity was validated across all devices. [View detailed test log](#).
+> Full connectivity was validated across all devices.
 
 [Back to Top](#top)
 
