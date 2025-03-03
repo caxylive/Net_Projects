@@ -37,7 +37,7 @@ The `192.168.1.0/24` address space was subdivided as follows:
 | Description               | Command (R1)                                 | Command (R2)                               |
 |---------------------------|----------------------------------------------|--------------------------------------------|
 | Configure LAN Interface   | `interface GigabitEthernet0/0/0`             | `interface GigabitEthernet0/0/0`           |
-| Assign IP Address         | `ip address 192.168.1.62 255.255.255.192`    | `ip address 192.168.1.126 255.255.255.192`  |
+| Assign IP Address         | `ip address 192.168.1.62 255.255.255.192`    | `ip address 192.168.1.126 255.255.255.192` |
 | Bring interface up        | `no shutdown`                                | `no shutdown`                              |
 | Configure WAN Interface   | `interface Serial0/1/0`                      | `interface Serial0/1/0`                    |
 | Assign IP Address         | `ip address 192.168.1.129 255.255.255.252`   | `ip address 192.168.1.130 255.255.255.252` |
@@ -46,6 +46,33 @@ The `192.168.1.0/24` address space was subdivided as follows:
 
 ![R1 Interface Configuration](screenshot/003/config-r1_initial.png)  
 *Relevant interface commands and verification output on R1.*
+
+---
+
+### **New York Router (R2)**
+#### **DHCP and DNS Configuration**
+
+While devices in San Francisco will be assigned Static IPs, DHCP will be implemented for clients in New York R2.
+
+| Description                                                | Command (R1) | Command (R2)                                           |
+|------------------------------------------------------------|--------------|--------------------------------------------------------|
+| Create a DHCP Pool                                         |              | `ip dhcp pool NY`                                      |
+| Specify the network range of the DHCP Pool                 |              | `network 192.168.1.64 255.255.255.192`                 |
+| Set the Default Gateway                                    |              | `default-router 192.168.1.126`                         |
+| Exclude a range of IP that will not be assigned to clients |              | `ip dhcp excluded-address 192.168.1.125 192.168.1.127` |
+| Specify the DNS server's IP address                        |              | `ip name-server 192.168.1.126`                         |
+
+Note:
+-  **DHCP Pool** enables the DHCP server to automatically assign IP addresseses based on this "pool" of addresses, reducing the workload and minimizing errors.
+-  By excluding IP addresses (`ip dhcp excluded-address 192.168.1.125 192.168.1.127`), R2 avoids assigning the IP addresses of itself, S2, and broadcast IP to the hosts.
+- Use `default-gateway` for Switches and use `default-router` for Routers.
+- Use `default-gateway` on a router if the router is acting as a switch and its IP routing function is disabled.
+- Layer 3 switches that can perform routing functions might use `default-router` in their DHCP settings to provide default gateway information to DHCP clients.
+-  R2 does not need `ip default-gateway` because it's a router, and routing protocols take care of forwarding traffic.
+- In production environments, DNS is typically hosted on a **dedicated server**. Here, R2 simulates DNS resolution for **testing purposes**.
+
+![R2 DHCP and DNS Configuration](screenshot/003/config-r2-show-run.png)  
+*DHCP pool setup and DNS configuration on R2.*
 
 ---
 
@@ -62,29 +89,6 @@ The `192.168.1.0/24` address space was subdivided as follows:
 
 ![Switch (S1) and (S2) Configuration](screenshot/003/config-switch_initial.png)  
 *Relevant interface commands and verification output on S1.*
-
----
-
-### **New York Router (R2)**
-#### **DHCP and DNS Configuration**
-```Cisco IOS
-ip dhcp pool NY
- network 192.168.1.64 255.255.255.192
- default-router 192.168.1.126
-ip dhcp excluded-address 192.168.1.125 192.168.1.127
-ip name-server 192.168.1.126
-```
-
-![R2 DHCP and DNS Configuration](screenshot/003/config-r2-show-run.png)  
-*DHCP pool setup and DNS configuration on R2.*
-
-**Note**: 
-- In production environments, DNS is typically hosted on a dedicated server. Here, R2 simulates DNS resolution for testing purposes.
-- `default-router` → Used in DHCP to tell clients which router to use as their gateway.
--  `ip default-gateway` → Only used on switches or routers with IP routing disabled (not needed here).
--  R2 does not need `ip default-gateway` because it's a router, and routing protocols take care of forwarding traffic.
--  **DHCP Pool** enables the DHCP server to automatically assign IP addresseses based on this "pool" of addresses, reducing the workload and minimizing errors.
--  By excluding IP addresses (`ip dhcp excluded-address 192.168.1.125 192.168.1.127`), R2 avoids assigning the IP addresses of itself, S2, and broadcast IP to the hosts.
 
 ---
 
