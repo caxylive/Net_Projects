@@ -1,10 +1,15 @@
+<a name="top"></a>
 # Subnetting, Network Configuration and Management
 **Author**: [**Carl Xymon Verdejo**](https://hardworking-lion-z4sd3b.mystrikingly.com/)</br>
 **Contact**: carl.xymon.verdejo@gmail.com
 
+---
+
 ## **1. Project Overview**
 ### Background
 You have been allocated subnet 192.168.1.0/24 and is tasked to subdivide it into four networks.
+
+---
 
 ### Network Topology:
 - Each LAN in this network topology is connected to a switch, specifically a **3650-24PS model**, which facilitates communication among the devices within that network segment. 
@@ -12,7 +17,9 @@ You have been allocated subnet 192.168.1.0/24 and is tasked to subdivide it into
 - Both routers, **Routr1 (R1)** and **Router2 (R2)**, use **GigabitEthernet interfaces** for their LAN connections and **Serial interfaces** for their WAN links to the Internet Router. 
 - The Internet Router (**IntRouter**), also an **ISR4321**, connects to both **Site 1** and **Site 2** via serial links and extends connectivity to the Internet via its **GigabitEthernet 0/0/1 interface**, which has **DHCP** enabled.
 
-![Figure 1: Network Topology](/screenshot/001/network_topology-initial.png)
+![Figure 1: Network Topology](screenshot/network_topology-initial.png)
+
+---
 
 ### Objectives
   - Design and configure a small-scale network with multiple subnets and internet connectivity. The allocated IP address range of **192.168.1.0/24** needs to be divided into four subnets:
@@ -28,16 +35,24 @@ You have been allocated subnet 192.168.1.0/24 and is tasked to subdivide it into
   - Verify that the PCs can access cicso.com and facebook.com using their browsers
 - **Tools Used**: Cisco Packet Tracer
 
+[Back to Top](#top)
+
+---
+
 ## **2. Network Design**
 ### Subnetting Calculations
 Before configuring the devices, it is recommended to properly calculate and tabulate the IP Address of each devices. There will be a lot of **dynamic and static IP addresseses** on this network (much more so in the real world!) and one might easily misconfigure a device without proper documentation.
 
 The table below shows the relationships between IP addresses and interfaces for each device on their respective subnets. It also shows how the binary format of each IP address looks like to easily understand which is the **Network Portion** and **Host Portion** of the each address.
-![Figure 2: Subnetting Excel Spreadsheet](/screenshot/001/subnetting_details.png)
+![Figure 2: Subnetting Excel Spreadsheet](screenshot/subnetting_details.png)
 
 ### Network Topology After Subnetting
 This is how the network topology looks like after populating with labels according our the subnetting table. This way, it is easier to visualize the network and configure the devices.
-![Figure 3: Network Topology Populated](/screenshot/001/network_topology-final.png)
+![Figure 3: Network Topology Populated](screenshot/network_topology-final.png)
+
+[Back to Top](#top)
+
+---
 
 ## 3. Device Configuration
 ### Router R1
@@ -46,7 +61,7 @@ This is how the network topology looks like after populating with labels accordi
 - Enable the **Serial 0/1/0** interface using the ```no shutdown``` command
 - Configure the **Serial 0/1/0** interface with IP address ```192.168.1.66/26```
 - Save the current running configuration to the startup configuration using the ```copy running-config startup-config``` command
-![Figure 4: Router1 (R1) Configuration](/screenshot/001/configuration-R1-01.png)
+![Figure 4: Router1 (R1) Configuration](screenshot/configuration-R1-01.png)
 
 ### Router R2
 - Enable the **GigabitEthernet 0/0/0** interface using the ```no shutdown``` command
@@ -54,7 +69,7 @@ This is how the network topology looks like after populating with labels accordi
 - Enable the **Serial 0/1/0** interface using the ```no shutdown``` command
 - Configure the **Serial 0/1/0** interface with IP address ```192.168.1.193/26```
 - Save the current running configuration to the startup configuration using the ```copy running-config startup-config``` command
-![Figure 5: Router2 (R2) Configuration](/screenshot/001/configuration-R2-01.png)
+![Figure 5: Router2 (R2) Configuration](screenshot/configuration-R2-01.png)
 
 ### Switch S1
 - Configure the **Default Gateway** to **R1** ```192.168.1.62```
@@ -62,7 +77,7 @@ This is how the network topology looks like after populating with labels accordi
 - Configure the **VLAN1** interface with Second last IP address in the subnet ```192.168.1.61/26```
 - Save the current running configuration to the startup configuration using the ```copy running-config startup-config``` command
 - Verify interface is up using ```show ip interface brief```
-![Figure 6: Switch1 (S1)](/screenshot/001/configuration_S1-01.png)
+![Figure 6: Switch1 (S1)](screenshot/configuration_S1-01.png)
 
 ### Switch S2
 - Enable the **Vlan1** interface using the ```no shutdown``` command
@@ -70,35 +85,39 @@ This is how the network topology looks like after populating with labels accordi
 - Configure the **Default Gateway** to **R2** ```192.168.1.190```
 - Save the current running configuration to the startup configuration using the ```copy running-config startup-config``` command
 - Verify interface is up using ```show ip interface brief```
-![Figure 7: Switch2 (S2)](/screenshot/001/configuration_S2-01.png)
+![Figure 7: Switch2 (S2)](screenshot/configuration_S2-01.png)
 
 ### DHCP Server1
 - Configure Server1 with the 3rd last IP Address within the subnet ```192.168.1.60```
-![Figure 8: DHCP Server1 - Global Settings](/screenshot/001/configuration_Server1-FastEthernet0-01.png)
+![Figure 8: DHCP Server1 - Global Settings](screenshot/configuration_Server1-FastEthernet0-01.png)
 
 - Set the Default Gateway to R1 ```192.168.1.62```
 - Point the DNS to Google ```8.8.8.8```
-![Figure 9: DHCP Server1 - FastEthernet0](/screenshot/001/configuration_Server1-globalSettings-01.png)
+![Figure 9: DHCP Server1 - FastEthernet0](screenshot/configuration_Server1-globalSettings-01.png)
 
 - Configure the DHCP Pool
 - Refer back to the Subnetting Table to determine the IP range for this subnet
 - The amount of users that can connect to this network can also be set here.
 - Take note of all the Static IPs so that they can be excluded from the range.
-![Figure 10: DHCP Server1 - DHCP_Pool](/screenshot/001/configuration_Server1-services-dhcp-01.png)
+![Figure 10: DHCP Server1 - DHCP_Pool](screenshot/configuration_Server1-services-dhcp-01.png)
 
 ### DHCP Server2
 - Configure Server1 with the 3rd last IP Address within the subnet ```192.168.1.188```
-![Figure 11: DHCP Server1 - Global Settings](/screenshot/001/configuration_Server2-FastEthernet0-01.png)
+![Figure 11: DHCP Server1 - Global Settings](screenshot/configuration_Server2-FastEthernet0-01.png)
 
 - Set the Default Gateway to R2 ```192.168.1.190```
 - Point the DNS to Google ```8.8.8.8```
-![Figure 12: DHCP Server1 - FastEthernet0](/screenshot/001/configuration_Server2-globalSettings-01.png)
+![Figure 12: DHCP Server1 - FastEthernet0](screenshot/configuration_Server2-globalSettings-01.png)
 
 - Configure the DHCP Pool
 - Refer back to the Subnetting Table to determine the IP range for this subnet
 - The amount of users that can connect to this network can also be set here.
 - Take note of all the Static IPs so that they can be excluded from the range.
-![Figure 13: DHCP Server1 - DHCP_Pool](/screenshot/001/configuration_Server2-services-dhcp-01.png)
+![Figure 13: DHCP Server1 - DHCP_Pool](screenshot/configuration_Server2-services-dhcp-01.png)
+
+[Back to Top](#top)
+
+---
 
 ## **4. Important Notes:**
 ### The ```no shutdown``` Command
@@ -126,12 +145,20 @@ The physical ports (GigabitEthernet) on the switch are still used to connect dev
 #### In summary
 Configuring VLAN 1 on the switch with an IP address allows you to manage the switch, while the physical GigabitEthernet ports are used to connect devices without requiring individual IP addresses for each port.
 
+[Back to Top](#top)
+
+---
+
 ## **5. Verification and Testing**
 1. Verifying connectivity between all devices.
 2. Test connectivity to external IP address ```8.8.8.8```
-![Figure 13: DHCP Server1 - DHCP_Pool](/screenshot/001/test-ping.png)
+![Figure 13: DHCP Server1 - DHCP_Pool](screenshot/test-ping.png)
 3. Ensuring all PCs (PC0-PC5) can access external websites (e.g., cisco.com, facebook.com).
-![Figure 13: DHCP Server1 - DHCP_Pool](/screenshot/001/test-pc0-facebook.png)
+![Figure 13: DHCP Server1 - DHCP_Pool](screenshot/test-pc0-facebook.png)
+
+[Back to Top](#top)
+
+---
 
 ## **6. Results**
 The network topology was successfully implemented and configured according to the design specifications. The subnetting scheme was correctly applied, ensuring efficient IP address allocation across the four designated subnets: 
@@ -180,6 +207,10 @@ In a real-world scenario, network security would be a primary concern, requiring
 ### 4) Additional Configurations
 In this project, NAT and OSPF have already been preconfigured. In the real-world, more configurations are involved before being able to connect to other devices and the internet.
 
+[Back to Top](#top)
+
+---
+
 ## **8. Future Improvements and Optimization**
 To improve the network topology and bring it closer to real-world standards, the following enhancements can be considered:
 
@@ -210,6 +241,10 @@ To improve the network topology and bring it closer to real-world standards, the
 - Perform **penetration testing** to evaluate network security and identify vulnerabilities.
 
 By addressing these limitations and implementing the suggested improvements, the network can be more scalable, secure, and reliable, making it better suited for real-world business environments.
+
+[Back to Top](#top)
+
+---
 
 ## **9. Conclusion**
 The project successfully demonstrated the implementation of a structured enterprise-level network using subnetting, routing, switching, and DHCP services. By effectively dividing the ```192.168.1.0/24``` network into smaller subnets, IP address management was optimized, and logical segmentation was achieved.
