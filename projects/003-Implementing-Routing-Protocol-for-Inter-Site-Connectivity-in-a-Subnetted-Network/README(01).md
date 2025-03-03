@@ -54,13 +54,14 @@ The `192.168.1.0/24` address space was subdivided as follows:
 
 While devices in San Francisco will be assigned Static IPs, DHCP will be implemented for clients in New York R2.
 
-| Description                                                | Command (R1) | Command (R2)                                           |
-|------------------------------------------------------------|--------------|--------------------------------------------------------|
-| Create a DHCP Pool                                         |              | `ip dhcp pool NY`                                      |
-| Specify the network range of the DHCP Pool                 |              | `network 192.168.1.64 255.255.255.192`                 |
-| Set the Default Gateway                                    |              | `default-router 192.168.1.126`                         |
-| Exclude a range of IP that will not be assigned to clients |              | `ip dhcp excluded-address 192.168.1.125 192.168.1.127` |
-| Specify the DNS server's IP address                        |              | `ip name-server 192.168.1.126`                         |
+| Description                                                |     Command (R1)   | Command (R2)                                           |
+|------------------------------------------------------------|:------------------:|--------------------------------------------------------|
+| Create a DHCP Pool                                         |        ---         | `ip dhcp pool NY`                                      |
+| Specify the network range of the DHCP Pool                 |        ---         | `network 192.168.1.64 255.255.255.192`                 |
+| Set the Default Gateway                                    |        ---         | `default-router 192.168.1.126`                         |
+| Exclude a range of IP that will not be assigned to clients |        ---         | `ip dhcp excluded-address 192.168.1.125 192.168.1.127` |
+| Specify the DNS server's IP address                        |        ---         | `ip name-server 192.168.1.126`                         |
+
 
 Note:
 -  **DHCP Pool** enables the DHCP server to automatically assign IP addresseses based on this "pool" of addresses, reducing the workload and minimizing errors.
