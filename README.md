@@ -3,10 +3,10 @@ This repository serves as a collection of networking projects designed to enhanc
 
 ---
 
-- 001 - [Subnetting, Network Configuration and Management](#subnetting-network-configuration-and-management)
-- 002 - [Optimizing Network Subnetting and Configuration for Site Expansion](#optimizing-network-subnetting-and-configuration-for-site-expansion)
-- 003 - [Inter-Site Connectivity Using EIGRP in a Subnetted Network](#inter-site-connectivity-using-eigrp-in-a-subnetted-network)
-- 004 - [Coming Soon](#coming-soon)
+- 001 - [Subnetting, Network Configuration and Management](#1-subnetting-network-configuration-and-management)
+- 002 - [Optimizing Network Subnetting and Configuration for Site Expansion](#2-optimizing-network-subnetting-and-configuration-for-site-expansion)
+- 003 - [Inter-Site Connectivity Using EIGRP in a Subnetted Network](#3-inter-site-connectivity-using-eigrp-in-a-subnetted-network)
+- 004 - [Coming Soon](#4-coming-soon)
 
 ---
 
