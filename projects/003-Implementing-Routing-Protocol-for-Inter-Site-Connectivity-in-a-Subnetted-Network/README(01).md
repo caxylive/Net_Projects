@@ -94,11 +94,15 @@ router eigrp 100
  network 192.168.1.0
  no auto-summary
 ```
+| Description               | Command (R1)                                 | Command (R2)                              |
+|---------------------------|----------------------------------------------|-------------------------------------------|
+| Configure LAN Interface   | `interface vlan1`                            | `interface vlan1`                         |
 
 ![**Figure 6**: EIGRP Configuration on R1](screenshot/003/config-r1-eigrp.png)  
 *EIGRP setup for the San Fransisco subnet (AS 100).*
 
-Note:
+**Note**:
+- The Autonomous System (AS) number in the `router eigrp <autonomous-system-number>` command
 - By default, EIGRP autonatically summarizes routes at classful nework boundaries. This means EIGRP will summarize and advertise only the classful network address, potentially leading to inaccuracies in routing.
 - For example, EIGRP might summarize and advertise subnets within the `192.168.1.0/24` network (such as `192.168.1.0/26` and `192.168.1.64/26`) as `192.168.1.0/24` → leading to incorrect routing.
 - The `no auto-summary` command disables automatic summarization, ensuring that EIGRP advertises the specific subnets rather than summarizing them at classful boundaries → more accurate routing info.
