@@ -176,17 +176,16 @@ Post-EIGRP routing tables show EIGRP is correctly exchanging and installing rout
 
 ## **5. Testing and Validation**
 ### **Pre-EIGRP Routing Tables**
+The routing tables does not show any `D` EIGRP entries, which means that R1 **has not learned any routes** from R2 via EIGRP and vice versa. The only entries are for directly connected subnets (`C`) and local addresses (`L`), meaning R1 is not receiving updates from R2 and vice versa.
 
   ![No EIGRP Routes](screenshot/routing-tables-before-eigrp.png)  
-
-The routing tables does not show any `D` EIGRP entries, which means that R1 **has not learned any routes** from R2 via EIGRP and vice versa. The only entries are for directly connected subnets (`C`) and local addresses (`L`), meaning R1 is not receiving updates from R2 and vice versa.
 
 ---
 
 ### **Pre-EIGRP Connectivity**
 - ❌ Inter-site pings failed due to missing routes:  
 
-  ![Failed Inter-Site Ping](screenshot/inter-site_ping_fail.png)  
+  ![Failed Inter-Site Ping](screenshot/inter-site-ping-fail.png)  
   *Ping from San Francisco to New York and vice versa **before** EIGRP configuration.*
 
 ---
