@@ -1,5 +1,16 @@
 <a name="top"></a>
+[Back to Main](https://github.com/caxylive/Net_Projects/tree/main)
+
 # **Inter-Site Connectivity Using EIGRP in a Subnetted Network**
+
+---
+
+- [Introduction](#1-introduction)
+- [Network Design](#2-network-design)
+- [Device Configurations](#3-device-configurations)
+- [EIGRP Implementation](#4-eigrp-implementation)
+- [Testing and Validation](#5-testing-and-validation)
+- [Conclusion](#6-conclusion)
 
 ---
 
