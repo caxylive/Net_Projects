@@ -4,7 +4,20 @@
 Author: [Carl Xymon Verdejo](https://hardworking-lion-z4sd3b.mystrikingly.com/) </br>
 Contact: [carl.xymon.verdejo@gmail.com](carl.xymon.verdejo@gmail.com)
 
-## **1. Project_02 Overview**
+---
+
+- [Overview](#1-overview)
+- [Network Design](#2-network-design)
+- [Device Configuration](#3-device-configuration)
+- [Verification and Testing](#4-verification-and-testing)
+- [Results](#5-results)
+- [Limitations of the Project](#6-limitations-of-the-project)
+- [Future Improvements and Optimization](#7-future-improvements-and-optimization)
+- [Conclusion](#8-conclusion)
+
+---
+
+## **1. Overview**
 ## Background
 The aim of this project is to **extend** a previously configured small-scale network with multiple subnets and internet connectivity using Cisco Packet Tracer. Building upon [Project_01](https://github.com/caxylive/Net_Projects/tree/main/projects/001%20-%20Subnetting%20Network%20Configuration%20and%20Management), we will extend and conserve IP addresses for network expansion in Project_02.
 
@@ -228,7 +241,7 @@ The project successfully met all the objectives, demonstrating the effectiveness
 
 ---
 
-## **6. Limitations of Project**
+## **6. Limitations of the Project**
 ### Simulation Tool Constraints
 Cisco Packet Tracer is a simulation tool and does not fully replicate real-world network behavior in terms of performance, latency, and security threats.
 
