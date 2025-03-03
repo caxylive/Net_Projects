@@ -136,7 +136,7 @@ The routing tables does not show any `D` EIGRP entries, which means that R1 **ha
 
 ---
 ### Post-EIGRP Routing Tables
-Please revisit the [verification](#verification-routing-table) section to view the results after the routing tables have been configured with EIGRP.
+Please revisit the [verification](#verification-routing-tables) section to view the results after the routing tables have been configured with EIGRP.
 
 ---
 
