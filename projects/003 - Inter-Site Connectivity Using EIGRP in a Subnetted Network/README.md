@@ -17,8 +17,6 @@
 - [EIGRP Implementation](#4-eigrp-implementation)
   - [Configuration on R1 and R2](#configuration-on-r1-and-r2)
   - [Verification](#verification)
-    - [Neighbor Adjacency](#1-neighbor-adjacency)
-    - [Routing Tables](#2-routing-tables)
 - [Testing and Validation](#5-testing-and-validation)
   - [Pre-EIGRP Routing Tables](#pre-eigrp-routing-tables)
   - [Pre-EIGRP Connectivity](#pre-eigrp-connectivity)
