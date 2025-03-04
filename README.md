@@ -3,6 +3,7 @@
 This repository serves as a collection of networking projects designed to enhance my technical knowledge and practical skills in IT. Each project focuses on key networking concepts such as subnetting, routing, and network configuration, reinforcing my understanding as I progress in my IT journey.
 
 ---
+## Table of Contents
 |Project Number | Project Title                                                                                                                                   |
 |:-------------:|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | 001           | [Subnetting, Network Configuration and Management](#1-subnetting-network-configuration-and-management)                                          |
