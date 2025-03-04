@@ -168,7 +168,8 @@ Post-EIGRP routing tables show EIGRP is correctly exchanging and installing rout
 - New York Subnet `192.168.1.64/26` is also reachable via EIGRP from R1 through R2's Serial Interface `192.168.1.130/30`.
 
   ![Post-EIGRP Routing Table on R1 and R2](screenshot/routing-tables-after-eigrp.png)
-  *```D``` (EIGRP) routes for remote subnets, confirming route propagation.*
+
+  *`D` (EIGRP) routes for remote subnets, confirming route propagation.*
 
 [Back to Top](#top)
 
