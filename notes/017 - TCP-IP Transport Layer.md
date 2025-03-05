@@ -1,20 +1,30 @@
-# TCP/IP Transport Layer (Layer 4)
+# TCP/IP Transport Layer (Layer 4): TCP & UDP
 
-This lesson delves into the TCP/IP transport layer, or layer 4 of the OSI model, focusing specifically on the TCP and UDP protocols.
+This lesson explores the TCP/IP transport layer, focusing on TCP and UDP protocols, data segmentation, flow control, and protocol comparison.
 
 ## 1. Comparison of UDP and TCP
 
 ### UDP (User Datagram Protocol)
 
-* **Connectionless protocol:** Does not guarantee packet delivery.
+* **Connectionless:** Does not guarantee packet delivery.
 * **Speed over reliability:** Suitable for applications requiring speed.
 * **Analogy:** Regular mail (sent without confirmation of delivery).
+* **Applications:** VoIP, video streaming.
 
 ### TCP (Transmission Control Protocol)
 
-* **Connection-oriented protocol:** Guarantees packet delivery.
+* **Connection-oriented:** Guarantees packet delivery.
 * **Reliable data transmission:** Suitable for applications requiring reliability.
 * **Analogy:** Telephone call (involves connection setup and acknowledgment).
+* **Applications:** HTTP, email, FTP.
+
+| Feature          | TCP                                      | UDP                                      |
+| :--------------- | :--------------------------------------- | :--------------------------------------- |
+| Connection       | Connection-oriented (three-way handshake) | Connectionless                           |
+| Reliability      | Reliable (ACKs, sequence numbers)        | Unreliable (best-effort)                 |
+| Sequence Numbers | Yes                                      | No                                       |
+| Retransmissions  | Yes                                      | No                                       |
+| Flow Control     | Yes (sliding window)                     | No (relies on higher-layer protocols)   |
 
 ## 2. Importance of Port Numbers
 
@@ -23,27 +33,69 @@ This lesson delves into the TCP/IP transport layer, or layer 4 of the OSI model,
 
 ## 3. Mechanisms of TCP
 
-* **TCP Three-Way Handshake:** Ensures a reliable connection is established before data transmission.
-* **Windowing:** Manages the flow of data and controls congestion.
-* **Sequence Numbers:** Ensures data is received in the correct order and without errors.
+* **TCP Three-Way Handshake:** Establishes a reliable connection.
+* **Windowing:** Manages data flow and congestion.
+* **Sequence Numbers:** Ensures data is received in order and without errors.
 
 ## 4. IP Protocol Characteristics
 
-* **Connectionless:** Each packet is treated independently, can take different paths to the destination.
-* **No Delivery Guarantee:** Higher layer protocols (like TCP) handle packet reordering and error checking.
+* **Connectionless:** Packets treated independently, can take different paths.
+* **No Delivery Guarantee:** Higher layer protocols handle reordering and error checking.
 
-## 5. Practical Examples
+## 5. Data Segmentation and MTU/MSS
 
-* **UDP Example:** Data sent without confirmation, suitable for streaming.
-* **TCP Example:** Reliable data transmission with acknowledgment, suitable for web browsing.
+* **Segmentation:** Data broken into smaller chunks for transmission.
+* **Maximum Transmission Unit (MTU):** Largest packet size an interface can handle (e.g., 1,500 bytes for Fast Ethernet).
+* **TCP Packet Size:** Theoretically, up to 65,495 bytes.
+* **Fragmentation:** Breaking large packets into smaller ones when exceeding MTU.
+* **Maximum Segment Size (MSS):** Largest data amount TCP sends in a single segment (avoid fragmentation).
+* **Path MTU Discovery:**
+    * Determines the smallest MTU along the path.
+    * Avoids fragmentation.
+    * Optional in IPv4, mandatory in IPv6.
+    * IPv6 does not support router fragmentation.
+* **UDP and Fragmentation:** UDP relies on higher-layer protocols for fragmentation.
 
-## 6. Explanation of Sockets
+## 6. Flow Control
 
-* A combination of an IP address and a port number, used to identify specific applications on a host.
+* **Purpose:** Prevents sender from overwhelming receiver.
+* **TCP Flow Control:**
+    * Uses acknowledgments (ACKs) and sliding window.
+    * Receiver advertises receive window.
+* **UDP Flow Control:**
+    * Not implemented.
+    * Higher-layer protocols handle flow control.
 
-## 7. Session Multiplexing
+## 7. Explanation of Sockets
 
-* Allows a single host with one IP address to communicate with multiple servers and devices simultaneously.
+* Combination of IP address and port number.
+
+## 8. Session Multiplexing
+
+* Allows a single host to communicate with multiple servers simultaneously.
+
+## 9. UDP Deep Dive
+
+* **Transport Layer Protocol:** OSI layer 4.
+* **Access to Network Layer:** Without reliability overhead.
+* **Connectionless:** Sends datagrams without setup.
+* **Limited Error Checking:**
+    * Optional checksum (mandatory in IPv6).
+    * Destination port unreachable messages.
+* **Best-Effort Delivery:**
+    * No delivery guarantee.
+    * Higher-layer protocols handle reliability.
+* **No Data Recovery:** Higher-layer protocols handle recovery.
+* **TFTP Example:** Uses UDP but implements its own reliability.
+
+### UDP Header
+
+* **Source Port:** 16-bit.
+* **Destination Port:** 16-bit.
+* **UDP Length:** 16-bit (header + data).
+    * Minimum: 8 bytes.
+    * Maximum: 65,535 bytes (IPv4: 65,507 bytes).
+* **UDP Checksum:** 16-bit (optional in IPv4, mandatory in IPv6).
 
 ## Useful Commands
 
@@ -60,5 +112,3 @@ This lesson delves into the TCP/IP transport layer, or layer 4 of the OSI model,
 | Change Line VTY Transport Input             | `line vty 0 4` <br> `transport input all`                                                                    |
 | Ping Command                                | `ping [ip-address]`                                                                                          |
 | Clear OSPF Processes                        | `clear ip ospf process`                                                                                      |
-
-This lesson covers the key differences between TCP and UDP, the importance of port numbers, and the mechanisms that ensure reliable data transmission in TCP. Understanding these protocols and their functionalities is crucial for network management and troubleshooting.
