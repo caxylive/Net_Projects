@@ -59,3 +59,34 @@ While using the same type of cable is important, ensuring that both devices are 
 Runt frames are Ethernet frames that are smaller than the minimum frame size defined by the IEEE 802.3 standard. Specifically, a runt frame is any frame that is less than 64 bytes in length. These frames are typically caused by collisions on the network, especially in a half-duplex Ethernet environment.
 
 In a properly functioning Ethernet network, frames should be at least 64 bytes long to ensure reliable communication. When a frame is smaller than this minimum size, it is considered a runt and is usually discarded by network devices because it indicates a problem, such as a collision or a malfunctioning network interface card.
+
+---
+
+When devices fail to properly auto-negotiate their speed and duplex settings, they often default to a more conservative mode to ensure basic connectivity. This default can be 10 Mbps and half duplex, especially with older devices.
+
+Here’s a brief recap from the transcript:
+- The router, unable to negotiate with the switch, defaulted to 10 Mbps half duplex.
+- The switch was set to 10 Mbps full duplex.
+
+This mismatch led to performance issues, such as collisions and errors, under high traffic conditions. Ensuring proper auto-negotiation or manually configuring compatible settings on both devices is crucial to prevent such problems.
+
+---
+
+The reason why the router defaulted to 10 Mbps half duplex while the switch defaulted to 10 Mbps full duplex isn't due to a programming error, but rather to historical design decisions and how auto-negotiation works.
+
+Here's a bit of context:
+
+1. Historical Design:
+    - Originally, Ethernet networks were half-duplex, using hubs to connect devices. In this environment, 10 Mbps half duplex was the norm.
+    - As technology evolved, switches replaced hubs, allowing full-duplex communication, which eliminates collisions and improves performance.
+
+2. Auto-Negotiation:
+    - Auto-negotiation is a process where devices share their capabilities (speed and duplex) and agree on the best mode of operation.
+    - If auto-negotiation fails, devices often fall back to a "safe mode" to ensure basic connectivity. This fallback is often 10 Mbps half duplex because it's a widely supported mode, even by older devices.
+
+3. Fallback Mechanism:
+    - When a device (like the router) fails to negotiate successfully, it defaults to 10 Mbps half duplex to ensure it can still communicate at a basic level.
+    - Newer switches, designed for full duplex operation, may not always fall back to half duplex, resulting in a mismatch.
+
+4. Configuration Variability:
+    - Devices may have different default configurations based on their design and intended use. This can lead to mismatches if not properly configured.
