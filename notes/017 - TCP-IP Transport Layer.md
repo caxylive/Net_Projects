@@ -19,14 +19,17 @@ This lesson explores the TCP/IP transport layer, focusing on TCP and UDP protoco
 * **Applications:** HTTP, email, FTP, file transfer (FTP, TFTP, NFS), remote login (Telnet, SSH), network management (SNMP), name management (DNS).
 * **Full Duplex:** Allows simultaneous transmission and reception of data.
 
-| Feature             | TCP                                      | UDP                                      |
-| :------------------ | :--------------------------------------- | :--------------------------------------- |
-| Connection          | Connection-oriented (three-way handshake) | Connectionless                           |
-| Reliability         | Reliable (ACKs, sequence numbers)        | Unreliable (best-effort)                 |
-| Sequence Numbers    | Yes                                      | No                                       |
-| Retransmissions     | Yes                                      | No                                       |
-| Flow Control        | Yes (sliding window)                     | No (relies on higher-layer protocols)   |
-| Error Checking      | Checksums                                | Optional Checksums(Mandatory in IPv6)   |
+| Feature                | TCP                                                              | UDP                                                              |
+| :--------------------- | :----------------------------------------------------------------- | :----------------------------------------------------------------- |
+| Connection             | Connection-oriented (three-way handshake)                         | Connectionless                                                   |
+| Reliability            | Reliable (ACKs, sequence numbers, data recovery)                  | Unreliable (best-effort)                                         |
+| Sequence Numbers       | Yes (ensures data order)                                           | No                                                               |
+| Retransmissions        | Yes (for lost or corrupted packets)                                | No                                                               |
+| Flow Control           | Yes (sliding window)                                               | No (relies on higher-layer protocols)                              |
+| Error Checking         | Checksums                                                          | Optional Checksums (Mandatory in IPv6)                             |
+| Full Duplex Mode       | Yes (both hosts can transmit and receive simultaneously)           | Not applicable (connectionless)                                  |
+| Acknowledgement        | Yes (receipt of data)                                              | No                                                               |
+| Data Recovery          | Yes (re-transmits lost segments)                                   | No (relies on higher-layer protocols)                              |
 
 ## 2. Importance of Port Numbers
 
