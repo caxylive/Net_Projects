@@ -204,3 +204,10 @@ FastEthernet0/3 is up, line protocol is up
 ```
 
 You want to look for any non-zero values in these counters, as they can indicate issues that need to be addressed. By focusing on these key metrics, you can better understand what might be going wrong on the interface and take appropriate action to resolve the problems.
+
+---
+
+## Moral of the Story
+
+Option 1: Configure both sides for Auto-Negotiation
+Option 2: Hardcode both sides (100Mbps Full Duplex <---> 100Mbps Full Duplex)
