@@ -106,6 +106,7 @@ This lesson explores the TCP/IP transport layer, focusing on TCP and UDP protoco
 
 ## 10. TCP Header
 
+```
   0                   1                   2                   3
   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -125,6 +126,7 @@ This lesson explores the TCP/IP transport layer, focusing on TCP and UDP protoco
  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
  |                             Data                              |
  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+```
 
 * **Source Port (16-bit):**
     * Identifies the sending port.
