@@ -59,12 +59,12 @@
 ## 4. **Resolving Duplex Mismatches**
 ### **Option 1: Configure Both Sides for Auto-Negotiation**
 - Use the following commands on both the router and switch:
-```Cisco_IOS
+``` Cisco_IOS
 Router(config)# interface f0/3
 Router(config-if)# speed auto
 Router(config-if)# duplex auto
 ```
-```Cisco_IOS
+``` Cisco_IOS
 Switch(config)# interface f0/3
 Switch(config-if)# speed auto
 Switch(config-if)# duplex auto
@@ -72,12 +72,12 @@ Switch(config-if)# duplex auto
 
 ### **Option 2: Hardcode Both Sides**
 - Manually configure both devices to the same speed and duplex settings (e.g., 100 Mbps full duplex):
-```Cisco_IOS
+``` Cisco_IOS
 Router(config)# interface f0/3
 Router(config-if)# speed 100
 Router(config-if)# duplex full
 ```
-```Cisco_IOS
+``` Cisco_IOS
 Switch(config)# interface f0/3
 Switch(config-if)# speed 100
 Switch(config-if)# duplex full
@@ -90,13 +90,13 @@ Switch(config-if)# duplex full
 ## 5. **Troubleshooting Duplex Mismatches**
 ### Step 1: Clear Interface Counters
 - Use the clear counters command to reset interface statistics:
-```Cisco_IOS
+``` Cisco_IOS
 Router# clear counters fastethernet 0/3
 ```
 
 ### Step 2: Monitor Interface Statistics
 - Use the show interfaces command to check for errors:
-```Cisco_IOS
+``` Cisco_IOS
 Router# show interfaces fastethernet 0/3
 ```
 - Key metrics to monitor:
@@ -109,7 +109,7 @@ Router# show interfaces fastethernet 0/3
 
 ### Step 3: Verify Configuration
 - Check the current configuration of the interface:
-```Cisco_IOS
+``` Cisco_IOS
 Router# show run interface f0/3
 ```
 
@@ -151,12 +151,12 @@ Router# show run interface f0/3
 
 ### Solution:
 - Manually configure both devices to 100 Mbps full duplex:
-```Cisco_IOS
+``` Cisco_IOS
 Router(config)# interface f0/3
 Router(config-if)# speed 100
 Router(config-if)# duplex full
 ```
-```Cisco_IOS
+``` Cisco_IOS
 Switch(config)# interface f0/3
 Switch(config-if)# speed 100
 Switch(config-if)# duplex full
