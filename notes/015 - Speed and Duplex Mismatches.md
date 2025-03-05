@@ -1,4 +1,4 @@
-### CCNA Lesson Summary
+### Lesson Summary
 
 In this CCNA lesson, the instructor is demonstrating the issue of duplex mismatches between a router and switches. Here’s a summarized walkthrough:
 
@@ -32,6 +32,8 @@ In this CCNA lesson, the instructor is demonstrating the issue of duplex mismatc
 
 The key takeaway is that duplex mismatches, often due to auto-negotiation failures or manual configuration mismatches, can severely impact network performance, especially under heavy traffic conditions. Monitoring and proper configuration are essential to prevent such issues.
 
+---
+
 ### SOLUTION
 
 Using the same type of cable can help avoid some issues, but it's not the only solution to fix duplex mismatches. The key steps to resolving duplex mismatch problems include:
@@ -49,6 +51,8 @@ Using the same type of cable can help avoid some issues, but it's not the only s
     - Use network management tools like those from SolarWinds to detect and resolve duplex mismatches and other network issues.
 
 While using the same type of cable is important, ensuring that both devices are configured consistently and monitoring the network for issues are equally crucial steps in preventing and resolving duplex mismatches.
+
+---
 
 ### RUNT FRAMES
 
