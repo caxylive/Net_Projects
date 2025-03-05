@@ -54,6 +54,19 @@ While using the same type of cable is important, ensuring that both devices are 
 
 ---
 
+To resolve duplex mismatch issues, you'll need to ensure that both devices (router and switch) have compatible configurations. This involves using the appropriate commands on both devices to set the speed and duplex settings consistently. Here's a recap:
+
+| Description of Command      | Router Command                        | Switch Command                        |
+|-----------------------------|---------------------------------------|---------------------------------------|
+| Enter Interface Configuration Mode | `int f0/3`                     | `int f0/3`                            |
+| Set Speed to Auto-Negotiate | `speed auto`                          | `speed auto`                          |
+| Set Duplex to Auto-Negotiate| `duplex auto`                         | `duplex auto`                         |
+| Verify Configuration        | `sh run int f0/3`                     | `sh run int f0/3`                     |
+
+By ensuring both devices are set to auto-negotiate the speed and duplex settings, you can prevent mismatches and improve network performance. If auto-negotiation fails, you may need to manually set both devices to the same speed and duplex mode.
+
+---
+
 ### RUNT FRAMES
 
 Runt frames are Ethernet frames that are smaller than the minimum frame size defined by the IEEE 802.3 standard. Specifically, a runt frame is any frame that is less than 64 bytes in length. These frames are typically caused by collisions on the network, especially in a half-duplex Ethernet environment.
