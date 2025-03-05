@@ -14,14 +14,34 @@ This repository serves as a collection of networking projects designed to enhanc
 ---
 
 ## 1) [Subnetting, Network Configuration and Management](https://github.com/caxylive/Net_Projects/tree/main/projects/001%20-%20Subnetting%20Network%20Configuration%20and%20Management)
-This project focuses on subnetting an allocated network into smaller subnets to accommodate multiple network segments. It involves configuring IP addressing, ensuring proper device communication within each subnet, and enabling external network access. The primary objective is to establish a well-structured network that supports efficient IP address allocation and seamless connectivity.
+This project focuses on subnetting an allocated network into smaller subnets to accommodate multiple network segments. I configured IP addressing, set up devices for internal communication, and enabled external network access. The goal was to design a scalable and well-organized network that supports efficient IP address allocation, reduces waste, and ensures seamless connectivity within and outside of subnets.
+
+Tools Used:
+- Cisco Packet Tracer
+- Routers, Switches, VLANs
+
+Key Challenges & Solutions:
+- **Challenge**: Determining the correct subnet mask and network size for each segment, ensuring efficient use of IP space.
+- **Solution**: Applied VLSM (Variable Length Subnet Masking) to optimize subnet sizes based on the number of devices in each subnet.
+- **Challenge**: Ensuring connectivity between different subnets without running into IP address conflicts.
+- **Solution**: Configured routing and device interfaces to ensure each subnet could communicate with others and maintain an active internet connection.
 
 [Back to Top](#top)
 
 ---
 
 ## 2) [Optimizing Network Subnetting and Configuration for Site Expansion](https://github.com/caxylive/Net_Projects/tree/main/projects/002%20-%20Optimizing%20Network%20Subnetting%20and%20Configuration%20for%20Site%20Expansion)
-As organizations grow, network expansion becomes necessary to accommodate new sites and devices while conserving IP address space. This project builds upon the previous subnetting and configuration setup, optimizing the network to support an additional site while maintaining connectivity. Using Cisco Packet Tracer, the project ensures that all devices can communicate efficiently while implementing best practices for IP address utilization and network scalability.
+As organizations grow, their networks must expand to accommodate new devices and sites. This project optimizes a previous network design to add a new site while maintaining efficient IP address utilization. The focus is on adjusting network configurations to seamlessly integrate the new site, ensuring no connectivity issues arise while optimizing the use of IP addresses.
+
+Tools Used:
+- Cisco Packet Tracer
+- Routers, Switches, VLANs, Routing Protocols (OSPF or EIGRP depending on the setup)
+
+Key Challenges & Solutions:
+- Challenge: Managing IP address allocation while expanding the network for an additional site.
+- Solution: Carefully planned subnetting to accommodate the new site and integrated it without IP conflicts.
+- Challenge: Ensuring the network scales without causing bottlenecks or inefficiencies.
+- Solution: Configured routing protocols to facilitate smooth communication between the sites, prioritizing efficiency and redundancy.
 
 [Back to Top](#top)
 
@@ -35,5 +55,6 @@ In modern network infrastructures, efficient routing is essential to ensure seam
 ---
 
 ## 4) Coming Soon!
+Stay tuned for more exciting networking projects that explore advanced routing protocols, network security, and real-world network design solutions.
 
 [Back to Top](#top)
