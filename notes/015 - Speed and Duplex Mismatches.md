@@ -73,12 +73,16 @@
 - **Network Management** Applications: Tools like SolarWinds can help detect and resolve duplex mismatches.
 - **Extended Ping Test**: Use large datagram sizes to simulate high traffic and observe errors.
 
+[Back to Top](#top)
+
 ---
 
 ## 3. **Causes of Duplex Mismatches**
 - **Auto-Negotiation Failure**: Devices fail to negotiate speed and duplex settings properly.
 - **Manual Configuration Mismatch**: One device is manually configured for full duplex, while the other is set to half duplex.
 - **Historical Design**: Older devices may default to 10 Mbps half duplex if auto-negotiation fails, while newer devices may default to full duplex.
+
+[Back to Top](#top)
 
 ---
 
@@ -109,6 +113,8 @@ Switch(config-if)# speed 100
 Switch(config-if)# duplex full
 ```
 
+[Back to Top](#top)
+
 ---
 
 ## 5. **Troubleshooting Duplex Mismatches**
@@ -137,6 +143,8 @@ Router# show interfaces fastethernet 0/3
 Router# show run interface f0/3
 ```
 
+[Back to Top](#top)
+
 ---
 
 ## 6. **Key Takeaways** 
@@ -144,6 +152,8 @@ Router# show run interface f0/3
   - **Proper Cabling**: Use high-quality, compatible cables (e.g., Cat5 or Cat6 for 100BASE-TX).
   - **Monitoring Tools**: Use tools like SolarWinds to detect and resolve duplex mismatches.
   - **Auto-Negotiation**: Prefer auto-negotiation, but if it fails, manually configure both devices.
+
+[Back to Top](#top)
 
 ---
 
@@ -157,6 +167,8 @@ Router# show run interface f0/3
 - **Definition**: Collisions that occur after the first 64 bytes of a frame have been transmitted.
 - **Cause**: Duplex mismatch or excessive cable length.
 - **Solution**: Resolve duplex mismatches and check cable lengths.
+
+[Back to Top](#top)
 
 ---
 
@@ -180,9 +192,12 @@ Switch(config-if)# speed 100
 Switch(config-if)# duplex full
 ```
 
+[Back to Top](#top)
+
 ---
 
 ## 9. Moral of the Story
 - **Option 1**: Configure both sides for auto-negotiation.
 - **Option 2**: Hardcode both sides to the same speed and duplex settings (e.g., 100 Mbps full duplex).
 
+[Back to Top](#top)
