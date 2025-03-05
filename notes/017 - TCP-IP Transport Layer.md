@@ -106,16 +106,58 @@ This lesson explores the TCP/IP transport layer, focusing on TCP and UDP protoco
 
 ## 10. TCP Header
 
-* **Source Port:** 16-bit identifier for the sending port.
-* **Destination Port:** 16-bit identifier for the receiving port.
-* **Sequence Number:** 32-bit number for segment ordering.
-* **Acknowledgement Number:** 32-bit number for acknowledging received data.
-* **Header Length:** Specifies the size of the TCP header.
-* **Flags:** Various control flags (URG, ACK, PSH, RST, SYN, FIN).
-* **Window Size:** 16-bit field for flow control.
-* **Checksum:** 16-bit field for error checking.
-* **Urgent Pointer:** Indicates the end of urgent data.
-* **Options:** Various additional options for TCP.
+  0                   1                   2                   3
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+ |      Source Port               |      Destination Port        |
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+ |                        Sequence Number                        |
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+ |                    Acknowledgement Number                     |
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+ |  Data |           |U|A|P|R|S|F|                               |
+ | Offset| Reserved  |R|C|S|S|Y|I|            Window             |
+ |       |           |G|K|H|T|N|N|                               |
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+ |           Checksum            |         Urgent Pointer        |
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+ |                    Options                    |    Padding    |
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+ |                             Data                              |
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+* **Source Port (16-bit):**
+    * Identifies the sending port.
+* **Destination Port (16-bit):**
+    * Identifies the receiving port.
+* **Sequence Number (32-bit):**
+    * If the SYN bit is set, this is the initial sequence number.
+    * If the SYN bit is not set, this is the accumulated sequence number of the first data byte of the current session.
+* **Acknowledgement Number (32-bit):**
+    * If the ACK bit is set, this value is the next sequence number that the receiver expects to receive, acknowledging the receipt of all prior bytes.
+* **Header Length/Data Offset:**
+    * Specifies the size of the TCP header in 32-bit words.
+    * Minimum size: 5 words.
+    * Maximum size: 15 words.
+* **Reserved:**
+    * Set to 0 for future use.
+* **Flags/Control Bits:**
+    * **URG:** Urgent pointer field significant.
+    * **ACK:** Acknowledgment field significant.
+    * **PSH:** Push Function.
+    * **RST:** Reset the connection.
+    * **SYN:** Synchronize sequence numbers.
+    * **FIN:** No more data from the sender.
+* **Window Size (16-bit):**
+    * Specifies the size of the receiver's window, indicating the number of bytes the receiver is willing to receive.
+* **Checksum (16-bit):**
+    * Used for error-checking the header and data.
+* **Urgent Pointer (16-bit):**
+    * If the URG flag is set, this value is an offset from the sequence number, indicating the last urgent data byte.
+* **Options:**
+    * Various options for TCP, out of scope for this course.
+* **Data:**
+    * Higher layer protocol data encapsulated within the TCP header.
 
 ## 11. OSI Model Layer Mapping
 
