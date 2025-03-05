@@ -16,15 +16,17 @@ This lesson explores the TCP/IP transport layer, focusing on TCP and UDP protoco
 * **Connection-oriented:** Guarantees packet delivery.
 * **Reliable data transmission:** Suitable for applications requiring reliability.
 * **Analogy:** Telephone call (involves connection setup and acknowledgment).
-* **Applications:** HTTP, email, FTP.
+* **Applications:** HTTP, email, FTP, file transfer (FTP, TFTP, NFS), remote login (Telnet, SSH), network management (SNMP), name management (DNS).
+* **Full Duplex:** Allows simultaneous transmission and reception of data.
 
-| Feature          | TCP                                      | UDP                                      |
-| :--------------- | :--------------------------------------- | :--------------------------------------- |
-| Connection       | Connection-oriented (three-way handshake) | Connectionless                           |
-| Reliability      | Reliable (ACKs, sequence numbers)        | Unreliable (best-effort)                 |
-| Sequence Numbers | Yes                                      | No                                       |
-| Retransmissions  | Yes                                      | No                                       |
-| Flow Control     | Yes (sliding window)                     | No (relies on higher-layer protocols)   |
+| Feature             | TCP                                      | UDP                                      |
+| :------------------ | :--------------------------------------- | :--------------------------------------- |
+| Connection          | Connection-oriented (three-way handshake) | Connectionless                           |
+| Reliability         | Reliable (ACKs, sequence numbers)        | Unreliable (best-effort)                 |
+| Sequence Numbers    | Yes                                      | No                                       |
+| Retransmissions     | Yes                                      | No                                       |
+| Flow Control        | Yes (sliding window)                     | No (relies on higher-layer protocols)   |
+| Error Checking      | Checksums                                | Optional Checksums(Mandatory in IPv6)   |
 
 ## 2. Importance of Port Numbers
 
@@ -36,6 +38,8 @@ This lesson explores the TCP/IP transport layer, focusing on TCP and UDP protoco
 * **TCP Three-Way Handshake:** Establishes a reliable connection.
 * **Windowing:** Manages data flow and congestion.
 * **Sequence Numbers:** Ensures data is received in order and without errors.
+* **Acknowledgements:** Receiver acknowledges receipt of data, enabling re-transmission.
+* **Data Recovery:** Re-transmits lost segments.
 
 ## 4. IP Protocol Characteristics
 
@@ -96,6 +100,30 @@ This lesson explores the TCP/IP transport layer, focusing on TCP and UDP protoco
     * Minimum: 8 bytes.
     * Maximum: 65,535 bytes (IPv4: 65,507 bytes).
 * **UDP Checksum:** 16-bit (optional in IPv4, mandatory in IPv6).
+
+## 10. TCP Header
+
+* **Source Port:** 16-bit identifier for the sending port.
+* **Destination Port:** 16-bit identifier for the receiving port.
+* **Sequence Number:** 32-bit number for segment ordering.
+* **Acknowledgement Number:** 32-bit number for acknowledging received data.
+* **Header Length:** Specifies the size of the TCP header.
+* **Flags:** Various control flags (URG, ACK, PSH, RST, SYN, FIN).
+* **Window Size:** 16-bit field for flow control.
+* **Checksum:** 16-bit field for error checking.
+* **Urgent Pointer:** Indicates the end of urgent data.
+* **Options:** Various additional options for TCP.
+
+## 11. OSI Model Layer Mapping
+
+* **Layer 2 (Data Link):** Uses type numbers to differentiate multiple layer 3 protocols.
+* **Layer 3 (Network):** Uses protocol numbers to differentiate layer 4 protocols (TCP, UDP).
+* **Layer 4 (Transport):** Uses port numbers to differentiate multiple applications at layer 7.
+
+## 12. Practical Examples
+
+* **Duplex and Speed Mismatch:** Issues caused by auto-negotiation failures or manual mismatches.
+* **Full-Duplex vs. Half-Duplex:** Differences in transmission methods and potential errors to look for.
 
 ## Useful Commands
 
