@@ -139,8 +139,8 @@ This lesson explores the TCP/IP transport layer, focusing on TCP and UDP protoco
     * If the ACK bit is set, this value is the next sequence number that the receiver expects to receive, acknowledging the receipt of all prior bytes.
 * **Header Length/Data Offset:**
     * Specifies the size of the TCP header in 32-bit words.
-    * Minimum size: 5 words.
-    * Maximum size: 15 words.
+    * Minimum size: 5 words   ;   20 -bits
+    * Maximum size: 15 words  ;   60-bits
 * **Reserved:**
     * Set to 0 for future use.
 * **Flags/Control Bits:**
