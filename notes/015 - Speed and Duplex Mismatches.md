@@ -1,4 +1,49 @@
+<a name="top"></a>
 # CCNA Notes: Duplex Mismatch and Network Performance
+
+---
+
+# Table of Contents
+
+1. [Overview of Duplex Mismatch](#1-overview-of-duplex-mismatch)  
+   - [Definition](#1-overview-of-duplex-mismatch)  
+   - [Impact](#1-overview-of-duplex-mismatch)  
+
+2. [Identifying Duplex Mismatches](#2-identifying-duplex-mismatches)  
+   - [Symptoms](#2-identifying-duplex-mismatches)  
+   - [Tools for Monitoring](#2-identifying-duplex-mismatches)  
+
+3. [Causes of Duplex Mismatches](#3-causes-of-duplex-mismatches)  
+   - [Auto-Negotiation Failure](#3-causes-of-duplex-mismatches)  
+   - [Manual Configuration Mismatch](#3-causes-of-duplex-mismatches)  
+   - [Historical Design](#3-causes-of-duplex-mismatches)  
+
+4. [Resolving Duplex Mismatches](#4-resolving-duplex-mismatches)  
+   - [Option 1: Configure Both Sides for Auto-Negotiation](#4-resolving-duplex-mismatches)  
+   - [Option 2: Hardcode Both Sides](#4-resolving-duplex-mismatches)  
+
+5. [Troubleshooting Duplex Mismatches](#5-troubleshooting-duplex-mismatches)  
+   - [Step 1: Clear Interface Counters](#5-troubleshooting-duplex-mismatches)  
+   - [Step 2: Monitor Interface Statistics](#5-troubleshooting-duplex-mismatches)  
+   - [Step 3: Verify Configuration](#5-troubleshooting-duplex-mismatches)  
+
+6. [Key Takeaways](#6-key-takeaways)  
+   - [Consistent Configuration](#6-key-takeaways)  
+   - [Proper Cabling](#6-key-takeaways)  
+   - [Monitoring Tools](#6-key-takeaways)  
+   - [Auto-Negotiation](#6-key-takeaways)  
+
+7. [Common Issues and Solutions](#7-common-issues-and-solutions)  
+   - [Issue: Runt Frames](#7-common-issues-and-solutions)  
+   - [Issue: Late Collisions](#7-common-issues-and-solutions)  
+
+8. [Example Scenario](#8-example-scenario)  
+   - [Problem](#8-example-scenario)  
+   - [Solution](#8-example-scenario)  
+
+9. [Moral of the Story](#9-moral-of-the-story)  
+   - [Option 1: Auto-Negotiation](#9-moral-of-the-story)  
+   - [Option 2: Hardcode Settings](#9-moral-of-the-story)  
 
 ---
 
@@ -12,6 +57,8 @@
     - Runt frames
     - Poor throughput
     - Packet drops
+
+[Back to Top](#top)
 
 ---
 
