@@ -161,6 +161,32 @@ This lesson explores the TCP/IP transport layer, focusing on TCP and UDP protoco
 * **Data:**
     * Higher layer protocol data encapsulated within the TCP header.
 
+---
+
+### Examples;
+
+1. URG (Urgent pointer field significant)
+Example: If an application sends urgent data that needs immediate attention (like an interrupt signal), the URG flag is set. The urgent pointer in the TCP header indicates the end of the urgent data, so the receiving TCP knows to prioritize processing this data first.
+
+2. ACK (Acknowledgment field significant)
+Example: When a host receives data and wants to acknowledge the receipt, it sets the ACK flag. For example, when Host A sends data to Host B, Host B will send an acknowledgment (ACK) back to Host A indicating the successful receipt of the data.
+
+3. PSH (Push Function)
+Example: If data needs to be sent immediately rather than waiting to fill the TCP buffer, the PSH flag is set. For instance, in an interactive application like a chat program, when a user sends a message, the PSH flag can be set to ensure the data is delivered immediately.
+
+4. RST (Reset the connection)
+Example: If a connection needs to be terminated abruptly (e.g., due to an error or unexpected condition), the RST flag is set. If Host A sends data to Host B, but Host B doesn’t recognize the connection (e.g., because it was already closed), Host B will send a TCP segment with the RST flag set to reset the connection.
+
+5. SYN (Synchronize sequence numbers)
+Example: The SYN flag is used during the initial handshake process to establish a connection. When Host A wants to start a connection with Host B, it sends a TCP segment with the SYN flag set. Host B responds with a segment that also has the SYN flag set, and an acknowledgment (ACK).
+
+6. FIN (No more data from the sender)
+Example: When a host has finished sending data and wants to close the connection, it sets the FIN flag. For example, after Host A has sent all its data to Host B, it sends a segment with the FIN flag set to indicate no more data will be sent, initiating the connection termination process.
+
+These flags play crucial roles in managing and controlling TCP connections to ensure reliable and ordered data transmission. If you have any more questions or need further clarification, feel free to ask!
+
+---
+
 ## 11. OSI Model Layer Mapping
 
 * **Layer 2 (Data Link):** Uses type numbers to differentiate multiple layer 3 protocols.
