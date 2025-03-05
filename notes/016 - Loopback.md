@@ -11,8 +11,8 @@
 3. [Practical Use Cases](#3-practical-use-cases)
 4. [Useful Commands](#4-useful-commands)
 5. [Configuration Examples](#5-configuration-examples)
-6. [Summary](#6-summary)
-7. [Loopback Interfaces for OSPF](#7-loopback-interfaces-for-ospf)
+6. [Loopback Interfaces for OSPF](#6-loopback-interfaces-for-ospf)
+7. [Summary](#7-summary)
 
 ---
 
@@ -71,19 +71,11 @@
 
 ---
 
-## 6. Summary
-Loopback interfaces provide stability and reliability for router management. They are particularly useful for:
-- Consistent management access (e.g., telnet).
-- Advertising through routing protocols (e.g., EIGRP, OSPF).
-- Simplifying network management with consistent IP addressing.
-
-[Back to Top](#top)
-
----
-
-## 7. Loopback Interfaces for OSPF
+## 6. Loopback Interfaces for OSPF
 ### Purpose of Loopback Interfaces in OSPF:
 - **Router ID Selection**: OSPF uses the loopback interface to determine the router ID.
+  - **What is a Router ID?**: The Router ID is a unique identifier for an OSPF router. It is used to identify the router in the OSPF network.
+  - **How is it Selected?**: OSPF selects the highest IP address among the loopback interfaces as the Router ID. If no loopback is configured, it uses the highest IP address on active physical interfaces.
 - **Stability**: Loopback interfaces provide a stable router ID, preventing changes if a physical interface goes down.
 
 ### Practical Use Case:
@@ -93,8 +85,28 @@ Loopback interfaces provide stability and reliability for router management. The
 
 ### Configuration Examples:
 - **Enable OSPF**: Enables OSPF on all interfaces and selects the highest loopback address as the router ID.
+  - **What is a Process ID?**: The Process ID is a locally significant number used to identify an OSPF instance on a router. It does not need to match across routers.
+  - **What is an Area ID?**: The Area ID is a logical grouping of OSPF routers. All routers in the same area share the same link-state database. Area 0 is the backbone area.
 - **Neighbor Relationship**: Shows how neighbor relationships are established and maintained using loopback addresses.
+
+### Additional Notes:
+- **What is VTY?**: VTY (Virtual Teletype) lines are used for remote access to the router (e.g., via telnet or SSH). Configuring `transport input all` allows both telnet and SSH access.
+
+[Back to Top](#top)
 
 ---
 
+## 7. Summary
+Loopback interfaces provide stability and reliability for router management. They are particularly useful for:
+- Consistent management access (e.g., telnet).
+- Advertising through routing protocols (e.g., EIGRP, OSPF).
+- Simplifying network management with consistent IP addressing.
+
+Key takeaways:
+- Loopback interfaces are logical and remain stable.
+- They are essential for OSPF Router ID stability and virtual links.
+- Use consistent loopback IP addresses for easier management.
+
 [Back to Top](#top)
+
+---
