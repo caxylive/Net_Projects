@@ -48,7 +48,23 @@ Key Challenges & Solutions:
 ---
 
 ## 3) [Inter-Site Connectivity Using EIGRP in a Subnetted Network](https://github.com/caxylive/Net_Projects/tree/main/projects/003%20-%20Inter-Site%20Connectivity%20Using%20EIGRP%20in%20a%20Subnetted%20Network)
-In modern network infrastructures, efficient routing is essential to ensure seamless communication between different sites. This project involves configuring and implementing the Enhanced Interior Gateway Routing Protocol (EIGRP) to enable full network connectivity between two locations: San Francisco and New York. Prior to configuring EIGRP, devices within each site could communicate locally, but inter-site communication was not possible. The goal of this project is to enable dynamic routing using EIGRP so that devices from both sites can reach each other efficiently.
+This project demonstrates the configuration of Enhanced Interior Gateway Routing Protocol (EIGRP) to establish dynamic routing between two geographically separate sites: San Francisco and New York. By implementing EIGRP, the previously isolated sites can communicate with one another efficiently.
+
+Before implementing EIGRP, the two sites could not communicate due to the lack of a routing protocol to propagate routing information between them. The goal of the project was to enable dynamic routing and facilitate seamless communication between sites, thus eliminating the need for manual static routing.
+
+Technologies Used:
+- Dynamic Routing Protocol: EIGRP (Enhanced Interior Gateway Routing Protocol)
+- Subnetting: VLSM (Variable Length Subnet Masking)
+- Network Services: DHCP (Dynamic Host Configuration Protocol), DNS (simulated)
+- Tools: Cisco Packet Tracer, Cisco IOS
+
+Key Challenges & Solutions:
+- Challenge: Ensuring that the EIGRP routing protocol correctly advertised subnet routes to both sites.
+  - Solution: Proper EIGRP configuration, including the assignment of an Autonomous System (AS) number and ensuring no automatic summarization of subnets using no auto-summary.
+- Challenge: Ensuring both sites could assign IPs dynamically to devices without IP conflicts.
+  - Solution: Implemented a DHCP server on the New York router (R2) and configured static IPs on San Francisco devices, ensuring all IP assignments were correctly allocated.
+- Challenge: Verifying that both sites could reach each other after EIGRP was configured.
+  - Solution: Ran connectivity tests (ping) from both sites and validated EIGRP route propagation using routing table commands and neighbor relationships.
 
 [Back to Top](#top)
 
