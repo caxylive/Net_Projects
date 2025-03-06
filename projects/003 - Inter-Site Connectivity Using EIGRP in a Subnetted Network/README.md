@@ -155,7 +155,7 @@ The ```show ip eigrp neighbors``` command confirms successful adjacency between 
 - Uptime increasing means that the adjacency is stable.
 - `Q count = 0` means that there are no pending EIGRP updates waiting to be sent.
 
-![EIGRP Neighbor Status](screenshot/show-ip-eigrp-beighbors.png)
+![EIGRP Neighbor Status](screenshot/show-ip-eigrp-neighbors.png)
 *Stable neighbor relationship indicated by increasing uptime and ```Q Count = 0```.*
 
 ---
