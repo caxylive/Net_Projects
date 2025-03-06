@@ -1,5 +1,13 @@
 <a name="top"></a>
 # My Networking Projects
+
+---
+
+**Author**: [**Carl Xymon Verdejo**](https://hardworking-lion-z4sd3b.mystrikingly.com/)</br>
+**Contact**: carl.xymon.verdejo@gmail.com
+
+---
+
 This repository serves as a collection of networking projects designed to enhance my technical knowledge and practical skills in IT. Each project focuses on key networking concepts such as subnetting, routing, and network configuration, reinforcing my understanding as I progress in my IT journey.
 
 ---
