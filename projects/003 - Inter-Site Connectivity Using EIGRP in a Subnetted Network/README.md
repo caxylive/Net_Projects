@@ -200,7 +200,7 @@ Please revisit the [verification](#verification-routing-tables) section to view 
 - ✅ **Successful Inter-Site Pings**
 
   ![Successful Inter-Site Ping](screenshot/inter-site-ping-success.png)  
-  *Ping from PC1 (San Francisco) to PC2 (New York) after EIGRP convergence.*
+  *Ping from San Francisco to New York and back to San Francisco after EIGRP convergence.*
 
 ---
 
