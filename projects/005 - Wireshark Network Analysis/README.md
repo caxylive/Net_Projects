@@ -7,7 +7,7 @@ Contact: [carl.xymon.verdejo@gmail.com](carl.xymon.verdejo@gmail.com)
 
 ## Overview
 
-This project documents my journey learning Wireshark, a powerful network protocol analyzer. I'm using Wireshark to gain hands-on experience in network traffic analysis, focusing on security forensics and understanding fundamental networking protocols. This project is based on the excellent work by [Rajneesh Gupta](https://github.com/0xrajneesh/Wireshark-Projects-for-beginners) and serves as a practical application of the concepts I'm learning in my CCNA studies.
+This project documents my journey learning Wireshark, a powerful network protocol analyzer. I'm using Wireshark to gain hands-on experience in network traffic analysis, focusing on security forensics and understanding fundamental networking protocols. This project is based on the excellent work by [Rajneesh Gupta](https://github.com/0xrajneesh/Wireshark-Projects-for-beginners) and serves as a practical application of the concepts I'm learning in my networking studies.
 
 This folder contains sub-projects, each focusing on a specific aspect of Wireshark usage, including HTTP analysis, malware detection, intrusion detection, TLS decryption, and VoIP analysis. My goal is to develop a strong understanding of network traffic patterns and enhance my ability to troubleshoot and secure networks.
 
