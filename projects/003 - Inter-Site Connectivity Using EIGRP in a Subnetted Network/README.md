@@ -5,6 +5,11 @@
 
 ---
 
+**Author**: [**Carl Xymon Verdejo**](https://hardworking-lion-z4sd3b.mystrikingly.com/)</br>
+**Contact**: carl.xymon.verdejo@gmail.com
+
+---
+
 ## Table of Contents
 1. [Introduction](#1-introduction)
     - [Technologies Used](#technologies-used)
