@@ -70,7 +70,10 @@ Before implementing EIGRP, the two sites could not communicate due to the lack o
 
 ---
 
-## 4) **Coming Soon!**
-Stay tuned for more exciting networking projects that explore advanced routing protocols, network security, and real-world network design solutions.
+## 4) [Wireshark Network Analysis]()
+This project documents my learning journey with Wireshark, focusing on network traffic analysis for security forensics and understanding fundamental networking protocols. It includes analysis of HTTP, DNS, and other network traffic using Wireshark. Each sub-project documents the steps taken, observations, challenges, and key learnings.
+
 
 [Back to Top](#top)
+
+---
