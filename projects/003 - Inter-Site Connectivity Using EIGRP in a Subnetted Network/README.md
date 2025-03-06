@@ -199,7 +199,7 @@ Please revisit the [verification](#verification-routing-tables) section to view 
 ### **Post-EIGRP Connectivity**
 - ✅ **Successful Inter-Site Pings**
 
-  ![Successful Inter-Site Ping](screenshot/003/inter-site-ping-success.png)  
+  ![Successful Inter-Site Ping](screenshot/inter-site-ping-success.png)  
   *Ping from PC1 (San Francisco) to PC2 (New York) after EIGRP convergence.*
 
 ---
