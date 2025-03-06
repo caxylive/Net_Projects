@@ -71,12 +71,17 @@ Before implementing EIGRP, the two sites could not communicate due to the lack o
 ---
 
 ## 4) [Wireshark Network Analysis](https://github.com/caxylive/Net_Projects/tree/main/projects/005%20-%20Wireshark%20Network%20Analysis)
-This project documents my learning journey with Wireshark, focusing on network traffic analysis for security forensics and understanding fundamental networking protocols. It includes analysis of HTTP, DNS, and other network traffic using Wireshark. Each sub-project documents the steps taken, observations, challenges, and key learnings. View the projects here: </br>
-      1. [HTTP Analysis](https://github.com/caxylive/Net_Projects/blob/main/projects/005%20-%20Wireshark%20Network%20Analysis/Project-5-VoIP-Analysis/README.md)</br>
-      2. [Malware Detection](https://github.com/caxylive/Net_Projects/blob/main/projects/005%20-%20Wireshark%20Network%20Analysis/Project-2-Malware-Detection/)</br>
-      3. [Intrusion Detection](https://github.com/caxylive/Net_Projects/blob/main/projects/005%20-%20Wireshark%20Network%20Analysis/Project-3-Intrusion-Detection/)</br>
-      4. [TLS Decryption](https://github.com/caxylive/Net_Projects/blob/main/projects/005%20-%20Wireshark%20Network%20Analysis/Project-4-TLS-Decryption/)</br>
-      5. [VoIP Analysis](https://github.com/caxylive/Net_Projects/blob/main/projects/005%20-%20Wireshark%20Network%20Analysis/Project-5-VoIP-Analysis/)</br>
+This project documents my learning journey with Wireshark, focusing on network traffic analysis for security forensics and understanding fundamental networking protocols. It includes analysis of HTTP, DNS, and other network traffic using Wireshark. Each sub-project documents the steps taken, observations, challenges, and key learnings. View the projects here:
+      
+  1. [HTTP Analysis](https://github.com/caxylive/Net_Projects/blob/main/projects/005%20-%20Wireshark%20Network%20Analysis/Project-5-VoIP-Analysis/README.md)
+      
+  2. [Malware Detection](https://github.com/caxylive/Net_Projects/blob/main/projects/005%20-%20Wireshark%20Network%20Analysis/Project-2-Malware-Detection/)
+  
+  3. [Intrusion Detection](https://github.com/caxylive/Net_Projects/blob/main/projects/005%20-%20Wireshark%20Network%20Analysis/Project-3-Intrusion-Detection/)
+
+  4. [TLS Decryption](https://github.com/caxylive/Net_Projects/blob/main/projects/005%20-%20Wireshark%20Network%20Analysis/Project-4-TLS-Decryption/)
+
+  5. [VoIP Analysis](https://github.com/caxylive/Net_Projects/blob/main/projects/005%20-%20Wireshark%20Network%20Analysis/Project-5-VoIP-Analysis/)
 
 [Back to Top](#top)
 
