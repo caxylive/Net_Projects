@@ -1,15 +1,22 @@
+<a name="top"></a>
+[Back to Main](https://github.com/caxylive/Net_Projects/tree/main)
+
 # 005 - Wireshark Network Analysis
 
 Author: [Carl Xymon Verdejo](https://hardworking-lion-z4sd3b.mystrikingly.com/) </br>
 Contact: [carl.xymon.verdejo@gmail.com](carl.xymon.verdejo@gmail.com)
 
-<a name="top"></a>
+---
 
 ## Overview
 
 This project documents my journey learning Wireshark, a powerful network protocol analyzer. I'm using Wireshark to gain hands-on experience in network traffic analysis, focusing on security forensics and understanding fundamental networking protocols. This project is based on the excellent work by [Rajneesh Gupta](https://github.com/0xrajneesh/Wireshark-Projects-for-beginners) and serves as a practical application of the concepts I'm learning in my networking studies.
 
 This folder contains sub-projects, each focusing on a specific aspect of Wireshark usage, including HTTP analysis, malware detection, intrusion detection, TLS decryption, and VoIP analysis. My goal is to develop a strong understanding of network traffic patterns and enhance my ability to troubleshoot and secure networks.
+
+[Back to Top](#top)
+
+---
 
 ## Table of Contents
 
@@ -20,6 +27,10 @@ This folder contains sub-projects, each focusing on a specific aspect of Wiresha
 | [Project-3-Intrusion-Detection](#project-3-intrusion-detection) | Employing Wireshark for network intrusion detection, focusing on identifying indicators of compromise.                                          |
 | [Project-4-TLS-Decryption](#project-4-tls-decryption) | Mastering the decryption and analysis of SSL/TLS traffic to understand secure communication.                                                           |
 | [Project-5-VoIP-Analysis](#project-5-voip-analysis) | Capturing and analyzing VoIP traffic to understand SIP and RTP protocols and to troubleshoot voice communication issues.                                   |
+
+[Back to Top](#top)
+
+---
 
 ## Project Details
 
@@ -48,6 +59,10 @@ This folder contains sub-projects, each focusing on a specific aspect of Wiresha
 * **Description:** This sub-project focuses on capturing and analyzing VoIP traffic to understand SIP and RTP protocols and troubleshoot voice communication issues.
 * **Location:** [Project-5-VoIP-Analysis](./Project-5-VoIP-Analysis/README.md)
 
+[Back to Top](#top)
+
+---
+
 ## Learning Objectives
 
 * Gain proficiency in using Wireshark for network traffic analysis.
@@ -56,6 +71,10 @@ This folder contains sub-projects, each focusing on a specific aspect of Wiresha
 * Learn to troubleshoot network communication issues.
 * Document and present network analysis findings effectively.
 
+[Back to Top](#top)
+
+---
+
 ## Getting Started
 
 1.  Navigate to the specific project folder you wish to explore.
@@ -63,14 +82,24 @@ This folder contains sub-projects, each focusing on a specific aspect of Wiresha
 3.  Use Wireshark to capture and analyze network traffic based on the project objectives.
 4.  Document your observations, challenges, and lessons learned.
 
+[Back to Top](#top)
+
+---
+
 ## Future Enhancements
 
 * Explore advanced Wireshark features and filters.
 * Integrate Wireshark analysis with other network security tools.
 * Apply Wireshark in real-world network scenarios for troubleshooting and security assessments.
 
+[Back to Top](#top)
+
+---
+
 ## Contact
 
 Feel free to reach out with any questions or feedback.
 
 [Back to Top](#top)
+
+---
