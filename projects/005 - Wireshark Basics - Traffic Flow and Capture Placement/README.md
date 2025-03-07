@@ -30,22 +30,26 @@ The same GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projec
 ## Analysis and Observations
 
 1.  **Capture Placement Impact:**
-    * Capturing traffic on the link (`3`) between the switch and the router (rather than between the switch and PC (`1`) or switch and server(`2`)) failed to capture HTTP traffic between the PC and server.
+    * Links:
+       * [`1`] - between switch and PC
+       * [`2`] - between switch and server
+       * [`3`] - between switch and router
+    * Capturing traffic on the link [`3`] (rather than link [`1`] or link [`2`]) failed to capture HTTP traffic between the PC and server.
     * This demonstrates that traffic is not flooded to all ports on a switch once the switch has learned the MAC addresses involved in the communication.
-2.  **DNS Traffic Capture:**
+3.  **DNS Traffic Capture:**
     * DNS queries from the PC to the router (DNS server) were captured successfully.
     * This confirmed that the PC was using the router as its DNS server.
     * The capture showed the DNS query and response, including the resolution of `gns3.com` to 10.1.1.100.
     * The use of UDP port 53 for DNS was observed.
-3.  **Switch MAC Address Table:**
+4.  **Switch MAC Address Table:**
     * The switch's MAC address table was examined to demonstrate how the switch learns and forwards traffic.
     * The switch learned the MAC addresses of the PC, server, and router on their respective ports.
     * Once the switch learned the MAC addresses of the PC and server, traffic was forwarded directly between them, not to other ports.
-4.  **Traffic Flow Explanation:**
+5.  **Traffic Flow Explanation:**
     * The switch's behavior of forwarding traffic directly between known MAC addresses was explained.
     * This explained why HTTP traffic between the PC and server was not captured on the link between the switch and router.
     * Traffic between the PC and server was directly switched, and did not traverse the link between the switch and the router.
-5.  **Router as DNS/DHCP Server:**
+6.  **Router as DNS/DHCP Server:**
     * The router was configured as a DNS server using `ip dns server`.
     * Static DNS entries were configured to resolve `gns3.com` to 10.1.1.100.
     * The router also acted as a DHCP server, dynamically allocating IP addresses to the PCs.
