@@ -78,18 +78,24 @@ Before implementing EIGRP, the two sites could not communicate due to the lack o
 
 ---
 
-## 4) [Wireshark Network Analysis](https://github.com/caxylive/Net_Projects/tree/main/projects/005%20-%20Wireshark%20Network%20Analysis)
-These series of projects document my learning journey with Wireshark, focusing on network traffic analysis for security forensics and understanding fundamental networking protocols. It includes analysis of HTTP, DNS, and other network traffic using Wireshark. Each sub-project documents the steps taken, observations, challenges, and key learnings. View the individual sub-projects here:
-      
-  1. HTTP Analysis (Link Coming Soon)
-      
-  2. Malware Detection (Link Coming Soon)
-  
-  3. Intrusion Detection (Link Coming Soon)
+## 4) [Wireshark Network Analysis]()(Coming Soon)
+This project will delve into the practical application of Wireshark for network traffic analysis. Wireshark is a powerful tool used to capture and analyze network packets in real-time, providing invaluable insights into network behavior, troubleshooting issues, and enhancing security.
 
-  4. TLS Decryption (Link Coming Soon)
+The focus will be on learning to capture, filter, and interpret network traffic to understand protocol interactions, identify anomalies, and diagnose network problems. This project will cover various aspects of network analysis, including:
 
-  5. VoIP Analysis (Link Coming Soon)
+  - **Packet Capture**: Setting up Wireshark to capture network traffic on different interfaces.
+  - **Filtering**: Using Wireshark's filtering capabilities to isolate specific traffic based on protocols, IP addresses, ports, and other criteria.
+  - **Protocol Analysis**: Examining packet details to understand how different protocols (TCP, UDP, IP, HTTP, etc.) function.
+  - **Troubleshooting**: Identifying and diagnosing network issues such as latency, packet loss, and connection problems.
+  - **Security Analysis**: Detecting suspicious network activity and potential security threats.
+
+**Expected Outcomes**:
+  - Proficiency in using Wireshark to capture and analyze network traffic.
+  - Ability to interpret packet data and understand protocol behavior.
+  - Enhanced troubleshooting skills for diagnosing network issues.
+  - Improved understanding of network security concepts through traffic analysis.
+
+Stay tuned for updates as this project progresses, where I will document the practical steps and findings from my Wireshark analysis sessions.
 
 [Back to Top](#top)
 
