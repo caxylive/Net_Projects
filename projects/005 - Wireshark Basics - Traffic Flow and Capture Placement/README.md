@@ -41,7 +41,7 @@ The same GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projec
     ![DNS Queries from PC to Router](screenshot/dns-query.png)
     * This confirmed that the PC was using the router as its DNS server. In [Project 003](https://github.com/caxylive/Net_Projects/blob/main/projects/003%20-%20Inter-Site%20Connectivity%20Using%20EIGRP%20in%20a%20Subnetted%20Network/README.md), we configured routers to act as DHCP and DNS server for testing purposes.
     * The capture showed the DNS query and response, including the resolution of `gns3.com` to 10.1.1.100.
-    * The use of UDP port 53 for DNS was observed.
+    * The use of UDP port 53 for DNS was observed which is a well known port for DNS. Note that Port 50786 is an Ephemeral Port.
 4.  **Switch MAC Address Table:**
     * The switch's MAC address table was examined to demonstrate how the switch learns and forwards traffic.
     * The switch learned the MAC addresses of the PC, server, and router on their respective ports.
