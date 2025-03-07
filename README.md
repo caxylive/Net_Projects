@@ -18,6 +18,7 @@ This repository serves as a collection of networking projects designed to enhanc
 | 002           | [Optimizing Network Subnetting and Configuration for Site Expansion](#2-optimizing-network-subnetting-and-configuration-for-site-expansion)     |
 | 003           | [Inter-Site Connectivity Using EIGRP in a Subnetted Network](#3-inter-site-connectivity-using-eigrp-in-a-subnetted-network)                     |
 | 004           | [Wireshark Basics: Analyzing HTTP Traffic](#4-wireshark-basics-analyzing-http-traffic)                                                                                                                   |
+| 005           | [Wireshark Basics: Traffic Flow and Capture Placement](#4-wireshark-basics-traffic-flow-and-capture-placement)                                                                                                                   |
 
 ---
 
@@ -80,6 +81,13 @@ Before implementing EIGRP, the two sites could not communicate due to the lack o
 
 ## 4) [Wireshark Basics: Analyzing HTTP Traffic](https://github.com/caxylive/Net_Projects/tree/main/projects/004%20-%20Wireshark%20Basics%20-%20Analyzing%20HTTP%20Traffic/README.md)
 This document outlines the process of capturing and analyzing HTTP traffic using Wireshark. The goal is to demonstrate the practical application of Wireshark for network traffic analysis and to reinforce key networking concepts.
+
+[Back to Top](#top)
+
+---
+
+## 5) [Wireshark Basics: Traffic Flow and Capture Placement](https://github.com/caxylive/Net_Projects/blob/main/projects/005%20-%20Wireshark%20Basics%20-%20Traffic%20Flow%20and%20Capture%20Placement/README.md)
+This document focuses on the importance of capture placement in network traffic analysis. The screenshots, diagrams, and the document as a whole demonstrates how traffic flow and switch behavior affect Wireshark captures, highlighting the need for strategic capture points.
 
 [Back to Top](#top)
 
