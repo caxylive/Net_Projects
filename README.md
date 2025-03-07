@@ -95,7 +95,7 @@ The focus will be on learning to capture, filter, and interpret network traffic 
   - Enhanced troubleshooting skills for diagnosing network issues.
   - Improved understanding of network security concepts through traffic analysis.
 
-Stay tuned for updates as this project progresses, where I will document the practical steps and findings from my Wireshark analysis sessions.
+**Stay tuned for updates as this project progresses, where I will document the practical steps and findings from my Wireshark analysis sessions.**
 
 [Back to Top](#top)
 
