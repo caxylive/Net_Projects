@@ -38,7 +38,7 @@ The same GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projec
     * This demonstrates that traffic is not flooded to all ports on a switch once the switch has learned the MAC addresses involved in the communication.
 3.  **DNS Traffic Capture:**
     * DNS queries from the PC to the router (DNS server) were captured successfully.
-    * This confirmed that the PC was using the router as its DNS server.
+    * This confirmed that the PC was using the router as its DNS server. In [Project 003](https://github.com/caxylive/Net_Projects/blob/main/projects/003%20-%20Inter-Site%20Connectivity%20Using%20EIGRP%20in%20a%20Subnetted%20Network/README.md), we configured routers to act as DHCP and DNS server for testing purposes.
     * The capture showed the DNS query and response, including the resolution of `gns3.com` to 10.1.1.100.
     * The use of UDP port 53 for DNS was observed.
 4.  **Switch MAC Address Table:**
