@@ -38,10 +38,11 @@ The same GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projec
     * This demonstrates that traffic is not flooded to all ports on a switch once the switch has learned the MAC addresses involved in the communication.
 3.  **DNS Traffic Capture:**
     * DNS queries from the PC to the router (DNS server) were captured successfully.
-    ![DNS Queries from PC to Router](screenshot/dns-query.png)
+    ![DNS Queries from PC to Router](screenshot/dns-query-pc-to-router.png)
+    ![DNS Response from Router to PC](screenshot/dns-response-router-to-pc.png)
     * This confirmed that the PC was using the router as its DNS server. 
     * The capture showed the DNS query and response, including the resolution of `gns3.com` to 10.1.1.100.
-    ![DNS Response from Router to PC](screenshot/dns-response.png)
+    
     * The use of UDP port 53 for DNS was observed which is a well known port for DNS. Note that Port 50786 is an Ephemeral Port.
 4.  **Switch MAC Address Table:**
     * The switch's MAC address table was examined to demonstrate how the switch learns and forwards traffic.
