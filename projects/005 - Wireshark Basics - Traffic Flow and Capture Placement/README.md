@@ -1,12 +1,28 @@
-# Wireshark Basics: Traffic Flow and Capture Placement (David Bombal - Part 2)
+<a name="top"></a>
+[Back to Main](https://github.com/caxylive/Net_Projects/tree/main/README.md)
+
+# Wireshark Basics: Traffic Flow and Capture Placement
+
+---
+
+Author: https://hardworking-lion-z4sd3b.mystrikingly.com/
+Contact: carl.xymon.verdejo@gmail.com
+
+---
 
 ## Objective
 
-This document summarizes David Bombal's "Wireshark Basics - Part 2" video, which focuses on the importance of capture placement in network traffic analysis. The video demonstrates how traffic flow and switch behavior affect Wireshark captures, highlighting the need for strategic capture points.
+This document focuses on the importance of capture placement in network traffic analysis. The screenshots, diagrams, and the document as a whole demonstrates how traffic flow and switch behavior affect Wireshark captures, highlighting the need for strategic capture points.
+
+---
 
 ## Scenario
 
 The same GNS3 topology from the previous video is used, consisting of a PC (10.1.1.1), a server (10.1.1.100), and a router (10.1.1.254) acting as a DNS and DHCP server, all connected via a layer 2 switch. The objective is to understand why capturing traffic at certain points in the network does not reveal all communication.
+
+[Back to Top](#top)
+
+---
 
 ## Analysis and Observations
 
@@ -32,6 +48,10 @@ The same GNS3 topology from the previous video is used, consisting of a PC (10.1
     * The router also acted as a DHCP server, dynamically allocating IP addresses to the PCs.
     * The configuration of the router was shown with `show run | include dns`, and `show interface gigabit 0/0` to show the IP and MAC address of the interface.
 
+[Back to Top](#top)
+
+---
+
 ## Key Takeaways
 
 * **Capture Placement Matters:** The location of the Wireshark capture is critical for capturing specific traffic flows.
@@ -40,6 +60,10 @@ The same GNS3 topology from the previous video is used, consisting of a PC (10.1
 * **Router Functionality:** Cisco routers can act as DNS and DHCP servers.
 * **Need for Mirroring/Taps:** To capture traffic between specific devices connected to a switch, port mirroring/spanning or network taps are necessary.
 
+[Back to Top](#top)
+
+---
+
 ## Technical Skills Reinforced
 
 * Understanding switch MAC address table behavior.
@@ -47,6 +71,12 @@ The same GNS3 topology from the previous video is used, consisting of a PC (10.1
 * Understanding the role of a router as a DNS and DHCP server.
 * Recognizing the importance of capture placement in network analysis.
 
+---
+
 ## Conclusion
 
 This video emphasized the importance of understanding network traffic flow and switch behavior when using Wireshark. It highlighted the need for strategic capture points and the limitations of capturing traffic at arbitrary locations. The next video will demonstrate how to use port mirroring to capture traffic between specific devices.
+
+[Back to Top](#top)
+
+---
