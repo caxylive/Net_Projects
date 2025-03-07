@@ -21,7 +21,7 @@ This repository serves as a collection of networking projects designed to enhanc
 
 ---
 
-## 1) [Subnetting, Network Configuration and Management](https://github.com/caxylive/Net_Projects/tree/main/projects/001%20-%20Subnetting%20Network%20Configuration%20and%20Management)
+## 1) [Subnetting, Network Configuration and Management](https://github.com/caxylive/Net_Projects/tree/main/projects/001%20-%20Subnetting%20Network%20Configuration%20and%20Management/README.md)
 This project focuses on subnetting an allocated network into smaller subnets to accommodate multiple network segments. I configured IP addressing, set up devices for internal communication, and enabled external network access. The goal was to design a scalable and well-organized network that supports efficient IP address allocation, reduces waste, and ensures seamless connectivity within and outside of subnets.
 
 **Tools Used**:
@@ -38,7 +38,7 @@ Key Challenges & Solutions:
 
 ---
 
-## 2) [Optimizing Network Subnetting and Configuration for Site Expansion](https://github.com/caxylive/Net_Projects/tree/main/projects/002%20-%20Optimizing%20Network%20Subnetting%20and%20Configuration%20for%20Site%20Expansion)
+## 2) [Optimizing Network Subnetting and Configuration for Site Expansion](https://github.com/caxylive/Net_Projects/tree/main/projects/002%20-%20Optimizing%20Network%20Subnetting%20and%20Configuration%20for%20Site%20Expansion/README.md)
 As organizations grow, their networks must expand to accommodate new devices and sites. This project optimizes a previous network design to add a new site while maintaining efficient IP address utilization. The focus is on adjusting network configurations to seamlessly integrate the new site, ensuring no connectivity issues arise while optimizing the use of IP addresses.
 
 **Tools Used**:
@@ -55,7 +55,7 @@ As organizations grow, their networks must expand to accommodate new devices and
 
 ---
 
-## 3) [Inter-Site Connectivity Using EIGRP in a Subnetted Network](https://github.com/caxylive/Net_Projects/tree/main/projects/003%20-%20Inter-Site%20Connectivity%20Using%20EIGRP%20in%20a%20Subnetted%20Network)
+## 3) [Inter-Site Connectivity Using EIGRP in a Subnetted Network](https://github.com/caxylive/Net_Projects/tree/main/projects/003%20-%20Inter-Site%20Connectivity%20Using%20EIGRP%20in%20a%20Subnetted%20Network/README.md)
 This project demonstrates the configuration of Enhanced Interior Gateway Routing Protocol (EIGRP) to establish dynamic routing between two geographically separate sites: San Francisco and New York. By implementing EIGRP, the previously isolated sites can communicate with one another efficiently.
 
 Before implementing EIGRP, the two sites could not communicate due to the lack of a routing protocol to propagate routing information between them. The goal of the project was to enable dynamic routing and facilitate seamless communication between sites, thus eliminating the need for manual static routing.
