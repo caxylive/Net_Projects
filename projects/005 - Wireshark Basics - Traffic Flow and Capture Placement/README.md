@@ -31,10 +31,10 @@ The same GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projec
 
 1.  **Capture Placement Impact:**
     * Links:
-       * [`1`] - between switch and PC
-       * [`2`] - between switch and server
-       * [`3`] - between switch and router
-    * Capturing traffic on the link [`3`] (rather than link [`1`] or link [`2`]) failed to capture HTTP traffic between the PC and server.
+       * [1] - between switch and PC
+       * [2] - between switch and server
+       * [3] - between switch and router
+    * Capturing traffic on the link [3] (rather than link [1] or link [2]) failed to capture HTTP traffic between the PC and server.
     * This demonstrates that traffic is not flooded to all ports on a switch once the switch has learned the MAC addresses involved in the communication.
 3.  **DNS Traffic Capture:**
     * DNS queries from the PC to the router (DNS server) were captured successfully.
