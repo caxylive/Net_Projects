@@ -19,7 +19,7 @@ This document focuses on the importance of capture placement in network traffic 
 
 ## Scenario
 
-The same GNS3 topology from the previous video is used, consisting of a PC (10.1.1.1), a server (10.1.1.100), and a router (10.1.1.254) acting as a DNS and DHCP server, all connected via a layer 2 switch. The objective is to understand why capturing traffic at certain points in the network does not reveal all communication.
+The same GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projects/tree/main/projects/004%20-%20Wireshark%20Basics%20-%20Analyzing%20HTTP%20Traffic/README.md) is used, consisting of a PC (10.1.1.1), a server (10.1.1.100), and a router (10.1.1.254) acting as a DNS and DHCP server, all connected via a layer 2 switch. The objective is to understand why capturing traffic at certain points in the network does not reveal all communication.
 
 ![Network Topology Overview](screenshot/topology.png)
 
@@ -30,7 +30,7 @@ The same GNS3 topology from the previous video is used, consisting of a PC (10.1
 ## Analysis and Observations
 
 1.  **Capture Placement Impact:**
-    * Capturing traffic on the link between the switch and the router (rather than between the switch and PC or switch and server) failed to capture HTTP traffic between the PC and server.
+    * Capturing traffic on the link (`3`) between the switch and the router (rather than between the switch and PC (`1`) or switch and server(`2`)) failed to capture HTTP traffic between the PC and server.
     * This demonstrates that traffic is not flooded to all ports on a switch once the switch has learned the MAC addresses involved in the communication.
 2.  **DNS Traffic Capture:**
     * DNS queries from the PC to the router (DNS server) were captured successfully.
