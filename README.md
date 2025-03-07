@@ -67,7 +67,7 @@ Before implementing EIGRP, the two sites could not communicate due to the lack o
 - **Tools**: Cisco Packet Tracer, Cisco IOS
 
 **Key Challenges & Solutions**:
-- **Challenge**: Ensuring that the EIGRP routing protocol correctly advertised subnet routes to both sites.
+- **Challenge**: Ensuring that routing protocol correctly advertised subnet routes to both sites.
   - **Solution**: Proper EIGRP configuration, including the assignment of an Autonomous System (AS) number and ensuring no automatic summarization of subnets using no auto-summary.
 - **Challenge**: Ensuring both sites could assign IPs dynamically to devices without IP conflicts.
   - **Solution**: Implemented a DHCP server on the New York router (R2) and configured static IPs on San Francisco devices, ensuring all IP assignments were correctly allocated.
