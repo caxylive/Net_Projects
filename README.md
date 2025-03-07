@@ -78,7 +78,7 @@ Before implementing EIGRP, the two sites could not communicate due to the lack o
 
 ---
 
-## 4) [Wireshark Network Analysis](https://github.com/caxylive/Net_Projects/tree/main/projects/004%20-%20Wireshark%20Network%20Analysis/README.md)(Coming Soon)
+## 4) [Wireshark Network Analysis](https://github.com/caxylive/Net_Projects/tree/main/projects/004%20-%20Wireshark%20Network%20Analysis/README.md)
 This project will delve into the practical application of Wireshark for network traffic analysis. Wireshark is a powerful tool used to capture and analyze network packets in real-time, providing invaluable insights into network behavior, troubleshooting issues, and enhancing security.
 
 The focus will be on learning to capture, filter, and interpret network traffic to understand protocol interactions, identify anomalies, and diagnose network problems. This project will cover various aspects of network analysis, including:
