@@ -18,7 +18,7 @@ This repository serves as a collection of networking projects designed to enhanc
 | 002           | [Optimizing Network Subnetting and Configuration for Site Expansion](#2-optimizing-network-subnetting-and-configuration-for-site-expansion)     |
 | 003           | [Inter-Site Connectivity Using EIGRP in a Subnetted Network](#3-inter-site-connectivity-using-eigrp-in-a-subnetted-network)                     |
 | 004           | [Wireshark Basics: Analyzing HTTP Traffic](#4-wireshark-basics-analyzing-http-traffic)                                                                                                                   |
-| 005           | [Wireshark Basics: Traffic Flow and Capture Placement](#4-wireshark-basics-traffic-flow-and-capture-placement)                                                                                                                   |
+| 005           | [Wireshark Basics: Traffic Flow and Capture Placement](#5-wireshark-basics-traffic-flow-and-capture-placement)                                                                                                                   |
 
 ---
 
