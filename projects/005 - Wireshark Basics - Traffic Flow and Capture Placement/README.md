@@ -21,6 +21,8 @@ This document focuses on the importance of capture placement in network traffic 
 
 The same GNS3 topology from the previous video is used, consisting of a PC (10.1.1.1), a server (10.1.1.100), and a router (10.1.1.254) acting as a DNS and DHCP server, all connected via a layer 2 switch. The objective is to understand why capturing traffic at certain points in the network does not reveal all communication.
 
+[Network Topology Overview](screenshot/topology.png)
+
 [Back to Top](#top)
 
 ---
