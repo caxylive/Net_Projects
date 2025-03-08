@@ -34,7 +34,7 @@ The GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projects/tr
 ## Analysis and Observations
 
 1.  **Initial Capture Failure:**
-    * Capturing traffic on the link between the switch and the router (as done in the previous video) still fails to capture HTTP traffic between the PC and server.
+    * Capturing traffic on Link [3] (as done in [Project 005](https://github.com/caxylive/Net_Projects/edit/main/projects/005%20-%20Wireshark%20Basics%20-%20Traffic%20Flow%20and%20Capture%20Placement/README.md)) still fails to capture HTTP traffic between the PC and server.
     * This reinforces the concept that switches do not flood traffic to all ports once MAC addresses are learned.
    ![No HTTP Traffic Captured](screenshot/no-http-traffic-captured.png)
 
