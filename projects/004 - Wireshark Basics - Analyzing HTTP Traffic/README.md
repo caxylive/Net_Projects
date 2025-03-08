@@ -1,6 +1,7 @@
 <a name="top"></a>
 [Back to Main](https://github.com/caxylive/Net_Projects/blob/main/README.md)
 
+# Wireshark Basics: Analyzing HTTP Traffic
 ---
 
 Author: [Carl Xymon Verdejo](https://hardworking-lion-z4sd3b.mystrikingly.com/)
@@ -26,9 +27,19 @@ A basic network topology was established using GNS3, consisting of a PC (10.1.1.
 
 ---
 
+## How to Capture Traffic?
+![Wireshark Interface Selection](screenshot/wireshark-interface-selection.png)
+
+---
+
+## Wireshark Basic Layout
+![Packet Detail Pane Structure](screenshot/wireshark-structure.png)
+
+---
+
 ## Capture and Analysis
 
-![Wireshark Structure](screenshot/wireshark-packet-detail-panel-structure.png)
+![Packet List and Packet Detail](screenshot/wireshark-packet-detail-panel-structure.png)
 
 1.  **Traffic Capture:**
     * Wireshark was initiated to capture traffic on the link between the PC and the switch.
