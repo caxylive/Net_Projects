@@ -28,7 +28,7 @@ A basic network topology was established using GNS3, consisting of a PC (10.1.1.
 
 ## Capture and Analysis
 
-![Wireshark Structure](screenshot/wireshark-packet-detail-panel.png)
+![Wireshark Structure](screenshot/wireshark-packet-detail-panel-structure.png)
 
 1.  **Traffic Capture:**
     * Wireshark was initiated to capture traffic on the link between the PC and the switch.
