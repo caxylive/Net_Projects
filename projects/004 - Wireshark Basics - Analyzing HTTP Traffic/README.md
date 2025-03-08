@@ -37,7 +37,7 @@ A basic network topology was established using GNS3, consisting of a PC (10.1.1.
 
 ---
 
-## Capture and Analysis
+## Capturing HTTP Traffic and Analysis
 
 ![Packet List and Packet Detail](screenshot/wireshark-packet-detail-panel-structure.png)
 
