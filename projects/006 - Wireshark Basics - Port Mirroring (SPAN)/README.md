@@ -47,13 +47,14 @@ The GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projects/tr
 
 1.  **Initial Capture Failure:**
     * Capturing traffic on Link [3] (as done in [Project 005](https://github.com/caxylive/Net_Projects/blob/main/projects/005%20-%20Wireshark%20Basics%20-%20Traffic%20Flow%20and%20Capture%20Placement/README.md)) still fails to capture HTTP traffic between the PC and server.
-    * This reinforces the concept that switches do not flood traffic to all ports once MAC addresses are learned.
+    * This is because, in the previous project, the switch have already learned the MAC addresses of PC1 and the server.
+    * And switches behave in such that they do not flood traffic to all ports once MAC addresses are learned.
    ![No HTTP Traffic Captured](screenshot/no-http-traffic-captured.png)
 
 ---
 
 2.  **Port Mirroring (SPAN) Configuration:**
-    * Port mirroring (SPAN) is configured on the switch to copy traffic from Link [1] to Link [4].
+    * **Switched Port Analyzer** (SPAN) is configured on the switch to copy traffic from Link [1] to Link [4].
     * The following commands are used:
         * `monitor session 1 source interface gigabit 0/0` 
         * `monitor session 1 destination interface gigabit 0/3`
@@ -61,14 +62,14 @@ The GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projects/tr
 
 **Notes**:
   
-   * **Switched Port Analyzer** (SPAN) is used to mirror traffic from one or more source ports or VLANs to a destination port for monitoring or analysis.
-   * The session number (1 in this case) is an identifier for the SPAN session, which allows you to configure and manage multiple SPAN sessions on the same device.
+   * **SPAN** is used to mirror traffic from one or more source ports or VLANs to a destination port for monitoring or analysis.
+   * The session number (`1` in this case) is an identifier for the SPAN session, which allows you to configure and manage multiple SPAN sessions on the same device.
    * Each session is configured independently with its own sources and destinations.
 
 ---
 
 3.  **Successful HTTP Traffic Capture:**
-    * After configuring port mirroring, HTTP traffic between the PC and server is successfully captured on the Ubuntu PC link.
+    * After configuring port mirroring, HTTP traffic between the PC and server is successfully captured on Link [4].
     * This demonstrates the effectiveness of port mirroring for capturing traffic between specific devices.
 
     ![HTTP Traffic Captured](screenshot/http-traffic-captured.png)
