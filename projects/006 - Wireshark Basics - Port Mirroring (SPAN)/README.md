@@ -79,6 +79,8 @@ The GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projects/tr
 4.  **Verification of SPAN Configuration:**
     * The `show monitor session 1` command is used to verify the SPAN configuration.
     * This command displays the source and destination interfaces, as well as the encapsulation type.
+    * Gig0/0 is pointing to PC1
+    * Gig0/3 is pointing to Ubuntu-1
   
     ![show monitor session 1](screenshot/show-monitor-session-1.png)
 
