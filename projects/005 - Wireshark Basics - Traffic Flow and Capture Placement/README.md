@@ -48,10 +48,14 @@ The same GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projec
     * The switch's MAC address table was examined to demonstrate how the switch learns and forwards traffic.
     * The switch learned the MAC addresses of the PC, server, and router on their respective ports.
     * Once the switch learned the MAC addresses of the PC and server, traffic was forwarded directly between them, not to other ports.
-5.  **Traffic Flow Explanation:**
-    * The switch's behavior of forwarding traffic directly between known MAC addresses was explained.
-    * This explained why HTTP traffic between the PC and server was not captured on the link between the switch and router.
-    * Traffic between the PC and server was directly switched, and did not traverse the link between the switch and the router.
+5.  **Traffic Flow Explanation: Switches Learn and Forward**
+    * When a device sends traffic to a switch, the switch records the device's MAC address and the port it came from in its MAC address table.
+    * Once the switch knows the MAC addresses of both the source and destination devices involved in a conversation, it forwards traffic directly between those two ports.
+    * The switch no longer floods the traffic out of all its other ports. This targeted forwarding is how switches improve network efficiency.
+    * Therefore, if you want to capture the traffic between two specific devices connected to a switch, you must capture it on the link directly between those devices, or use techniques like port mirroring/spanning or network taps to redirect the traffic to your capture device.
+    * Capturing traffic on a link that is not directly in the path of the conversation (i.e., Link [3]) will not show the traffic.
+    * This means that in Link [3], although DNS traffic was captured, **no HTTP traffic will be captured**. 
+    * Traffic between PC1 and server was directly switched, and did not traverse Link [3].
 6.  **Router as DNS/DHCP Server:**
     * The router was configured as a DNS server using `ip dns server`.
     * Static DNS entries were configured to resolve `gns3.com` to 10.1.1.100.
