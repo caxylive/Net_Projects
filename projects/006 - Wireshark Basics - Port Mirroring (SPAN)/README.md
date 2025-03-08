@@ -42,9 +42,9 @@ The GNS3 topology from the previous videos is used. An Ubuntu PC (Ubuntu-1) is a
 2.  **Port Mirroring (SPAN) Configuration:**
     * Port mirroring (SPAN) is configured on the switch to copy traffic from Link [1] to Link [4].
     * The following commands are used:
-        * `monitor session 1 source interface gigabit 0/0`
+        * `monitor session 1 source interface gigabit 0/0` 
         * `monitor session 1 destination interface gigabit 0/3`
-    * This configuration copies all traffic from gigabit 0/0 (PC-switch link) to gigabit 0/3 (Ubuntu PC link).
+    * This configuration copies all traffic from gigabit 0/0 (Link 1) to gigabit 0/3 (Link 4).
 
 **Notes**:
   
