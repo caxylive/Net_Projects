@@ -85,7 +85,7 @@ The GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projects/tr
    * "Native" encapsulation : the mirrored traffic sent to the destination port is transmitted in its original Ethernet format without any additional encapsulation.
       * This is the default setting on most Cisco devices for SPAN sessions.
       * The traffic appears exactly as it would if it were transmitted from its source interface.
-   * **ERSPAN** (Encapsulated Remote Switcheed Port Analyzer) : mirrored traffic is encapsulated in a **GRE** (Generic Routing Encapsulation) tunnel
+   * **ERSPAN** (Encapsulated Remote Switched Port Analyzer) : mirrored traffic is encapsulated in a **GRE** (Generic Routing Encapsulation) tunnel
       * This allows the traffic to be sent across Layer 3 networks to a remote monitoring device.
       * This is useful for analyzing traffic over a broader network range, beyong the local switch.
 
