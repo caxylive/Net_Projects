@@ -65,6 +65,8 @@ The GNS3 topology from the previous videos is used. An Ubuntu PC (Ubuntu-1) is a
 4.  **Verification of SPAN Configuration:**
     * The `show monitor session 1` command is used to verify the SPAN configuration.
     * This command displays the source and destination interfaces, as well as the encapsulation type.
+  
+    ![show monitor session 1](screenshot/show-monitor-session-1.png)
 
 ---
 
