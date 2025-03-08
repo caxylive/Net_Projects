@@ -57,7 +57,7 @@ The same GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projec
     * Static DNS entries were configured to resolve `gns3.com` to 10.1.1.100.
     * The router also acted as a DHCP server, dynamically allocating IP addresses to the PCs.
     * The configuration of the router was shown with `show run | include dns`, and `show interface gigabit 0/0` to show the IP and MAC address of the interface.
-    * I will not discuss how to configure routers here because in [Project 003](https://github.com/caxylive/Net_Projects/blob/main/projects/003%20-%20Inter-Site%20Connectivity%20Using%20EIGRP%20in%20a%20Subnetted%20Network/README.md), I already showed how to configured routers to act as DHCP and DNS servers (for testing purposes).
+    * For configuring routers to act as DNS and DHCP servers (for testing purpose), please refer to [Project 003](https://github.com/caxylive/Net_Projects/blob/main/projects/003%20-%20Inter-Site%20Connectivity%20Using%20EIGRP%20in%20a%20Subnetted%20Network/README.md).
 
 [Back to Top](#top)
 
