@@ -1,8 +1,8 @@
-# Wireshark Basics: Port Mirroring (SPAN) (David Bombal - Part 3)
+# Wireshark Basics: Port Mirroring (SPAN) 
 
 ## Objective
 
-This document summarizes David Bombal's "Wireshark Basics - Part 3" video, which demonstrates how to use port mirroring (SPAN) to capture traffic between specific devices in a switched network. The video highlights the limitations of capturing traffic at arbitrary locations and the necessity of port mirroring for comprehensive network analysis.
+This document demonstrates how to use port mirroring (SPAN) to capture traffic between specific devices in a switched network. The video highlights the limitations of capturing traffic at arbitrary locations and the necessity of port mirroring for comprehensive network analysis.
 
 ## Scenario
 
@@ -14,7 +14,7 @@ The GNS3 topology from the previous videos is used. An Ubuntu PC is added to the
     * Capturing traffic on the link between the switch and the router (as done in the previous video) still fails to capture HTTP traffic between the PC and server.
     * This reinforces the concept that switches do not flood traffic to all ports once MAC addresses are learned.
 2.  **Port Mirroring (SPAN) Configuration:**
-    * Port mirroring (SPAN) is configured on the switch to copy traffic from the PC-switch link to the Ubuntu PC link.
+    * Port mirroring (SPAN) is configured on the switch to copy traffic from Link [1] to Link [4].
     * The following commands are used:
         * `monitor session 1 source interface gigabit 0/0`
         * `monitor session 1 destination interface gigabit 0/3`
@@ -56,4 +56,4 @@ The GNS3 topology from the previous videos is used. An Ubuntu PC is added to the
 
 ## Conclusion
 
-This video demonstrated the practical application of port mirroring for capturing traffic between specific devices in a switched network. It reinforced the importance of capture placement and highlighted the limitations of capturing traffic at arbitrary locations. Port mirroring is a valuable tool for network analysis and troubleshooting.
+This project demonstrated the practical application of port mirroring for capturing traffic between specific devices in a switched network. It reinforced the importance of capture placement and highlighted the limitations of capturing traffic at arbitrary locations. Port mirroring is a valuable tool for network analysis and troubleshooting.
