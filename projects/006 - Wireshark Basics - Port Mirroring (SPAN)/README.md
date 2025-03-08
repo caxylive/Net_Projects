@@ -1,14 +1,35 @@
+<a name="top"></a>
+[Back to Main](https://github.com/caxylive/Net_Projects/tree/main/README.md)
+
+---
+
 # Wireshark Basics: Port Mirroring (SPAN) 
+
+---
+
+Author: [Carl Xymon Verdejo](https://hardworking-lion-z4sd3b.mystrikingly.com/)
+
+Contact: carl.xymon.verdejo@gmail.com
+
+---
 
 ## Objective
 
 This document demonstrates how to use port mirroring (SPAN) to capture traffic between specific devices in a switched network. The video highlights the limitations of capturing traffic at arbitrary locations and the necessity of port mirroring for comprehensive network analysis.
+
+[Back to Top](#top)
+
+---
 
 ## Scenario
 
 The GNS3 topology from the previous videos is used. An Ubuntu PC (Ubuntu-1) is added to the topology to simulate a monitoring station. The goal is to capture HTTP traffic between the PC and server by using port mirroring.
 
 ![Updated Network Topology](screenshot/topology.png)
+
+[Back to Top](#top)
+
+---
 
 ## Analysis and Observations
 
@@ -21,6 +42,12 @@ The GNS3 topology from the previous videos is used. An Ubuntu PC (Ubuntu-1) is a
         * `monitor session 1 source interface gigabit 0/0`
         * `monitor session 1 destination interface gigabit 0/3`
     * This configuration copies all traffic from gigabit 0/0 (PC-switch link) to gigabit 0/3 (Ubuntu PC link).
+
+  Notes:
+    * **Switched Port Analyzer** (SPAN) is used to mirror traffic from one or more source ports or VLANs to a destination port for monitoring or analysis.
+    * The session number (1 in this case) is an identifier for the SPAN session, which allows you to configure and manage multiple SPAN sessions on the same device.
+    * Each session is configured independently with its own sources and destinations.
+    
 3.  **Successful HTTP Traffic Capture:**
     * After configuring port mirroring, HTTP traffic between the PC and server is successfully captured on the Ubuntu PC link.
     * This demonstrates the effectiveness of port mirroring for capturing traffic between specific devices.
@@ -40,6 +67,10 @@ The GNS3 topology from the previous videos is used. An Ubuntu PC (Ubuntu-1) is a
     * The potential overhead and traffic volume associated with remote SPAN are discussed.
     * Capturing traffic locally is recommended whenever possible.
 
+[Back to Top](#top)
+
+---
+
 ## Key Takeaways
 
 * **Port Mirroring (SPAN):** Port mirroring allows copying traffic from one or more interfaces to a destination interface for monitoring purposes.
@@ -47,6 +78,10 @@ The GNS3 topology from the previous videos is used. An Ubuntu PC (Ubuntu-1) is a
 * **Switch Behavior:** Switches forward traffic directly between known MAC addresses, not flooding to all ports.
 * **Monitoring Station:** Port mirroring allows a monitoring station to capture traffic between specific devices.
 * **Remote SPAN:** Remote SPAN allows capturing remote traffic, but it adds overhead.
+
+[Back to Top](#top)
+
+---
 
 ## Technical Skills Reinforced
 
@@ -56,6 +91,14 @@ The GNS3 topology from the previous videos is used. An Ubuntu PC (Ubuntu-1) is a
 * Understanding the importance of capture placement.
 * Understanding the role of a monitoring station.
 
+[Back to Top](#top)
+
+---
+
 ## Conclusion
 
 This project demonstrated the practical application of port mirroring for capturing traffic between specific devices in a switched network. It reinforced the importance of capture placement and highlighted the limitations of capturing traffic at arbitrary locations. Port mirroring is a valuable tool for network analysis and troubleshooting.
+
+[Back to Top](#top)
+
+---
