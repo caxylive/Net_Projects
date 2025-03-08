@@ -80,7 +80,7 @@ The GNS3 topology from the previous videos is used. An Ubuntu PC (Ubuntu-1) is a
 
 ---
 
-6.  **Remote SPAN and Overhead:**
+7.  **Remote SPAN and Overhead:**
     * The video mentions remote SPAN, which allows copying traffic through a tunnel to a remote monitoring station.
     * The potential overhead and traffic volume associated with remote SPAN are discussed.
     * Capturing traffic locally is recommended whenever possible.
