@@ -8,14 +8,14 @@
 
 ## **1. Project Overview**
 ### Background
-You have been allocated subnet 192.168.1.0/24 and is tasked to subdivide it into four networks.
+You have been assigned subnet 192.168.1.0/24 and is tasked to subdivide it into four networks.
 
 ---
 
 ### Network Topology:
 - Each LAN in this network topology is connected to a switch, specifically a **3650-24PS model**, which facilitates communication among the devices within that network segment. 
 - The routers, **ISR4321 models**, act as gateways between the LANs and the broader network, handling inter-subnet routing and external connectivity. 
-- Both routers, **Routr1 (R1)** and **Router2 (R2)**, use **GigabitEthernet interfaces** for their LAN connections and **Serial interfaces** for their WAN links to the Internet Router. 
+- Both routers, **Router (R1)** and **Router2 (R2)**, use **GigabitEthernet interfaces** for their LAN connections and **Serial interfaces** for their WAN links to the Internet Router. 
 - The Internet Router (**IntRouter**), also an **ISR4321**, connects to both **Site 1** and **Site 2** via serial links and extends connectivity to the Internet via its **GigabitEthernet 0/0/1 interface**, which has **DHCP** enabled.
 
 ![Figure 1: Network Topology](screenshot/network_topology-initial.png)
@@ -24,8 +24,8 @@ You have been allocated subnet 192.168.1.0/24 and is tasked to subdivide it into
 
 ### Objectives
   - Design and configure a small-scale network with multiple subnets and internet connectivity. The allocated IP address range of **192.168.1.0/24** needs to be divided into four subnets:
-      - **Subnet_1**: assigned to **Site_1**, which consists of multiple PCs, a server (Server1), a switch, and a **R1**.
-      - **Subnet_2**: serves as a point-to-point link between **R1** and **IntRouter**, enabling communication between **Site_1** and **external networks**.
+      - **Subnet_1**: assigned to **Site_1**, which consists of multiple PCs, a server (Server1), a switch, and a router (R1).
+      - **Subnet_2**: serves as a **point-to-point link** between R1 and IntRouter enabling communication between Site_1 and external networks.
       - **Subnet_3**: assigned to **Site_2**, contains another set of PCs, a server (Server2), a switch (S2), and **R2**.
       - **Subnet_4**: serves as a point-to-point link between **R2** and **IntRouter**, ensuring connectivity for **Site_2**.
   - Configure Routers with the **Last IP Address** in the Subnet
@@ -42,13 +42,15 @@ You have been allocated subnet 192.168.1.0/24 and is tasked to subdivide it into
 
 ## **2. Network Design**
 ### Subnetting Calculations
-Before configuring the devices, it is recommended to properly calculate and tabulate the IP Address of each devices. There will be a lot of **dynamic and static IP addresseses** on this network (much more so in the real world!) and one might easily misconfigure a device without proper documentation.
+Before configuring the devices, it is recommended to properly calculate and tabulate the IP Address of each devices. There will be a lot of **dynamic and static IP addresseses** on this network (much more so in the real world!) and it is easy to misconfigure a device without proper documentation.
 
-The table below shows the relationships between IP addresses and interfaces for each device on their respective subnets. It also shows how the binary format of each IP address looks like to easily understand which is the **Network Portion** and **Host Portion** of the each address.
+The table below shows the relationships between IP addresses and interfaces for each device on their respective subnets. It also shows how the binary format of each IP address looks like to easily understand which is the **Network Portion** and **Host Portion** of each address.
+
 ![Figure 2: Subnetting Excel Spreadsheet](screenshot/subnetting_details.png)
 
 ### Network Topology After Subnetting
-This is how the network topology looks like after populating with labels according our the subnetting table. This way, it is easier to visualize the network and configure the devices.
+This is how the network topology looks like after populating with labels according the subnetting table. This way, it is easier to visualize the network and configure the devices.
+
 ![Figure 3: Network Topology Populated](screenshot/network_topology-final.png)
 
 [Back to Top](#top)
