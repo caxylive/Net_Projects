@@ -74,7 +74,7 @@ The GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projects/tr
     * The captured HTTP traffic is analyzed in Wireshark.
     * The source and destination MAC addresses, IP addresses, and port numbers are examined.
     * The HTTP requests and responses, including the HTML content and PNG file, are observed.
-    * The concept of the browser caching data is shown, and how a private browsing session can force new requests.
+    ![Wireshark HTTP Traffic Analysis](screenshot/wireshark-http-analysis.png)
 
 ---
 
