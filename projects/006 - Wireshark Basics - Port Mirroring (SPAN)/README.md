@@ -36,6 +36,9 @@ The GNS3 topology from the previous videos is used. An Ubuntu PC (Ubuntu-1) is a
 1.  **Initial Capture Failure:**
     * Capturing traffic on the link between the switch and the router (as done in the previous video) still fails to capture HTTP traffic between the PC and server.
     * This reinforces the concept that switches do not flood traffic to all ports once MAC addresses are learned.
+
+---
+
 2.  **Port Mirroring (SPAN) Configuration:**
     * Port mirroring (SPAN) is configured on the switch to copy traffic from Link [1] to Link [4].
     * The following commands are used:
@@ -43,25 +46,40 @@ The GNS3 topology from the previous videos is used. An Ubuntu PC (Ubuntu-1) is a
         * `monitor session 1 destination interface gigabit 0/3`
     * This configuration copies all traffic from gigabit 0/0 (PC-switch link) to gigabit 0/3 (Ubuntu PC link).
 
-  Notes:
-    * **Switched Port Analyzer** (SPAN) is used to mirror traffic from one or more source ports or VLANs to a destination port for monitoring or analysis.
-    * The session number (1 in this case) is an identifier for the SPAN session, which allows you to configure and manage multiple SPAN sessions on the same device.
-    * Each session is configured independently with its own sources and destinations.
-    
+**Notes**:
+  
+   * **Switched Port Analyzer** (SPAN) is used to mirror traffic from one or more source ports or VLANs to a destination port for monitoring or analysis.
+   * The session number (1 in this case) is an identifier for the SPAN session, which allows you to configure and manage multiple SPAN sessions on the same device.
+   * Each session is configured independently with its own sources and destinations.
+
+---
+
 3.  **Successful HTTP Traffic Capture:**
     * After configuring port mirroring, HTTP traffic between the PC and server is successfully captured on the Ubuntu PC link.
     * This demonstrates the effectiveness of port mirroring for capturing traffic between specific devices.
+
+---
+
 4.  **Verification of SPAN Configuration:**
     * The `show monitor session 1` command is used to verify the SPAN configuration.
     * This command displays the source and destination interfaces, as well as the encapsulation type.
+
+---
+
 5.  **HTTP Traffic Analysis:**
     * The captured HTTP traffic is analyzed in Wireshark.
     * The source and destination MAC addresses, IP addresses, and port numbers are examined.
     * The HTTP requests and responses, including the HTML content and PNG file, are observed.
     * The concept of the browser caching data is shown, and how a private browsing session can force new requests.
+
+---
+
 6.  **Importance of Capture Placement:**
     * The video reiterates the importance of capture placement and the limitations of capturing traffic at arbitrary locations.
     * The necessity of using port mirroring or other techniques to capture traffic between specific devices is emphasized.
+
+---
+
 6.  **Remote SPAN and Overhead:**
     * The video mentions remote SPAN, which allows copying traffic through a tunnel to a remote monitoring station.
     * The potential overhead and traffic volume associated with remote SPAN are discussed.
