@@ -47,7 +47,9 @@ The same GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projec
 4.  **Switch MAC Address Table:**
     * The switch's MAC address table was examined to demonstrate how the switch learns and forwards traffic.
     * The switch learned the MAC addresses of the PC, server, and router on their respective ports.
+    ![Switch MAC Address Table](screenshot/switch-mac-address-table.png)
     * Once the switch learned the MAC addresses of the PC and server, traffic was forwarded directly between them, not to other ports.
+    ![No HTTP Traffic Captured](screenshot/no-http-traffic-captured.png)
 5.  **Traffic Flow Explanation: Switches Learn and Forward**
     * When a device sends traffic to a switch, the switch records the device's MAC address and the port it came from in its MAC address table.
     * Once the switch knows the MAC addresses of both the source and destination devices involved in a conversation, it forwards traffic directly between those two ports.
