@@ -87,7 +87,27 @@ This document outlines the process of capturing and analyzing HTTP traffic using
 ---
 
 ## 5) [Wireshark Basics: Traffic Flow and Capture Placement](https://github.com/caxylive/Net_Projects/blob/main/projects/005%20-%20Wireshark%20Basics%20-%20Traffic%20Flow%20and%20Capture%20Placement/README.md)
-This document focuses on the importance of capture placement in network traffic analysis. The screenshots, diagrams, and the document as a whole demonstrates how traffic flow and switch behavior affect Wireshark captures, highlighting the need for strategic capture points.
+This project explores the critical role of capture placement in network traffic analysis. By analyzing a network with a switch, router, and multiple devices, it demonstrates how switch behavior and traffic flow impact Wireshark captures. The project highlights the need for strategic capture points to effectively monitor network communication and diagnose potential issues.
+
+Key Points:
+* The impact of capturing on different links within the network.
+* How a switch's MAC address learning affects traffic forwarding.
+* The use of DNS and DHCP services provided by a router.
+* The need for techniques like port mirroring or network taps to capture specific traffic.
+
+[Back to Top](#top)
+
+---
+
+## 6) [Wireshark Basics: Port Mirroring (SPAN)](https://github.com/caxylive/Net_Projects/blob/main/projects/006%20-%20Wireshark%20Basics%20-%20Port%20Mirroring%20(SPAN)/README.md)
+This project demonstrates the use of port mirroring (SPAN) to capture network traffic between specific devices on a switched network. Building on previous Wireshark projects, it shows how to configure SPAN on a Cisco switch to effectively monitor communications that would otherwise be invisible to a traditional Wireshark capture. The project highlights the importance of SPAN for comprehensive network analysis and troubleshooting.
+
+Key Points:
+* The limitations of capturing traffic on arbitrary switch ports.
+* Configuration of SPAN on a Cisco switch.
+* Successful capture and analysis of HTTP traffic using SPAN.
+* The concept of a dedicated monitoring station.
+* Discussion of Remote SPAN (RSPAN) and its potential overhead.
 
 [Back to Top](#top)
 
