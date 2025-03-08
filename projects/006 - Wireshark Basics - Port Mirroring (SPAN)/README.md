@@ -6,7 +6,7 @@ This document demonstrates how to use port mirroring (SPAN) to capture traffic b
 
 ## Scenario
 
-The GNS3 topology from the previous videos is used. An Ubuntu PC is added to the topology to simulate a monitoring station. The goal is to capture HTTP traffic between the PC and server by using port mirroring.
+The GNS3 topology from the previous videos is used. An Ubuntu PC (Ubuntu-1) is added to the topology to simulate a monitoring station. The goal is to capture HTTP traffic between the PC and server by using port mirroring.
 
 ## Analysis and Observations
 
