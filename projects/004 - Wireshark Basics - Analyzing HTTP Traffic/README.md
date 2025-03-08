@@ -30,10 +30,14 @@ A basic network topology was established using GNS3, consisting of a PC (10.1.1.
 ## How to Capture Traffic?
 ![Wireshark Interface Selection](screenshot/wireshark-interface-selection.png)
 
+[Back to Top](#top)
+
 ---
 
 ## Wireshark Basic Layout
 ![Packet Detail Pane Structure](screenshot/wireshark-structure.png)
+
+[Back to Top](#top)
 
 ---
 
