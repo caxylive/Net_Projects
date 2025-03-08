@@ -13,6 +13,18 @@ Contact: carl.xymon.verdejo@gmail.com
 
 ---
 
+# Table of Contents
+
+1.  [Objective](#objective)
+2.  [Scenario](#scenario)
+3.  [Analysis and Observations](#analysis-and-observations)
+4.  [Key Takeaways](#key-takeaways)
+5.  [Technical Skills Reinforced](#technical-skills-reinforced)
+6.  [Conclusion](#conclusion)
+7.  [Sources](#sources)
+
+---
+
 ## Objective
 
 This document demonstrates how to use port mirroring (SPAN) to capture traffic between specific devices in a switched network. The video highlights the limitations of capturing traffic at arbitrary locations and the necessity of port mirroring for comprehensive network analysis.
