@@ -36,6 +36,7 @@ The GNS3 topology from the previous videos is used. An Ubuntu PC (Ubuntu-1) is a
 1.  **Initial Capture Failure:**
     * Capturing traffic on the link between the switch and the router (as done in the previous video) still fails to capture HTTP traffic between the PC and server.
     * This reinforces the concept that switches do not flood traffic to all ports once MAC addresses are learned.
+   ![No HTTP Traffic Captured](screenshot/no-http-traffic-captured.png)
 
 ---
 
@@ -57,6 +58,7 @@ The GNS3 topology from the previous videos is used. An Ubuntu PC (Ubuntu-1) is a
 3.  **Successful HTTP Traffic Capture:**
     * After configuring port mirroring, HTTP traffic between the PC and server is successfully captured on the Ubuntu PC link.
     * This demonstrates the effectiveness of port mirroring for capturing traffic between specific devices.
+    ![HTTP Traffic Captured](screenshot/http-traffic-captured.png)
 
 ---
 
