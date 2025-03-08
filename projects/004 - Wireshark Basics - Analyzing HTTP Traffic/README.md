@@ -95,12 +95,7 @@ A basic network topology was established using GNS3, consisting of a PC (10.1.1.
 
 * Wireshark traffic capture and filtering.
 * OSI model layer analysis.
-   * Layer 2 - Data Link
-   * Layer 3 - Network Layer
-   * Layer 4 - Transport Layer
-   * Layer 5 - Session Layer
-   * Layer 6 - Presentation Layer
-   * Layer 7 - Application Layer
+![OSI Model & TCP/IP Model](screenshot/osi-model.png)
 * Protocol analysis (Ethernet, IP, TCP, HTTP).
 * Data extraction from network traffic.
 * Understanding of layer 2 switching and layer 3 routing behavior.
