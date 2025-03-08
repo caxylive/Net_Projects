@@ -139,6 +139,30 @@ The GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projects/tr
 
 ---
 
+8. **Why Capture Locally?**
+
+   Capturing traffic locally is generally recommended for the following reasons:
+
+   1. **Efficiency**:
+
+     * Reduced Overhead:
+       * Local capture minimizes network traffic and overhead on switches.
+       * It avoids the need to send mirrored traffic across the network.
+
+     * Improved Performance:
+       * Local capture doesn't consume valuable bandwidth or add overhead to network devices, which helps maintain optimal network performance.
+
+     * Simplified Troubleshooting:
+       * Local capture makes it easier to troubleshoot network issues, as you can quickly capture and analyze traffic without having to deal with the complexities of remote capture.
+
+   2. **Accuracy**:
+     * Local capture provides a more accurate representation of the traffic flow, as it avoids potential latency and packet loss associated with remote capture.
+
+   3. **Security**:
+     * Local captures reduce the risk of sensitive data traversing the network.
+
+---
+
 ## Key Takeaways
 
 * **Port Mirroring (SPAN):** Port mirroring allows copying traffic from one or more interfaces to a destination interface for monitoring purposes.
