@@ -87,7 +87,7 @@ The `192.168.1.0/24` address space was subdivided as follows:
 ### **New York Router (R2)**
 #### **DHCP and DNS Configuration**
 
-While devices in San Francisco will be assigned Static IPs, DHCP will be implemented for clients in New York R2.
+While devices in San Francisco were assigned Static IPs, DHCP was implemented for clients in New York R2.
 
 | Description                                                |     Command (R1)   | Command (R2)                                           |
 |------------------------------------------------------------|:------------------:|--------------------------------------------------------|
@@ -102,7 +102,7 @@ While devices in San Francisco will be assigned Static IPs, DHCP will be impleme
 ![R2 DHCP and DNS Configuration](screenshot/r2-show-run.png)  
 *DHCP pool setup and DNS configuration on R2.*
 
-**Note**:
+**Notes**:
 -  **DHCP Pool** enables the DHCP server to automatically assign IP addresseses based on this "pool" of addresses, reducing the workload and minimizing errors.
 -  By excluding IP addresses (`ip dhcp excluded-address 192.168.1.125 192.168.1.127`), DHCP clients avoid getting assigned IP addresses of R2, S2, and broadcast IP.
 - Use `default-gateway` on a router if the router is acting as a switch and its IP routing function is disabled.
@@ -144,7 +144,7 @@ We should be able to verify the configuration with `show ip interface brief`:
 ![EIGRP Configuration on R2](screenshot/r2-eigrp.png)  
 *EIGRP setup for the San Fransisco and New York subnet (AS 100).*
 
-**Note**:
+**Notes**:
 - The Autonomous System (AS) number in the `router eigrp 100` command ensures that the EIGRP process is uniquely identified and allows for controlled exchange or routing information within the specified routing domain.
 - By default, EIGRP autonatically summarizes routes at classful nework boundaries. This means EIGRP will summarize and advertise only the classful network address, potentially leading to inaccuracies in routing.
 - For example, EIGRP might summarize and advertise subnets within the `192.168.1.0/24` network (such as `192.168.1.0/26` and `192.168.1.64/26`) as `192.168.1.0/24` → leading to incorrect routing.
