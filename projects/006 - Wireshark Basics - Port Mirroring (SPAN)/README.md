@@ -23,7 +23,7 @@ This document demonstrates how to use port mirroring (SPAN) to capture traffic b
 
 ## Scenario
 
-The GNS3 topology from the previous videos is used. An Ubuntu PC (Ubuntu-1) is added to the topology to simulate a monitoring station. The goal is to capture HTTP traffic between the PC and server by using port mirroring.
+The GNS3 topology from [Project 004](https://github.com/caxylive/Net_Projects/tree/main/projects/004%20-%20Wireshark%20Basics%20-%20Analyzing%20HTTP%20Traffic/README.md) and [Project 005](https://github.com/caxylive/Net_Projects/edit/main/projects/005%20-%20Wireshark%20Basics%20-%20Traffic%20Flow%20and%20Capture%20Placement/README.md) is used. An Ubuntu PC (Ubuntu-1) is added to the topology to simulate a monitoring station. The goal is to capture HTTP traffic between the PC and server by using port mirroring.
 
 ![Updated Network Topology](screenshot/topology.png)
 
