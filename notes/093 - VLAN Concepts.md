@@ -6,14 +6,14 @@
 ---
 
 ## Introduction
-VLANs (Virtual Local Area Networks) are a fundamental concept in networking that allow network segmentation without requiring separate physical infrastructure. This document provides an overview of VLAN concepts, their benefits, and their use cases.
+VLANs (Virtual Local Area Networks) are a fundamental concept in networking that allow **network segmentation** without requiring separate physical infrastructure. This document provides an overview of VLAN concepts, their benefits, and their use cases.
 
 [Back to Top](#top)
 
 ---
 
 ## What is a VLAN?
-A VLAN is a logical grouping of devices within a network, allowing them to communicate as if they were on the same physical network, even if they are not. VLANs are implemented at the data link layer (Layer 2) of the OSI model.
+A VLAN is a **logical grouping** of devices within a network, allowing them to communicate as if they were on the same physical network, even if they are not. VLANs are implemented at the **data link layer (Layer 2)** of the OSI model.
 
 [Back to Top](#top)
 
