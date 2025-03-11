@@ -93,7 +93,8 @@ Red VLAN and Green VLAN will need a Layer 3 device (i.e., Router) to communicate
 |                   |                   |       (4 bytes)      |  Information         |                    |                 |
 +-------------------+-------------------+----------+-----------+----------------------+--------------------+-----------------+
 ```
-
+1 byte   =  8 bits
+4 bytes  = 32 bits
 ```
 +----------+---------+---------+-----------+
 |  TPID    |  PRI    |  CFI    | VLAN ID   |
