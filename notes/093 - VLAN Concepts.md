@@ -20,10 +20,30 @@ A VLAN is a **logical grouping** of devices within a network, allowing them to c
 ---
 
 ## Benefits of VLANs
-- **Network Segmentation**: Reduces broadcast traffic and enhances performance.
-- **Security**: Isolates traffic between groups to prevent unauthorized access.
-- **Flexibility**: Devices can be grouped based on function rather than physical location.
-- **Better Traffic Management**: VLANs help reduce congestion by segmenting network traffic.
+* **Network Segmentation**
+  * Reduces broadcast traffic and enhances performance.
+  * Can separate users based on function (e.g., Sales &#8594; VLAN1 , Marketing &#8594; VLAN2).
+
+* **Security**
+  * Isolates traffic between groups to prevent unauthorized access.
+  * Users have to traverse a Layer 3 device (e.g., Router) to get from one VLAN to another.
+
+* **Flexibility**
+  * Devices can be grouped based on function rather than physical location.
+  * Move users from one VLAN to another without changing physical cabling.
+
+* **Better Traffic Management**
+  * VLANs help reduce congestion by segmenting network traffic.
+  * Separate VLANs for IP Phones provides better QoS (Quality of Service).
+
+[Back to Top](#top)
+
+---
+
+## Physical vs Logical Topology
+
+![Physical Topology](physical-topology.png)
+![Logical Topology](logical-topology.png)
 
 [Back to Top](#top)
 
