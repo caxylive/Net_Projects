@@ -48,6 +48,8 @@ A VLAN is a **logical grouping** of devices within a network, allowing them to c
 ![Logical Topology](screenshot/logical-topology.png)
 Red VLAN and Green VLAN will need a Layer 3 device (i.e., Router) to communicate with each other.
 
+---
+
 ### Physical Topology with Trunk
 ![Physical Layout of Two Switches with Trunk](screenshot/trunk-physical.png)
 
