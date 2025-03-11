@@ -103,6 +103,25 @@ Red VLAN and Green VLAN will need a Layer 3 device (i.e., Router) to communicate
 +----------+---------+---------+-----------+
 ```
 
+### Notes:
+* TPID (Tag Protocol Identifier)
+  * 0x8100
+  * Allows switches and devices to distinguish an 802.1Q fram from untagged frames.
+
+* PRI = Priority Code Point
+  * Prioritize certain traffic over others
+  * Used heavility in QoS
+  * 5 = Voice
+
+* CFI (Canonical Format Identifier)
+  * Used in the old days for compatibility between ethernet and token-ring networks.
+  * Unlikely to be used today.
+
+* VLAN ID
+  * 0 = does not belong to any VLAN.
+  * Allows switches to communicate VLAN number with each other.
+  * 12 bits = 4096 VLANs
+
 
 [Back to Top](#top)
 
