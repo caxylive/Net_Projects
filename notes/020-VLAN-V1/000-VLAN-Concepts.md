@@ -46,6 +46,7 @@ A VLAN is a **logical grouping** of devices within a network, allowing them to c
 
 ### Logical Topology
 ![Logical Topology](screenshot/logical-topology.png)
+Red VLAN and Green VLAN will need a Layer 3 device (i.e., Router) to communicate with each other.
 
 [Back to Top](#top)
 
@@ -64,8 +65,9 @@ A VLAN is a **logical grouping** of devices within a network, allowing them to c
 
 ## VLAN Tagging
 - VLANs use tagging to identify traffic belonging to specific VLANs.
-- **802.1Q** is the most common tagging protocol.
+- **802.1Q** is the most common tagging protocol - this is the industry standard.
 - Switches use VLAN IDs (VID) to distinguish between VLANs.
+- **ISL** (Inter-Switch Link) is a Cisco-proprietary protocol - rarely used today.
 
 [Back to Top](#top)
 
