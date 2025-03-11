@@ -77,6 +77,24 @@ Red VLAN and Green VLAN will need a Layer 3 device (i.e., Router) to communicate
 - Switches use VLAN IDs (VID) to distinguish between VLANs.
 - **ISL** (Inter-Switch Link) is a Cisco-proprietary protocol - rarely used today.
 
+### Standard Ethernet Frame
+
+```
++-------------------+----------------+----------------------+----------------+-----------------+
+|  Destination MAC  |  Source MAC    |  EtherType/Length    |     Payload    |     FCS         |
+|  Address (6 bytes)|  Address (6 bytes)|  (2 bytes)          |   (46-1500 bytes)  |  (4 bytes)     |
++-------------------+----------------+----------------------+----------------+-----------------+
+```
+
+### 802.1Q Frame
+```
++-------------------+----------------+---------+----------+----------------------+----------------+-----------------+
+|  Destination MAC  |  Source MAC    |  802.1Q | VLAN Tag |  EtherType/Length    |     Payload    |     FCS         |
+|  Address (6 bytes)|  Address (6 bytes)|  Tag  |  Control |  (2 bytes)           | (46-1500 bytes)|  (4 bytes)      |
+|                   |                  | (4 bytes)          |  Information         |                |                 |
++-------------------+----------------+---------+----------+----------------------+----------------+-----------------+
+```
+
 [Back to Top](#top)
 
 ---
