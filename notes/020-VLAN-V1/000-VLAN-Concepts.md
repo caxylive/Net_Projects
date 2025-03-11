@@ -61,11 +61,40 @@ Red VLAN and Green VLAN will need a Layer 3 device (i.e., Router) to communicate
 ---
 
 ## Types of VLANs
-1. **Default VLAN**: The initial VLAN present on a switch (usually VLAN 1).
-2. **Data VLAN**: Used for carrying user-generated traffic.
-3. **Voice VLAN**: Dedicated for VoIP traffic to ensure Quality of Service (QoS).
-4. **Management VLAN**: Used for network management traffic.
-5. **Native VLAN**: The VLAN assigned to untagged frames.
+1. **Default VLAN**
+   * The initial VLAN present on a switch (usually VLAN 1).
+
+2. **Data VLAN**
+   * Used for carrying user-generated traffic.
+
+3. **Voice VLAN**
+   * Dedicated for VoIP traffic to ensure Quality of Service (QoS).
+
+4. **Management VLAN**
+   * Used for network management traffic.
+
+5. **Native VLAN**
+   * The VLAN assigned to untagged frames.
+
+   * Always use Native VLAN:
+     * **STP BPDU** (Spanning Tree Protocol Bridge Protocol Data Unit)
+     * **DTP** (Dynamic Trunking Protocol) always use native VLAN
+       * Lets switches negotiate to set up a trunk between themselves automatically
+
+   * Always use VLAN1, tagged if native VLAN not VLAN1
+     * CDP (Cisco Discovery Protocol)
+       * Collects directly connected neighbor device information 
+
+     * VTP (VLAN Trunking Protocol)
+       * Dynamically update other switches with changes made on a single switch in a VTP domain.
+
+     * PAgP (Port Aggregation Protocol)
+       * Automatic creation of Ether channels
+
+     * UDLD (Unidirectional Link Detection)
+       * Monitor physical configuration of cables between devices and detect unidirectional links.
+       * Detect incorrectly cabled links
+
 
 [Back to Top](#top)
 
@@ -143,4 +172,7 @@ Understanding VLANs is crucial for network engineers and administrators. They pr
 [Back to Top](#top)
 
 ---
+
+## Resources:
+1) [Cisco Learning Network](https://learningnetwork.cisco.com/s/article/cisco-discovery-protocol-cdp-x)
 
