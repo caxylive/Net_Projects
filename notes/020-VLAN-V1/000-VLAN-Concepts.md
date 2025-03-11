@@ -41,8 +41,10 @@ A VLAN is a **logical grouping** of devices within a network, allowing them to c
 ---
 
 ## Physical vs Logical Topology
-
+### Physical Topology
 ![Physical Topology](screenshot/physical-topology.png)
+
+### Logical Topology
 ![Logical Topology](screenshot/logical-topology.png)
 
 [Back to Top](#top)
