@@ -100,6 +100,46 @@ Red VLAN and Green VLAN will need a Layer 3 device (i.e., Router) to communicate
 
 ---
 
+## Port Assignment
+
+1. Static VLAN
+   * Administrator
+
+
+2. Dynamic VLAN
+   * Dnamically update a port's VLAN based on the MAC address of the attached device.
+   * VMPS (VLAN Membership Policy Server)
+   * 
+3. Voice VLAN
+   * IP phones
+
+[Back to Top](#top)
+
+---
+
+## VTP (VLAN Trunking Protocol)
+* Cisco Proprietary
+* Layer 2 Protocol
+* Allows for propagation of VLAN information
+* Rather than telnetting multiple switches, you can create, delete or rename VLANs on one switch
+* Have that information automatically propagated to other switches across trunk links.
+  * Can only be propagated across trunk links.
+* Uses MAC address 01-00-0C-CC-CC-CC
+* Messages:
+  * Summary Advertisements
+  * Subset Advertisements
+  * Advertisement requests
+
+### VTP Nightmares
+* Can cause a lot of headaches
+* Switches can have the entire VLAN configuration wiped out if a new switch is added to the network without following a proper procedure.
+* Cisco engineers will not enable VTP because of the inherent risks associated with this protocol.
+* 
+
+[Back to Top](#top)
+
+---
+
 ## VLAN Tagging
 - VLANs use tagging to identify traffic belonging to specific VLANs.
 - **802.1Q** is the most common tagging protocol - this is the industry standard.
