@@ -139,8 +139,8 @@ Red VLAN and Green VLAN will need a Layer 3 device (i.e., Router) to communicate
 
 * PRI = Priority Code Point
   * Prioritize certain traffic over others
-  * Used heavility in QoS
-  * 5 = Voice
+  * Used heavily in QoS
+  * e.g., 5 = Voice
 
 * CFI (Canonical Format Identifier)
   * Used in the old days for compatibility between ethernet and token-ring networks.
