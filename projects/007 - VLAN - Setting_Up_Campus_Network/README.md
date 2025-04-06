@@ -71,18 +71,18 @@ Core# show vlan brief
 ## Configuring the Management IP Addresses for Access Layer Switches (S1, S2, and S3)
 
 
-| Configuration Steps                | For Switch1                                           | For Switch2                                           | For Switch3                                           |
-|------------------------------------|-------------------------------------------------------|-------------------------------------------------------|-------------------------------------------------------|
-| 1. Enter Privileged Mode           | Switch1> enable                                       | Switch2> enable                                       | Switch3> enable                                       |
-| 2. Enter Global Configuration Mode | Switch1# configure terminal                           | Switch2# configure terminal                           | Switch3# configure terminal                           |
-| 3. Assign IP Address to VLAN 1     | Switch1(config)# interface vlan 1                     | Switch2(config)# interface vlan 1                     | Switch3(config)# interface vlan 1                     |
-| 4. Configure VLAN 1 IP Address     | Switch1(config-if)# ip address 10.1.1.1 255.255.255.0 | Switch2(config-if)# ip address 10.1.1.2 255.255.255.0 | Switch3(config-if)# ip address 10.1.1.3 255.255.255.0 |
-| 5. Activate VLAN 1 Interface       | Switch1(config-if)# no shutdown                       | Switch2(config-if)# no shutdown                       | Switch3(config-if)# no shutdown                       |
-| 6. Set Default Gateway             | Switch1(config)# ip default-gateway 10.1.1.254        | Switch2(config)# ip default-gateway 10.1.1.254        | Switch3(config)# ip default-gateway 10.1.1.254        |
-| 7. Exit Configuration Mode         | Switch1(config)# end                                  | Switch2(config)# end                                  | Switch3(config)# end                                  |
-| 8. Save Configuration              | Switch1# write memory                                 | Switch2# write memory                                 | Switch3# write memory                                 |
-| 9. Verify IP and Connectivity      | Switch1# show ip interface brief                      | Switch2# show ip interface brief                      | Switch3# show ip interface brief                      |
-| 10. Verify Connectivity            | Switch1# ping 10.1.1.254                              | Switch2# ping 10.1.1.254                              | Switch3# ping 10.1.1.254                              |
+| Configuration Steps                | For Switch1                                            | For Switch2                                            | For Switch3                                            |
+|------------------------------------|--------------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------|
+| 1. Enter Privileged Mode           | `Switch1> enable`                                      | `Switch2> enable`                                      | `Switch3> enable`                                      |
+| 2. Enter Global Configuration Mode | `Switch1# configure terminal`                          | `Switch2# configure terminal`                          | `Switch3# configure terminal`                          |
+| 3. Assign IP Address to VLAN 1     | `Switch1(config)# interface vlan 1`                    | `Switch2(config)# interface vlan 1`                    | `Switch3(config)# interface vlan 1`                    |
+| 4. Configure VLAN 1 IP Address     | `Switch1(config-if)# ip address 10.1.1.1 255.255.255.0`| `Switch2(config-if)# ip address 10.1.1.2 255.255.255.0`| `Switch3(config-if)# ip address 10.1.1.3 255.255.255.0`|
+| 5. Activate VLAN 1 Interface       | `Switch1(config-if)# no shutdown`                      | `Switch2(config-if)# no shutdown`                      | `Switch3(config-if)# no shutdown`                      |
+| 6. Set Default Gateway             | `Switch1(config)# ip default-gateway 10.1.1.254`       | `Switch2(config)# ip default-gateway 10.1.1.254`       | `Switch3(config)# ip default-gateway 10.1.1.254`       |
+| 7. Exit Configuration Mode         | `Switch1(config)# end`                                 | `Switch2(config)# end`                                 | `Switch3(config)# end`                                 |
+| 8. Save Configuration              | `Switch1# write memory`                                | `Switch2# write memory`                                | `Switch3# write memory`                                |
+| 9. Verify IP and Connectivity      | `Switch1# show ip interface brief`                     | `Switch2# show ip interface brief`                     | `Switch3# show ip interface brief`                     |
+| 10. Verify Connectivity            | `Switch1# ping 10.1.1.254`                             | `Switch2# ping 10.1.1.254`                             | `Switch3# ping 10.1.1.254`                             |
 
 
 
