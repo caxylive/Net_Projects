@@ -7,11 +7,17 @@
 
 ---
 
+## Introduction
+
+[Back to Top](#top)
+
+---
+
 ## Network Topology
 
 ![Physical Topology](screenshot/physical-topology.png)
 
-[Back to Top](top)
+[Back to Top](#top)
 
 ---
 
@@ -64,7 +70,7 @@ Core# show ip interface brief
 Core# show vlan brief
 ```
 
-[Back to Top](top)
+[Back to Top](#top)
 
 ---
 
