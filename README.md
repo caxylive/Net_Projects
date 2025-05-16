@@ -19,7 +19,7 @@ This repository serves as a collection of networking projects designed to enhanc
 | 003           | [Inter-Site Connectivity Using EIGRP in a Subnetted Network](#3-inter-site-connectivity-using-eigrp-in-a-subnetted-network)                     |
 | 004           | [Wireshark Basics: Analyzing HTTP Traffic](#4-wireshark-basics-analyzing-http-traffic)                                                                                                                   |
 | 005           | [Wireshark Basics: Traffic Flow and Capture Placement](#5-wireshark-basics-traffic-flow-and-capture-placement)                                                                                                                   |
-| 006           | [Wireshark Basics: Wireshark Basics: Port Mirroring (SPAN)](#6-wireshark-basics-port-mirroring-span)                                                                                                                   |
+| 006           | [Wireshark Basics: Port Mirroring (SPAN)](#6-wireshark-basics-port-mirroring-span)                                                                                                                   |
 
 ---
 
