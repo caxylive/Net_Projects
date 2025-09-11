@@ -13,16 +13,17 @@ The exercise provides hands-on practice with:
 
 ## Topology
 ``` ascii
-         +-------------------+
-         |       Switch 1    |
-         |                   |
-R1 (PC A)---+Gi1/0/1 Gi1/0/24+---+Gi1/0/24 Switch 2
-VLAN 1 | | | |
-R2 (PC B)---+Gi1/0/2 | | Gi1/0/1 +---R3 (PC C)
-VLAN 2 +-------------------+ | | VLAN 1
-| Gi1/0/2 +---R4 (PC D)
-| | VLAN 2
-+-------------------+
+              +-----------+
+R1 (PC A) ----| Gi1/0/1   |
+   VLAN 1     |           |
+R2 (PC B) ----| Gi1/0/2   |      +-----------+
+   VLAN 2     |   S1      |------|   S2      |
+              | Gi1/0/24  |      | Gi1/0/24  |
+              +-----------+      |           |
+                                 | Gi1/0/1   |---- R3 (PC C)
+                                 |           |     VLAN 1
+                                 | Gi1/0/2   |---- R4 (PC D)
+                                 +-----------+     VLAN 2
 ```
 
 ---
