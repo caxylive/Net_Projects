@@ -5,7 +5,7 @@
 - The Problem (without STP): Redundant physical links create a loop, causing brodcast storms (frames loop endlessly), MAC address table instability (port flapping, and network collapse.
 - STP Solution : STP creates a single, logical, loop-free path by logically blocking reduntant physical links.
 
-- # 2. **Root Bridge Election (The Global Decision)**
+## 2. **Root Bridge Election (The Global Decision)**
 
 The **Root Bridge (RB)** is the switch at the center of the STP domain, determined by an election process.
 
@@ -15,7 +15,7 @@ The **Root Bridge (RB)** is the switch at the center of the STP domain, determin
   - MAC Addre`ss (6 bytes): Used as the definitive tie-breaker if priorities are equal.
 - Manual Configuration: To force a switch to become the root, its priority must be lowered. The Cisco command `spanning-tree vlan [VLAN ID] root primary` automatically sets a low, winning priority.
 
-- # 3. **Path Cost and Root Port Election**
+## 3. **Path Cost and Root Port Election**
 
 The **Root Port (RP)** is the port on a non-root switch that provides the best path back to the RB.
 
@@ -34,7 +34,7 @@ The **Root Port (RP)** is the port on a non-root switch that provides the best p
 
 # RSTP and Port Role Enhancements
 
-1. Traditional STP (802.1D / PVST) Convergence
+## 1. Traditional STP (802.1D / PVST) Convergence
 
 This standard uses passive, timer-based convergence, leadingosignificant delays.
 - Mechanism: Relies on fixed timers to transition ports through states.
@@ -46,8 +46,8 @@ This standard uses passive, timer-based convergence, leadingosignificant delays.
 
 - 
 
-2. Rapid STP (802.1W / Rapid PVST+) Convergence
+## 2. Rapid STP (802.1W / Rapid PVST+) Convergence
 
-3. RSTP Port States and Roles
+## 3. RSTP Port States and Roles
 
-4. Dynamic Re-Convergence Demonstration
+## 4. Dynamic Re-Convergence Demonstration
