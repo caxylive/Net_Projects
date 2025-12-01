@@ -5,7 +5,7 @@
 - The Problem (without STP): Redundant physical links create a loop, causing brodcast storms (frames loop endlessly), MAC address table instability (port flapping, and network collapse.
 - STP Solution : STP creates a single, logical, loop-free path by logically blocking reduntant physical links.
 
-- # 2. **Root Bidge Election (The Global Decision)**
+- # 2. **Root Bridge Election (The Global Decision)**
 
 The **Root Bridge (RB)** is the switch at the center of the STP domain, determined by an election process.
 
@@ -29,3 +29,25 @@ The **Root Port (RP)** is the port on a non-root switch that provides the best p
   2. **Lowest Neighbor Bridge ID**
   3. **Lowest Port Priority** (Default 128)
   4. **Lowest Port ID** (e.g., Gig 0/0 is lower than Gig 0/1) 
+
+---
+
+# RSTP and Port Role Enhancements
+
+1. Traditional STP (802.1D / PVST) Convergence
+
+This standard uses passive, timer-based convergence, leadingosignificant delays.
+- Mechanism: Relies on fixed timers to transition ports through states.
+  - Max Age (20s) : Blocking --> Listening
+  - Forward Delay (15s) : Listening --> Learning
+  - Forward Delay (15s) : Learning --> Forwarding
+- Converge Time : Slow (30 - 50 seconds) for link state changes.
+- Problem: Causes network outages and application timeouts (e.g. DHCP failure) during link failure or recovery.
+
+- 
+
+2. Rapid STP (802.1W / Rapid PVST+) Convergence
+
+3. RSTP Port States and Roles
+
+4. Dynamic Re-Convergence Demonstration
