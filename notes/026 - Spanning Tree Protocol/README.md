@@ -81,9 +81,9 @@ RSTP consolidates old states and introduces new roles for greater efficiency in 
 
 ## 1. **The Core Difference: Active vs. Passive Convergence**
 
-Legacy STP (802.1D): Passive. It waited for the network to converge based on fixed, conservative timers (Forward Delay=15s, Max Age=20s).
+**Legacy STP (802.1D): Passive**. It waited for the network to converge based on fixed, conservative timers (Forward Delay=15s, Max Age=20s).
 
-Rapid STP (802.1w): Active. It uses an active negotiation/handshake mechanism to confirm the safety of a path, allowing the port to transition to Forwarding immediately, without relying on the 802.1D timers.
+**Rapid STP (802.1w): Active**. It uses an **active negotiation/handshake mechanism** to confirm the safety of a path, allowing the port to transition to **Forwarding immediately**, without relying on the 802.1D timers.
 
 ## 2. **Proposal / Agreement Handshake (Point-to-Point Links)**
 
@@ -93,17 +93,17 @@ This is the primary mechanism for sub-second convergence on links between switch
 
 - **Trigger:** Initiated when a port comes up or when a non-Root Switch receives a **superior BPDU** (better path) from a neighbor.
 
-- **BPDU Enhancements:** RSTP BPDUs contain specific fields (like the Proposal and Agreement bits) to facilitate the handshake.
+- **BPDU Enhancements:** RSTP BPDUs contain specific fields (like the **Proposal** and **Agreement** bits) to facilitate the handshake.
 
-- Sequence:
+- **Sequence**:
 
-  1. Proposal Sent: The designated switch (e.g., the Root) sends a BPDU with the Proposal bit set.
+  1. **Proposal Sent**: The designated switch (e.g., the Root) sends a BPDU with the **Proposal bit set**.
 
-  2. Synchronization (Sync): The receiving switch (Switch A) selects the port as its new Root Port (RP). Switch A immediately forces all other non-Edge ports into the Discarding state (Syncing).
+  2. **Synchronization (Sync)**: The receiving switch (Switch A) selects the port as its new **Root Port (RP)**. Switch A immediately forces all other **non-Edge ports** into the **Discarding** state (Syncing).
 
-  3. Agreement Sent: Once synchronization is complete, Switch A immediately transitions the new RP to Forwarding and sends an Agreement message back.
+  3. **Agreement Sent**: Once synchronization is complete, Switch A immediately transitions the new RP to **Forwarding** and sends an **Agreement** message back.
 
-  4. Instant Forwarding: The Designated Port on the neighbor receives the Agreement and immediately transitions to Forwarding.
+  4. **Instant Forwarding**: The Designated Port on the neighbor receives the Agreement and immediately transitions to **Forwarding**.
 
  ## 3. **Edge Ports (PortFast)**
 
